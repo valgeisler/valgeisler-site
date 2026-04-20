@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Val Geisler</title>
+  <meta name="description" content="Val Geisler — I help leaders see the strategy, tell the story, and build the org to make it real.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #FAFAF8;
+      --text:   #1C1C1A;
+      --accent: #3D6B4F;
+      --muted:  #6B6860;
+      --rule:   #E2DED8;
+      --serif:  'Cormorant Garamond', Georgia, serif;
+      --sans:   'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250, 250, 248, 0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* Shared */
+    .container { max-width: 780px; margin: 0 auto; }
+    section { padding: 6rem 2.5rem; }
+    hr.rule { border: none; border-top: 1px solid var(--rule); }
+
+    .label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.25rem;
+    }
+
+    /* Hero */
+    #hero { padding-top: 9rem; padding-bottom: 5rem; }
+
+    .hero-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(3.25rem, 6.5vw, 5rem);
+      font-weight: 500;
+      line-height: 1.0;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 420px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-tagline strong { color: var(--text); font-weight: 500; }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.6;
+    }
+
+    .social-pills { display: flex; gap: 0.625rem; flex-wrap: wrap; }
+
+    .social-pills a {
+      display: inline-block;
+      font-size: 0.775rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border: 1.5px solid var(--rule);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .social-pills a:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-photo {
+      width: 220px;
+      height: 270px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #D5CFC8;
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* About */
+    #about { padding-top: 5rem; }
+
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 1.375rem;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* Career */
+    .career { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--rule); }
+    .career-list { list-style: none; padding-left: 0; }
+
+    .career-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.5rem 2.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+
+    .career-item:last-child { border-bottom: none; }
+
+    .career-org {
+      font-size: 0.825rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+    }
+
+    .career-dates {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      line-height: 1.5;
+    }
+
+    .career-role {
+      font-family: var(--serif);
+      font-size: 1.175rem;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 0.625rem;
+    }
+
+    .career-bullets {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.25rem;
+    }
+
+    .career-bullets li {
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.7;
+      padding-left: 1.125rem;
+      position: relative;
+      margin-bottom: 0.35rem;
+    }
+
+    .career-bullets li:last-child { margin-bottom: 0; }
+
+    .career-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+      line-height: 1.55;
+    }
+
+    /* Recognition */
+    .recognition { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+
+    .recognition-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+
+    .recognition-list li {
+      font-size: 0.875rem;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .recognition-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+    /* Geometric Career */
+    .geo-svg {
+      width: 100%;
+      height: auto;
+      max-width: 660px;
+      display: block;
+      margin: 3.5rem auto 0;
+    }
+
+    /* Speaking */
+    #speaking { padding-top: 5rem; }
+    .press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+
+    .press-card {
+      display: block;
+      border: 1.5px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.375rem 1.5rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      color: inherit;
+    }
+
+    .press-card:hover { border-color: var(--accent); background: rgba(61,107,79,0.03); }
+
+    .press-card.wide {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: rgba(61,107,79,0.05);
+      border-color: rgba(61,107,79,0.25);
+    }
+
+    .press-card.wide:hover { background: rgba(61,107,79,0.08); }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .press-source {
+      font-size: 0.725rem;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .press-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .press-type { font-size: 0.78rem; color: var(--muted); margin-top: 0.35rem; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name { font-family: var(--serif); font-size: 1rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.75rem; }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      section { padding: 3.5rem 1.25rem; }
+      #hero { padding-top: 6rem; padding-bottom: 3rem; }
+      #about, #speaking { padding-top: 3.5rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-photo { width: 150px; height: 185px; order: -1; }
+      .career-item { grid-template-columns: 1fr; gap: 0.25rem; }
+      .press-grid { grid-template-columns: 1fr; }
+      .press-card.wide { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      footer { flex-direction: column; gap: 1.25rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-name">Val Geisler</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#speaking">Speaking</a>
+    <a href="https://www.linkedin.com/in/lovevalgeisler" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</nav>
+
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Hi, I'm Val.</h1>
+      <p class="hero-tagline">
+        I help companies <strong>see the strategy, tell the story,</strong> and build the org to make it real.
+      </p>
+      <p class="hero-sub">
+        12+ years at the intersection of strategy and execution, turning customer insight into revenue across Sales, CS, and GTM.
+      </p>
+      <div class="social-pills">
+        <a href="https://www.linkedin.com/in/lovevalgeisler" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="val-headshot.jpg" alt="Val Geisler">
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+
+<!-- About + Career -->
+<section id="about">
+  <div class="container">
+    <span class="label">About</span>
+
+    <div class="about-text">
+      <p>I've spent over 12 years <strong>turning customer insights into executive strategy,</strong> strategy into a story worth telling, and that story into the operating systems that move the org forward.</p>
+      <p>What that has looked like in practice: <strong>board decks and business reviews,</strong> product launches driven by customer interviews, <strong>co-selling alongside sales teams,</strong> and programs built from scratch that the business quickly can't imagine running without.</p>
+      <p>The through line is strategy that executes. I am as comfortable synthesizing customer insight into a board narrative as I am writing a PRD, running a QBR, or sitting in a strategic sales call where knowing the customer changes the outcome. <strong>I've reported directly to a CRO and a CEO.</strong></p>
+      <p>On LinkedIn I write about lifecycle marketing, GTM strategy, and what it actually takes to build a customer-centric revenue organization.</p>
+    </div>
+
+    <div class="career">
+      <span class="label">Career</span>
+      <ul class="career-list">
+
+        <li class="career-item">
+          <div class="career-meta">
+            <div class="career-org">Digioh</div>
+            <div class="career-dates">Dec 2025 – Present</div>
+          </div>
+          <div class="career-right">
+            <div class="career-role">VP, Partner Programs</div>
+            <ul class="career-bullets">
+              <li>Built agency partner program and certification from scratch, architecting the full system using AI tools</li>
+              <li>Signed <strong>10 net new agency partners</strong>, each with <strong>$100k+ MRR potential</strong></li>
+              <li>Leads strategy sessions with existing partners to drive product adoption and deepen relationships</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-meta">
+            <div class="career-org">Digioh</div>
+            <div class="career-dates">Jul 2024 – Dec 2025</div>
+          </div>
+          <div class="career-right">
+            <div class="career-role">VP, Customer &amp; Lifecycle Marketing</div>
+            <ul class="career-bullets">
+              <li>Reporting to the CRO; co-sold with the sales team at a <strong>60% close rate</strong>, double the <strong>30% baseline</strong></li>
+              <li>Served as PM on Journeys feature from ideation through launch: customer interviews, PRDs, UX/UI, engineering, and design</li>
+              <li>Launched NPS program and brought customer insight directly into product development</li>
+              <li>Helped bring <strong>NRR to 97%</strong></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-meta">
+            <div class="career-org">ByHeart</div>
+            <div class="career-dates">May 2023 – Jun 2024</div>
+          </div>
+          <div class="career-right">
+            <div class="career-role">Head of Retention</div>
+            <ul class="career-bullets">
+              <li>Grew lifecycle email from a dormant list to <strong>25% of all company revenue</strong></li>
+              <li>Achieved consistent <strong>30%+ open rates</strong></li>
+              <li>Built board decks and ran monthly business reviews</li>
+              <li>Built and scaled loyalty program from scratch</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-meta">
+            <div class="career-org">Klaviyo</div>
+            <div class="career-dates">Feb 2021 – Apr 2023</div>
+          </div>
+          <div class="career-right">
+            <div class="career-role">Customer Advocacy Lead</div>
+            <ul class="career-bullets">
+              <li>Built Klaviyo's customer advocacy function from scratch: case studies, review platforms, and VoC programs</li>
+              <li>Brought VoC into product marketing and created clearer ownership across the customer journey</li>
+              <li>Led cross-functional alignment of referral, influencer, advocacy, and community programs</li>
+              <li>Created inaugural Klaviyo Connect in London: <strong>35 customers, 6 video testimonials in a single day</strong></li>
+              <li>Built the customer story framework that fed the investor deck</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-meta">
+            <div class="career-org">Fix My Churn</div>
+            <div class="career-dates">Jun 2017 – Jan 2021</div>
+          </div>
+          <div class="career-right">
+            <div class="career-role">Founder</div>
+            <ul class="career-bullets">
+              <li>Built Fix My Churn from nothing; ran lifecycle strategy for <strong>10–15 global SaaS and ecommerce brands per year</strong></li>
+              <li>Ran QBRs with client executive teams, synthesizing customer data into strategic recommendations</li>
+              <li>Reduced churn <strong>13%</strong> for one client with a single new lifecycle flow</li>
+              <li>Grew free-to-paid conversions from <strong>10% to 15%</strong></li>
+              <li>Clients included ConvertKit, Stripe, Litmus, Trello, and InVision</li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="recognition">
+        <span class="label">Recognition</span>
+        <ul class="recognition-list">
+          <li>Top 100 Customer Marketing Influencers and Strategists</li>
+          <li>Finalist, CustomerX Expansion Engineer Award</li>
+          <li>Reforge Certified in Customer Retention + Engagement</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+
+<!-- Geometric Career -->
+<section id="geometric">
+  <div class="container">
+    <span class="label">Geometric Career</span>
+
+    <div class="about-text">
+      <p>My career doesn't have a straight line. It has a shape.</p>
+      <p>Theatre production taught me how to <strong>manage chaos and hit a hard deadline.</strong> Special events taught me how to <strong>read a room.</strong> Retail taught me <strong>what customers actually do when no one's watching.</strong> Sales taught me how to <strong>ask for what I want.</strong> Customer success taught me that <strong>retention starts before the sale.</strong> Entrepreneurship taught me how to <strong>build from nothing.</strong> Ecommerce taught me <strong>how scale changes everything.</strong> Software taught me to <strong>think in systems.</strong></p>
+      <p><strong>None of that was planned. All of it was useful.</strong></p>
+      <p>I call this a geometric career, not a ladder, not a lattice, but a shape that only makes sense when you step back and look at the whole thing. <strong>The breadth is the point.</strong></p>
+    </div>
+
+    <svg viewBox="0 0 820 640" xmlns="http://www.w3.org/2000/svg" class="geo-svg"
+      aria-label="Decagon diagram with each point labeled: Theatre Production, Special Events, Retail, Sales, Marketing, Customer Success, Entrepreneurship, Intrapreneurship, Ecommerce, Software">
+
+      <g stroke="#3D6B4F" stroke-width="1" opacity="0.15">
+        <line x1="410" y1="120" x2="410" y2="520"/>
+        <line x1="527.6" y1="158.2" x2="292.4" y2="481.8"/>
+        <line x1="600.2" y1="258.2" x2="219.8" y2="381.8"/>
+        <line x1="600.2" y1="381.8" x2="219.8" y2="258.2"/>
+        <line x1="527.6" y1="481.8" x2="292.4" y2="158.2"/>
+      </g>
+
+      <polygon
+        points="410,120 527.6,158.2 600.2,258.2 600.2,381.8 527.6,481.8 410,520 292.4,481.8 219.8,381.8 219.8,258.2 292.4,158.2"
+        fill="rgba(61,107,79,0.05)"
+        stroke="#3D6B4F"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+      />
+
+      <g fill="#3D6B4F">
+        <circle cx="410"   cy="120"   r="4"/>
+        <circle cx="527.6" cy="158.2" r="4"/>
+        <circle cx="600.2" cy="258.2" r="4"/>
+        <circle cx="600.2" cy="381.8" r="4"/>
+        <circle cx="527.6" cy="481.8" r="4"/>
+        <circle cx="410"   cy="520"   r="4"/>
+        <circle cx="292.4" cy="481.8" r="4"/>
+        <circle cx="219.8" cy="381.8" r="4"/>
+        <circle cx="219.8" cy="258.2" r="4"/>
+        <circle cx="292.4" cy="158.2" r="4"/>
+      </g>
+
+      <g font-family="'Inter', system-ui, sans-serif" font-size="12.5" fill="#1C1C1A" font-weight="500" letter-spacing="0.01em">
+        <text x="410"   y="64"    text-anchor="middle">Theatre Production</text>
+        <text x="559.9" y="113.7" text-anchor="start"  dominant-baseline="middle">Special Events</text>
+        <text x="652.5" y="241.2" text-anchor="start"  dominant-baseline="middle">Retail</text>
+        <text x="652.5" y="398.8" text-anchor="start"  dominant-baseline="middle">Sales</text>
+        <text x="559.9" y="526.3" text-anchor="start"  dominant-baseline="middle">Marketing</text>
+        <text x="410"   y="578"   text-anchor="middle">Customer Success</text>
+        <text x="260.1" y="526.3" text-anchor="end"    dominant-baseline="middle">Entrepreneurship</text>
+        <text x="167.5" y="398.8" text-anchor="end"    dominant-baseline="middle">Intrapreneurship</text>
+        <text x="167.5" y="241.2" text-anchor="end"    dominant-baseline="middle">Ecommerce</text>
+        <text x="260.1" y="113.7" text-anchor="end"    dominant-baseline="middle">Software</text>
+      </g>
+
+    </svg>
+
+  </div>
+</section>
+
+<hr class="rule">
+
+
+<!-- Speaking + Press -->
+<section id="speaking">
+  <div class="container">
+    <span class="label">Speaking &amp; Press</span>
+
+    <div class="press-grid">
+
+      <a href="https://podcasts.apple.com/us/podcast/ecommerce-marketing-school/id1495875193"
+         target="_blank" rel="noopener" class="press-card wide">
+        <span class="badge">Host</span>
+        <div>
+          <div class="press-source">Ecommerce Marketing School · Privy / Triple Whale Network</div>
+          <div class="press-title">Season host for the flagship ecommerce marketing podcast</div>
+        </div>
+      </a>
+
+      <a href="https://iterable.com/blog/smarter-lifecycle-marketing/"
+         target="_blank" rel="noopener" class="press-card">
+        <div class="press-source">Iterable</div>
+        <div class="press-title">Digioh's Dinner Party Strategy: Serving Up Smarter Lifecycle Marketing</div>
+        <div class="press-type">Feature</div>
+      </a>
+
+      <a href="https://www.tapcart.com/podcast-episode/s3-e3-how-to-fix-your-retention-with-val-geisler"
+         target="_blank" rel="noopener" class="press-card">
+        <div class="press-source">Down to Chat · Tapcart</div>
+        <div class="press-title">How to Fix Your Retention</div>
+        <div class="press-type">Podcast</div>
+      </a>
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <span class="footer-name">Val Geisler</span>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/lovevalgeisler" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
