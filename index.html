@@ -109,7 +109,26 @@
       color: #fff !important;
       border-color: var(--purple) !important;
     }
+.divider { border: none; display: block; overflow: hidden; line-height: 0; }
+.divider svg { display: block; width: 100%; }
 
+.divider-orange {
+  height: 5px;
+  background: linear-gradient(to right, transparent 0%, #f69426 6%, #f69426 94%, transparent 100%);
+}
+
+.divider-zigzag { height: 15px; }
+
+.divider-squiggle { height: 18px; }
+
+.divider-dashes {
+  height: 5px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #009b5f 0, #009b5f 16px,
+    transparent 16px, transparent 32px
+  );
+}
     /* ── Shared ── */
     .container { max-width: 780px; margin: 0 auto; }
     section { padding: 6rem 2.5rem; }
