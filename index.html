@@ -1,1344 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Val Geisler</title>
-  <meta name="description" content="Val Geisler — I help leaders see the strategy, tell the story, and build the org to make it real.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:     #f4f4ed;
-      --text:   #231f20;
-      --black:  #000000;
-      --purple: #974fff;
-      --green:  #009b5f;
-      --blue:   #1979eb;
-      --navy:   #391e60;
-      --orange: #f69426;
-      --muted:  rgba(35,31,32,0.52);
-      --rule:   rgba(35,31,32,0.13);
-      --serif:  'Cormorant Garamond', Georgia, serif;
-      --sans:   'Inter', system-ui, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
- body {
-  background-size: 30px 30px;
-  background-image: radial-gradient(circle, rgba(35,31,32,0.2) 1px, transparent 1px);
-      color: var(--text);
-      font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    strong { font-weight: 600; color: var(--text); }
-
-    /* ── Nav ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      padding: 1.125rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(244,244,237,0.93);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--rule);
-      z-index: 100;
-    }
-
-    .nav-name {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-
-    .nav-links a {
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    /* Nav pills — replicated from hero */
-    .nav-pill {
-      border: 1.5px solid rgba(35,31,32,0.2) !important;
-      padding: 0.375rem 0.9rem !important;
-      border-radius: 100px;
-      color: var(--text) !important;
-      letter-spacing: 0.06em !important;
-      transition: border-color 0.2s, color 0.2s, background 0.2s !important;
-    }
-
-    .nav-pill:hover {
-      border-color: var(--navy) !important;
-      color: var(--navy) !important;
-    }
-
-    .nav-pill-cta {
-      border-color: var(--purple) !important;
-      color: var(--purple) !important;
-      background: rgba(151,79,255,0.06);
-      font-weight: 500 !important;
-    }
-
-    .nav-pill-cta:hover {
-      background: var(--purple) !important;
-      color: #fff !important;
-      border-color: var(--purple) !important;
-    }
-.divider { border: none; display: block; overflow: hidden; line-height: 0; }
-.divider svg { display: block; width: 100%; }
-
-.divider-orange {
-  height: 5px;
-  background: linear-gradient(to right, transparent 0%, #f69426 6%, #f69426 94%, transparent 100%);
-}
-
-.divider-zigzag { height: 15px; }
-
-.divider-squiggle { height: 18px; }
-
-.divider-dashes {
-  height: 5px;
-  background-image: repeating-linear-gradient(
-    to right,
-    #009b5f 0, #009b5f 16px,
-    transparent 16px, transparent 32px
-  );
-}
-    /* ── Shared ── */
-    .container { max-width: 780px; margin: 0 auto; }
-    section { padding: 6rem 2.5rem; }
-
-    
-    /* Section labels — bigger, bolder, with icons */
-    .label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.825rem;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      color: var(--navy);        /* default; overridden per-section */
-      margin-bottom: 2.25rem;
-    }
-
-    .label svg {
-      width: 15px;
-      height: 15px;
-      flex-shrink: 0;
-      stroke: currentColor;
-    }
-
-    .label-blue   { color: var(--blue); }
-    .label-green  { color: var(--green); }
-    .label-purple { color: var(--purple); }
-    .label-navy   { color: var(--navy); }
-    .label-orange { color: var(--orange); }
-
-    /* ── Hero ── */
-    #hero { padding-top: 9rem; padding-bottom: 5rem; }
-
-    .hero-inner {
-      max-width: 780px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 220px;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-text h1 {
-      font-family: var(--serif);
-      font-size: clamp(3.25rem, 6.5vw, 5rem);
-      font-weight: 500;
-      line-height: 1.0;
-      letter-spacing: -0.015em;
-      margin-bottom: 1.5rem;
-      color: var(--black);
-    }
-
-    .hero-tagline {
-      font-size: 1.05rem;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 420px;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-tagline strong { color: var(--text); font-weight: 500; }
-
-    .hero-highlight {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'%3E%3Cpath d='M0,3 Q5,0 10,3 Q15,6 20,3' stroke='%23974fff' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: repeat-x;
-      background-position: bottom;
-      background-size: 20px 6px;
-      padding-bottom: 5px;
-    }
-
-    .hero-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0;
-      line-height: 1.6;
-    }
-
-    .hero-photo {
-      width: 220px;
-      height: 270px;
-      border-radius: 6px;
-      overflow: hidden;
-      background: #d5d0c8;
-      flex-shrink: 0;
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    /* ── About ── */
-    #about { padding-top: 5rem; }
-
-    .about-text p {
-      font-size: 1.05rem;
-      line-height: 1.85;
-      color: var(--text);
-      margin-bottom: 1.375rem;
-    }
-
-    .about-text p:last-child { margin-bottom: 0; }
-
-    /* ── Stats strip ── */
-    .stats-box {
-  background: rgba(57,30,96,0.08);
-  border-radius: 12px;
-  padding: 2rem 2rem 1.5rem;
-  margin-top: 1.5rem;
-      width: 100%;
-  
-}
-    .stats-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.5rem 1rem;
-      margin-top: 3.5rem;
-      padding-top: 2.5rem;
-    }
-
-    .stat-item { padding: 0.5rem 0; }
-
-    .stat-number {
-      font-family: var(--serif);
-      font-size: clamp(2.25rem, 3.5vw, 3.25rem);
-      font-weight: 500;
-      line-height: 1;
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-
-    .stat-orange { color: var(--orange); }
-    .stat-green  { color: var(--green); }
-    .stat-blue   { color: var(--blue); }
-    .stat-purple { color: var(--purple); }
-
-    .stat-label {
-      font-size: 0.76rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ── Career ── */
-    .career { margin-top: 4rem; padding-top: 3rem; width: 100%; }
-    .career-list { list-style: none; padding-left: 0; }
-
-    .career-item {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 1.5rem 2.5rem;
-      padding: 2.25rem 0;
-      align-items: start;
-    }
-
-    .career-item:last-child { border-bottom: none; }
-
-    .career-org {
-      font-size: 0.825rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--green);
-    }
-
-    .career-dates {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-      line-height: 1.5;
-    }
-
-    .career-role {
-      font-family: var(--serif);
-      font-size: 1.175rem;
-      font-weight: 500;
-      line-height: 1.25;
-      color: var(--text);
-      margin-bottom: 0.625rem;
-    }
-
-    .career-bullets { list-style: none; padding-left: 0; margin-top: 0.25rem; }
-
-    .career-bullets li {
-      font-size: 0.875rem;
-      color: var(--text);
-      line-height: 1.7;
-      padding-left: 1.125rem;
-      position: relative;
-      margin-bottom: 0.35rem;
-    }
-
-    .career-bullets li:last-child { margin-bottom: 0; }
-
-    .career-bullets li::before {
-      content: '·';
-      position: absolute;
-      left: 0;
-      color: var(--green);
-      font-size: 1.2rem;
-      line-height: 1.55;
-    }
-
-    /* ── Recognition ── */
-    .recognition { margin-top: 3rem; padding-top: 2.5rem; border-top: 2px solid var(--purple); }
-
-    .recognition-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
-
-    .recognition-list li {
-      font-size: 0.875rem;
-      color: var(--muted);
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .recognition-list li::before { content: '—'; position: absolute; left: 0; color: var(--purple); }
-
-    /* ── Client ticker ── */
-    .ticker-wrap {
-      overflow: hidden;
-      padding: 0.875rem 0;
-      background: rgba(57,30,96,0.04);
-      border-top: 1px solid rgba(57,30,96,0.1);
-      border-bottom: 1px solid rgba(57,30,96,0.1);
-    }
-
-    .ticker-track {
-      display: flex;
-      align-items: center;
-      width: max-content;
-      animation: ticker 28s linear infinite;
-    }
-
-    .ticker-track:hover { animation-play-state: paused; }
-
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    .ticker-item {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--navy);
-      padding: 0 2rem;
-      white-space: nowrap;
-    }
-
-    .ticker-sep { color: var(--purple); font-size: 0.55rem; flex-shrink: 0; }
-
-    /* ── Geometric Career ── */
-    #geometric { padding-top: 5rem; }
-
-    .pull-quote {
-      font-family: var(--serif);
-      font-size: clamp(1.6rem, 3vw, 2.25rem);
-      font-style: italic;
-      font-weight: 400;
-      line-height: 1.35;
-      color: var(--black);
-      padding: 1.75rem 0 1.75rem 2rem;
-      border-left: 3px solid var(--navy);
-      margin: 2.25rem 0;
-      position: relative;
-    }
-
-    .pull-quote::before {
-      content: '\201C';
-      font-family: var(--serif);
-      font-size: 5rem;
-      line-height: 1;
-      color: rgba(57,30,96,0.12);
-      position: absolute;
-      top: -0.5rem;
-      left: -0.25rem;
-      pointer-events: none;
-    }
-
-    .geo-svg {
-      width: 100%;
-      height: auto;
-      max-width: 660px;
-      display: block;
-      margin: 3.5rem auto 0;
-    }
-
-    /* ══════════════════════════════════
-       CONSULTING PACKAGES
-    ══════════════════════════════════ */
-    #work { padding-top: 5rem; }
-
-    .work-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.825rem;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 1rem;
-    }
-
-    .work-eyebrow svg {
-      width: 15px;
-      height: 15px;
-      stroke: currentColor;
-      flex-shrink: 0;
-    }
-
-    .work-title {
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      color: var(--black);
-      margin-bottom: 1.125rem;
-    }
-
-    .work-intro {
-      font-size: 1.0rem;
-      color: var(--muted);
-      max-width: 580px;
-      line-height: 1.8;
-      margin-bottom: 3rem;
-    }
-
-    /* Package cards */
-    .pkg-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3.5rem; }
-
-    details.pkg-card {
-      border: 1.5px solid var(--rule);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      background: rgba(244,244,237,0.85);
-    }
-
-    details.pkg-card:hover {
-      border-color: rgba(246,148,38,0.4);
-      box-shadow: 0 4px 24px rgba(246,148,38,0.09);
-    }
-
-    details.pkg-card[open] {
-      border-color: var(--orange);
-      box-shadow: 0 4px 24px rgba(246,148,38,0.1);
-    }
-
-    details.pkg-card.pkg-featured { border-color: rgba(246,148,38,0.3); }
-
-    /* Colored header band */
-    .pkg-header-band {
-      background: linear-gradient(105deg, rgba(246,148,38,0.1) 0%, rgba(151,79,255,0.06) 100%);
-      border-bottom: 1px solid rgba(246,148,38,0.12);
-      padding: 1.25rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .pkg-featured .pkg-header-band {
-      background: linear-gradient(105deg, rgba(246,148,38,0.15) 0%, rgba(151,79,255,0.09) 100%);
-      border-bottom-color: rgba(246,148,38,0.18);
-    }
-
-    .pkg-gated .pkg-header-band {
-      background: rgba(35,31,32,0.025);
-      border-bottom-color: var(--rule);
-    }
-
-    .pkg-header-left {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      flex: 1;
-      min-width: 0;
-      flex-wrap: wrap;
-    }
-
-    .pkg-icon {
-      flex-shrink: 0;
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      background: rgba(246,148,38,0.13);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--orange);
-    }
-
-    .pkg-gated .pkg-icon {
-      background: rgba(35,31,32,0.06);
-      color: var(--muted);
-    }
-
-    .pkg-icon svg { width: 17px; height: 17px; }
-
-    .pkg-name {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: var(--black);
-      line-height: 1.2;
-    }
-
-    .sticker {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
-      border-radius: 100px;
-      box-shadow: 1px 2px 5px rgba(0,0,0,0.13);
-    }
-
-    .sticker-popular {
-      background: var(--purple);
-      color: #fff;
-      transform: rotate(-2deg);
-      display: inline-block;
-    }
-
-    .sticker-gated {
-      background: rgba(35,31,32,0.1);
-      color: var(--muted);
-      transform: rotate(1.5deg);
-      display: inline-block;
-    }
-
-    .pkg-price-badge {
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.3rem;
-    }
-
-    .price-tag {
-      display: inline-block;
-      background: var(--orange);
-      color: #fff;
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 0.975rem;
-      padding: 0.45rem 0.9rem;
-      border-radius: 5px;
-      transform: rotate(-2deg);
-      box-shadow: 2px 3px 8px rgba(246,148,38,0.35);
-      white-space: nowrap;
-      line-height: 1.2;
-    }
-
-    .price-tag span { font-size: 0.68rem; font-weight: 500; opacity: 0.8; }
-
-    .price-tag.price-muted {
-      background: rgba(35,31,32,0.1);
-      color: var(--muted);
-      transform: rotate(1.5deg);
-      box-shadow: none;
-    }
-
-    .price-total { font-size: 0.72rem; color: var(--muted); text-align: right; }
-
-    summary.pkg-summary {
-      list-style: none;
-      cursor: pointer;
-      display: block;
-      user-select: none;
-      padding: 0;
-    }
-
-    summary.pkg-summary::-webkit-details-marker { display: none; }
-    summary.pkg-summary::marker { display: none; }
-
-    .pkg-tagline-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.875rem 2rem;
-      gap: 1.5rem;
-    }
-
-    .pkg-tagline {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.65;
-      max-width: 500px;
-    }
-
-    .pkg-chevron {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border: 1.5px solid var(--rule);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.25s ease, border-color 0.2s, color 0.2s;
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    details[open] .pkg-chevron {
-      transform: rotate(180deg);
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-
-    .pkg-body {
-      padding: 0 2rem 2rem;
-      border-top: 1px solid rgba(246,148,38,0.15);
-      animation: pkg-reveal 0.22s ease both;
-    }
-
-    @keyframes pkg-reveal {
-      from { opacity: 0; transform: translateY(-5px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .pkg-body-inner { padding-top: 1.5rem; }
-
-    .pkg-scope-title {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 0.875rem;
-    }
-
-    .pkg-scope-list { list-style: none; padding: 0; margin-bottom: 1.25rem; }
-
-    .pkg-scope-list li {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      padding-left: 1.375rem;
-      position: relative;
-      margin-bottom: 0.45rem;
-      color: var(--text);
-    }
-
-    .pkg-scope-list li:last-child { margin-bottom: 0; }
-
-    .pkg-scope-list li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--orange);
-      font-size: 0.8rem;
-      line-height: 1.8;
-    }
-
-    .pkg-not-included {
-      font-size: 0.8rem;
-      color: var(--muted);
-      border-top: 1px solid rgba(246,148,38,0.15);
-      padding-top: 0.875rem;
-      margin-top: 1.125rem;
-      line-height: 1.65;
-    }
-
-    .pkg-not-included strong { font-weight: 600; color: var(--muted); }
-
-    .work-cta { text-align: center; padding-top: 0.5rem; }
-
-    .work-cta p {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-bottom: 1.375rem;
-      line-height: 1.65;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 0.825rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: #fff;
-      background: var(--orange);
-      text-decoration: none;
-      padding: 0.9rem 2.5rem;
-      border-radius: 100px;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 4px 18px rgba(246,148,38,0.32);
-    }
-
-    .btn-primary:hover { background: #d97f18; transform: translateY(-2px); }
-
-    /* ── Speaking ── */
-    #speaking { padding-top: 5rem; }
-    .press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
-
-    .press-card {
-      display: block;
-      border: 1.5px solid var(--rule);
-      border-radius: 8px;
-      padding: 1.375rem 1.5rem;
-      text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
-      color: inherit;
-      background: rgba(244,244,237,0.85);
-    }
-
-    .press-card:hover { border-color: var(--blue); background: rgba(25,121,235,0.03); }
-
-    .press-card.wide {
-      grid-column: 1 / -1;
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      background: rgba(25,121,235,0.05);
-      border-color: rgba(25,121,235,0.25);
-    }
-
-    .press-card.wide:hover { background: rgba(25,121,235,0.09); }
-
-    .badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #fff;
-      background: var(--blue);
-      padding: 0.3rem 0.7rem;
-      border-radius: 100px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .press-source {
-      font-size: 0.725rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 0.5rem;
-    }
-
-    .press-title {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.4;
-    }
-
-    .press-type { font-size: 0.78rem; color: var(--muted); margin-top: 0.35rem; }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 2px solid var(--navy);
-      padding: 2.25rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-name { font-family: var(--serif); font-size: 1rem; color: var(--muted); }
-    .footer-links { display: flex; gap: 1.75rem; }
-
-    .footer-links a {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--text); }
-
-    /* ── Responsive ── */
-    @media (max-width: 680px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { gap: 1rem; }
-      .nav-pill { display: none !important; }
-      section { padding: 3.5rem 1.25rem; }
-      #hero { padding-top: 6rem; padding-bottom: 3rem; }
-      #about, #speaking, #work, #geometric { padding-top: 3.5rem; }
-      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-photo { width: 150px; height: 185px; order: -1; }
-      .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
-      .career-item { grid-template-columns: 1fr; gap: 0.25rem; }
-      .press-grid { grid-template-columns: 1fr; }
-      .press-card.wide { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-      footer { flex-direction: column; gap: 1.25rem; text-align: center; }
-      .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
-      .pkg-header-band { flex-wrap: wrap; gap: 0.875rem; padding: 1rem 1.25rem; }
-      .pkg-tagline-row { padding: 0.875rem 1.25rem; }
-      .pkg-body { padding: 0 1.25rem 1.5rem; }
-      .price-tag { transform: none; }
-      .sticker-popular, .sticker-gated { transform: none; }
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="#" class="nav-name">Val Geisler</a>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#speaking">Speaking</a>
-    <a href="https://www.linkedin.com/in/lovevalgeisler" target="_blank" rel="noopener" class="nav-pill">LinkedIn ↗</a>
-    <a href="#work" class="nav-pill nav-pill-cta">Work with me</a>
-  </div>
-</nav>
-
-
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h1>Hi, I'm Val.</h1>
-      <p class="hero-tagline">
-        I help companies <span class="hero-highlight"><strong>see the strategy, tell the story,</strong></span> and build the org to make it real.
-      </p>
-      <p class="hero-sub">
-        12+ years at the intersection of strategy and execution, turning customer insight into revenue across Sales, CS, and GTM.
-      </p>
-    </div>
-
-    <div class="hero-photo">
-      <img src="val-headshot.jpg" alt="Val Geisler">
-    </div>
-  </div>
-</section>
-
-<div class="divider divider-orange"></div>
-
-
-<!-- ═══ ABOUT + CAREER ═══ -->
-<section id="about">
-  <div class="container">
-
-    <span class="label label-blue">
-      <svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="8" cy="5" r="3"/>
-        <path d="M2 15c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-      </svg>
-      About
-    </span>
-
-    <div class="about-text">
-      <p>I've spent over 12 years <strong>turning customer insights into executive strategy,</strong> strategy into a story worth telling, and that story into the operating systems that move the org forward.</p>
-      <p>What that has looked like in practice: <strong>board decks and business reviews,</strong> product launches driven by customer interviews, <strong>co-selling alongside sales teams,</strong> and programs built from scratch that the business quickly can't imagine running without.</p>
-      <p>The through line is strategy that executes. I am as comfortable synthesizing customer insight into a board narrative as I am writing a PRD, running a QBR, or sitting in a strategic sales call where knowing the customer changes the outcome. <strong>I've reported directly to a CRO and a CEO.</strong></p>
-      <p>On LinkedIn I write about lifecycle marketing, GTM strategy, and what it actually takes to build a customer-centric revenue organization.</p>
-    </div>
-
-    <!-- Stats strip -->
-    <div class="stats-box">
-    <div class="stats-strip">
-      <div class="stat-item">
-        <span class="stat-number stat-orange">60%</span>
-        <span class="stat-label">close rate co-selling with sales teams</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number stat-green">25%</span>
-        <span class="stat-label">of company revenue from lifecycle email</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number stat-blue">97%</span>
-        <span class="stat-label">NRR achieved through customer-led strategy</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number stat-purple">13%</span>
-        <span class="stat-label">churn reduced with a single lifecycle flow</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <div class="career">
-
-      <span class="label label-green" style="margin-top: 0.5rem;">
-        <svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="6" width="12" height="8" rx="1.5"/>
-          <path d="M5 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/>
-          <line x1="2" y1="10" x2="14" y2="10"/>
-        </svg>
-        Career
-      </span>
-
-      <ul class="career-list">
-
-        <li class="career-item">
-          <div class="career-meta">
-            <div class="career-org">Digioh</div>
-            <div class="career-dates">Dec 2025 – Present</div>
-          </div>
-          <div class="career-right">
-            <div class="career-role">VP, Partner Programs</div>
-            <ul class="career-bullets">
-              <li>Built agency partner program and certification from scratch, architecting the full system using AI tools</li>
-              <li>Signed <strong>10 net new agency partners</strong>, each with <strong>$100k+ MRR potential</strong></li>
-              <li>Leads strategy sessions with existing partners to drive product adoption and deepen relationships</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="career-item">
-          <div class="career-meta">
-            <div class="career-org">Digioh</div>
-            <div class="career-dates">Jul 2024 – Dec 2025</div>
-          </div>
-          <div class="career-right">
-            <div class="career-role">VP, Customer &amp; Lifecycle Marketing</div>
-            <ul class="career-bullets">
-              <li>Reporting to the CRO; co-sold with the sales team at a <strong>60% close rate</strong>, double the <strong>30% baseline</strong></li>
-              <li>Served as PM on Journeys feature from ideation through launch: customer interviews, PRDs, UX/UI, engineering, and design</li>
-              <li>Launched NPS program and brought customer insight directly into product development</li>
-              <li>Helped bring <strong>NRR to 97%</strong></li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="career-item">
-          <div class="career-meta">
-            <div class="career-org">ByHeart</div>
-            <div class="career-dates">May 2023 – Jun 2024</div>
-          </div>
-          <div class="career-right">
-            <div class="career-role">Head of Retention</div>
-            <ul class="career-bullets">
-              <li>Grew lifecycle email from a dormant list to <strong>25% of all company revenue</strong></li>
-              <li>Achieved consistent <strong>30%+ open rates</strong></li>
-              <li>Built board decks and ran monthly business reviews</li>
-              <li>Built and scaled loyalty program from scratch</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="career-item">
-          <div class="career-meta">
-            <div class="career-org">Klaviyo</div>
-            <div class="career-dates">Feb 2021 – Apr 2023</div>
-          </div>
-          <div class="career-right">
-            <div class="career-role">Customer Advocacy Lead</div>
-            <ul class="career-bullets">
-              <li>Built Klaviyo's customer advocacy function from scratch: case studies, review platforms, and VoC programs</li>
-              <li>Brought VoC into product marketing and created clearer ownership across the customer journey</li>
-              <li>Led cross-functional alignment of referral, influencer, advocacy, and community programs</li>
-              <li>Created inaugural Klaviyo Connect: <strong>35 customers, 6 video testimonials in a single day</strong></li>
-              <li>Built the customer story framework that fed the investor deck</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="career-item">
-          <div class="career-meta">
-            <div class="career-org">Fix My Churn</div>
-            <div class="career-dates">Jun 2017 – Jan 2021</div>
-          </div>
-          <div class="career-right">
-            <div class="career-role">Founder</div>
-            <ul class="career-bullets">
-              <li>Built Fix My Churn from nothing; ran lifecycle strategy for <strong>10–15 global SaaS and ecommerce brands per year</strong></li>
-              <li>Ran QBRs with client executive teams, synthesizing customer data into strategic recommendations</li>
-              <li>Reduced churn <strong>13%</strong> for one client with a single new lifecycle flow</li>
-              <li>Grew free-to-paid conversions from <strong>10% to 15%</strong></li>
-              <li>Clients included ConvertKit, Stripe, Litmus, Trello, and InVision</li>
-            </ul>
-          </div>
-        </li>
-
-      </ul>
-
-      <div class="recognition">
-        <span class="label label-purple">
-          <svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="8,1.5 10,6 15,6.5 11.5,10 12.5,15 8,12.5 3.5,15 4.5,10 1,6.5 6,6"/>
-          </svg>
-          Recognition
-        </span>
-        <ul class="recognition-list">
-          <li>Top 100 Customer Marketing Influencers and Strategists</li>
-          <li>Finalist, CustomerX Expansion Engineer Award</li>
-          <li>Reforge Certified in Customer Retention + Engagement</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ CLIENT TICKER ═══ -->
-<div class="ticker-wrap" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item">ConvertKit</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Stripe</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Litmus</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Trello</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">InVision</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Klaviyo</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Digioh</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">ByHeart</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">ConvertKit</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Stripe</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Litmus</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Trello</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">InVision</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Klaviyo</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Digioh</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">ByHeart</span><span class="ticker-sep">◆</span>
-  </div>
-</div>
-
-<div class="divider divider-zigzag">
-  <svg viewBox="0 0 1200 15" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <polyline fill="none" stroke="#974fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-      points="0,7.5 37.5,1 75,14 112.5,1 150,14 187.5,1 225,14 262.5,1 300,14 337.5,1 375,14 412.5,1 450,14 487.5,1 525,14 562.5,1 600,14 637.5,1 675,14 712.5,1 750,14 787.5,1 825,14 862.5,1 900,14 937.5,1 975,14 1012.5,1 1050,14 1087.5,1 1125,14 1162.5,1 1200,14"/>
-  </svg>
-</div>
-
-
-<!-- ═══ GEOMETRIC CAREER ═══ -->
-<section id="geometric">
-  <div class="container">
-
-    <span class="label label-navy">
-      <svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="8,1.5 14.5,5.5 14.5,10.5 8,14.5 1.5,10.5 1.5,5.5"/>
-      </svg>
-      Geometric Career
-    </span>
-
-    <div class="about-text">
-      <p>My career doesn't have a straight line. It has a shape.</p>
-      <p>Theatre production taught me how to <strong>manage chaos and hit a hard deadline.</strong> Special events taught me how to <strong>read a room.</strong> Retail taught me <strong>what customers actually do when no one's watching.</strong> Sales taught me how to <strong>ask for what I want.</strong> Customer success taught me that <strong>retention starts before the sale.</strong> Entrepreneurship taught me how to <strong>build from nothing.</strong> Ecommerce taught me <strong>how scale changes everything.</strong> Software taught me to <strong>think in systems.</strong></p>
-    </div>
-
-    <blockquote class="pull-quote">
-      None of that was planned. All of it was useful.
-    </blockquote>
-
-    <div class="about-text">
-      <p>I call this a geometric career, not a ladder, not a lattice, but a shape that only makes sense when you step back and look at the whole thing. <strong>The breadth is the point.</strong></p>
-    </div>
-
-    <svg viewBox="0 0 820 640" xmlns="http://www.w3.org/2000/svg" class="geo-svg"
-      aria-label="Decagon diagram with each point labeled: Theatre Production, Special Events, Retail, Sales, Marketing, Customer Success, Entrepreneurship, Intrapreneurship, Ecommerce, Software">
-
-      <g stroke="#391e60" stroke-width="1" opacity="0.15">
-        <line x1="410" y1="120" x2="410" y2="520"/>
-        <line x1="527.6" y1="158.2" x2="292.4" y2="481.8"/>
-        <line x1="600.2" y1="258.2" x2="219.8" y2="381.8"/>
-        <line x1="600.2" y1="381.8" x2="219.8" y2="258.2"/>
-        <line x1="527.6" y1="481.8" x2="292.4" y2="158.2"/>
-      </g>
-
-      <polygon
-        points="410,120 527.6,158.2 600.2,258.2 600.2,381.8 527.6,481.8 410,520 292.4,481.8 219.8,381.8 219.8,258.2 292.4,158.2"
-        fill="rgba(57,30,96,0.05)"
-        stroke="#391e60"
-        stroke-width="1.5"
-        stroke-linejoin="round"
-      />
-
-      <g fill="#391e60">
-        <circle cx="410"   cy="120"   r="4"/>
-        <circle cx="527.6" cy="158.2" r="4"/>
-        <circle cx="600.2" cy="258.2" r="4"/>
-        <circle cx="600.2" cy="381.8" r="4"/>
-        <circle cx="527.6" cy="481.8" r="4"/>
-        <circle cx="410"   cy="520"   r="4"/>
-        <circle cx="292.4" cy="481.8" r="4"/>
-        <circle cx="219.8" cy="381.8" r="4"/>
-        <circle cx="219.8" cy="258.2" r="4"/>
-        <circle cx="292.4" cy="158.2" r="4"/>
-      </g>
-
-      <g font-family="'Inter', system-ui, sans-serif" font-size="12.5" fill="#231f20" font-weight="500" letter-spacing="0.01em">
-        <text x="410"   y="64"    text-anchor="middle">Theatre Production</text>
-        <text x="559.9" y="113.7" text-anchor="start"  dominant-baseline="middle">Special Events</text>
-        <text x="652.5" y="241.2" text-anchor="start"  dominant-baseline="middle">Retail</text>
-        <text x="652.5" y="398.8" text-anchor="start"  dominant-baseline="middle">Sales</text>
-        <text x="559.9" y="526.3" text-anchor="start"  dominant-baseline="middle">Marketing</text>
-        <text x="410"   y="578"   text-anchor="middle">Customer Success</text>
-        <text x="260.1" y="526.3" text-anchor="end"    dominant-baseline="middle">Entrepreneurship</text>
-        <text x="167.5" y="398.8" text-anchor="end"    dominant-baseline="middle">Intrapreneurship</text>
-        <text x="167.5" y="241.2" text-anchor="end"    dominant-baseline="middle">Ecommerce</text>
-        <text x="260.1" y="113.7" text-anchor="end"    dominant-baseline="middle">Software</text>
-      </g>
-
-    </svg>
-
-  </div>
-</section>
-
-<div class="divider divider-squiggle">
-  <svg viewBox="0 0 1200 18" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill="none" stroke="#391e60" stroke-width="2.75" stroke-linecap="round"
-      d="M0,9 C50,2 100,16 150,9 C200,2 250,16 300,9 C350,2 400,16 450,9 C500,2 550,16 600,9 C650,2 700,16 750,9 C800,2 850,16 900,9 C950,2 1000,16 1050,9 C1100,2 1150,16 1200,9"/>
-  </svg>
-</div>
-
-
-<!-- ═══ CONSULTING PACKAGES ═══ -->
-<section id="work">
-  <div class="container">
-
-    <span class="work-eyebrow">
-      <svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M8 1l1.5 3.5L13 5l-2.5 2.5.5 3.5L8 9.5 5 11l.5-3.5L3 5l3.5-.5z"/>
-      </svg>
-      Customer-Led Positioning
-    </span>
-    <h2 class="work-title">Work with me.</h2>
-    <p class="work-intro">Most positioning work delivers a messaging framework and stops there. This doesn't. The framework gets activated in the channels where it has to perform: sales conversations, lifecycle email, partner co-marketing... and your team gets trained on how to use it.</p>
-
-    <div class="pkg-list">
-
-      <!-- Card 1: Core -->
-      <details class="pkg-card">
-        <summary class="pkg-summary">
-          <div class="pkg-header-band">
-            <div class="pkg-header-left">
-              <div class="pkg-icon">
-                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="7.5" cy="7.5" r="5"/>
-                  <line x1="11.5" y1="11.5" x2="16" y2="16"/>
-                </svg>
-              </div>
-              <span class="pkg-name">Customer-Led Positioning (Core)</span>
-            </div>
-            <div class="pkg-price-badge">
-              <div class="price-tag">$8,500<span>/mo</span></div>
-              <div class="price-total">$25,500 total · 3 months</div>
-            </div>
-          </div>
-          <div class="pkg-tagline-row">
-            <p class="pkg-tagline">A messaging framework built from what your customers actually say, activated in sales and lifecycle channels.</p>
-            <div class="pkg-chevron">↓</div>
-          </div>
-        </summary>
-        <div class="pkg-body">
-          <div class="pkg-body-inner">
-            <p class="pkg-scope-title">What's included</p>
-            <ul class="pkg-scope-list">
-              <li>5–6 customer interviews: current customers, churned customers, and prospects</li>
-              <li>Sales call analysis</li>
-              <li>Up to 4 internal stakeholder interviews</li>
-              <li>Messaging framework: core narrative, value prop, audience segmentation, competitive differentiation</li>
-              <li>Sales enablement: rewritten talk track to build a deck from, plus competitive talk tracks on 2–3 top competitors</li>
-              <li>Lifecycle email: rewritten onboarding sequence or nurture flow — actual copy, not a content plan</li>
-              <li>Findings review session before recommendations are finalized</li>
-              <li>One 90-minute team enablement session at delivery</li>
-            </ul>
-            <p class="pkg-not-included"><strong>Not included:</strong> partner co-marketing activation, ongoing management, platform implementation</p>
-          </div>
-        </div>
-      </details>
-
-      <!-- Card 2: Advisory (featured) -->
-      <details class="pkg-card pkg-featured">
-        <summary class="pkg-summary">
-          <div class="pkg-header-band">
-            <div class="pkg-header-left">
-              <div class="pkg-icon">
-                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="1,10 8.5,5 16,10"/>
-                  <polyline points="1,13 8.5,8 16,13"/>
-                  <polyline points="1,7 8.5,2 16,7"/>
-                </svg>
-              </div>
-              <span class="pkg-name">Customer-Led Positioning + Advisory</span>
-              <span class="sticker sticker-popular">Most Popular</span>
-            </div>
-            <div class="pkg-price-badge">
-              <div class="price-tag">$12,500<span>/mo</span></div>
-              <div class="price-total">$37,500 total · 3 months</div>
-            </div>
-          </div>
-          <div class="pkg-tagline-row">
-            <p class="pkg-tagline">Everything in Core, plus broader research, partner co-marketing activation, and dedicated async advisory throughout the engagement.</p>
-            <div class="pkg-chevron">↓</div>
-          </div>
-        </summary>
-        <div class="pkg-body">
-          <div class="pkg-body-inner">
-            <p class="pkg-scope-title">Everything in Core, plus</p>
-            <ul class="pkg-scope-list">
-              <li>8–10 customer interviews for more signal to segment across three channels by use case, audience type, and deal stage</li>
-              <li>Up to 6 internal stakeholder interviews for a broader cross-functional picture</li>
-              <li>Partner co-marketing activation: Better Together one-pager and joint value prop document for co-sell conversations</li>
-              <li>2–3 cross-functional enablement sessions — sales, lifecycle, and partner teams each get a targeted session</li>
-              <li>Dedicated async advisory access throughout — real decisions get addressed as they come up, not at the next scheduled check-in</li>
-            </ul>
-          </div>
-        </div>
-      </details>
-
-      <!-- Card 3: Maintenance (gated) -->
-      <details class="pkg-card pkg-gated">
-        <summary class="pkg-summary">
-          <div class="pkg-header-band">
-            <div class="pkg-header-left">
-              <div class="pkg-icon">
-                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M13 3A7 7 0 1 0 15.5 9"/>
-                  <polyline points="15.5,3 15.5,9 9.5,9"/>
-                </svg>
-              </div>
-              <span class="pkg-name">Positioning Maintenance</span>
-              <span class="sticker sticker-gated">For existing clients</span>
-            </div>
-            <div class="pkg-price-badge">
-              <div class="price-tag price-muted">$2,500<span>/mo</span></div>
-              <div class="price-total">Month-to-month</div>
-            </div>
-          </div>
-          <div class="pkg-tagline-row">
-            <p class="pkg-tagline">Keeps the framework current as your product and market evolve. Available after completing a project engagement.</p>
-            <div class="pkg-chevron">↓</div>
-          </div>
-        </summary>
-        <div class="pkg-body">
-          <div class="pkg-body-inner">
-            <p class="pkg-scope-title">What's included each month</p>
-            <ul class="pkg-scope-list">
-              <li>Messaging updates as the product evolves or new use cases emerge</li>
-              <li>Ongoing sales call review to catch positioning drift before it affects close rates</li>
-              <li>New enablement materials as needed: talk track updates, objection handling additions, competitive refreshes</li>
-              <li>New team member onboarding to the framework</li>
-              <li>One async touchpoint per month</li>
-            </ul>
-            <p class="pkg-not-included"><strong>Not included:</strong> full repositioning, new customer research, content production at scale. Designed for clients who have completed a project engagement — if the foundation isn't there, the retainer won't hold.</p>
-          </div>
-        </div>
-      </details>
-
-    </div>
-<span class="label label-navy">
-      <svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="8" cy="5" r="3"/>
-        <path d="M2 15c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
-      </svg>
-      Who Is This For?
-    </span>
-    <div class="work-cta">
-      <p>GTM teams at a bootstrapped or Series A-B ecommerce SaaS. <br>Marketing team in place. No one building positioning from the customer up.</p>
-      <a href="#book" class="btn-primary">Let's talk</a>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider divider-dashes"></div>
-
-
-<!-- ═══ SPEAKING + PRESS ═══ -->
-<section id="speaking">
-  <div class="container">
-
-    <span class="label label-blue">
-      <svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="5" y="1" width="6" height="8" rx="3"/>
-        <path d="M2 8.5a6 6 0 0012 0"/>
-        <line x1="8" y1="14.5" x2="8" y2="11.5"/>
-        <line x1="5" y1="14.5" x2="11" y2="14.5"/>
-      </svg>
-      Speaking &amp; Press
-    </span>
-
-    <div class="press-grid">
-
-      <a href="https://podcasts.apple.com/us/podcast/ecommerce-marketing-school/id1495875193"
-         target="_blank" rel="noopener" class="press-card wide">
-        <span class="badge">Host</span>
-        <div>
-          <div class="press-source">Ecommerce Marketing School · Privy / Triple Whale Network</div>
-          <div class="press-title">Season host for the flagship ecommerce marketing podcast</div>
-        </div>
-      </a>
-
-      <a href="https://iterable.com/blog/smarter-lifecycle-marketing/"
-         target="_blank" rel="noopener" class="press-card">
-        <div class="press-source">Iterable</div>
-        <div class="press-title">Digioh's Dinner Party Strategy: Serving Up Smarter Lifecycle Marketing</div>
-        <div class="press-type">Feature</div>
-      </a>
-
-      <a href="https://www.tapcart.com/podcast-episode/s3-e3-how-to-fix-your-retention-with-val-geisler"
-         target="_blank" rel="noopener" class="press-card">
-        <div class="press-source">Down to Chat · Tapcart</div>
-        <div class="press-title">How to Fix Your Retention</div>
-        <div class="press-type">Podcast</div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <span class="footer-name">Val Geisler</span>
-  <div class="footer-links">
-    <a href="https://www.linkedin.com/in/lovevalgeisler" target="_blank" rel="noopener">LinkedIn</a>
-  </div>
-</footer>
-
-</body>
-</html>
+Val Geisler
+ABOUT
+SPEAKING
+LINKEDIN ↗
+WORK WITH ME
+Hi, I'm Val.
+I help companies see the strategy, tell the story, and build the org to make it real.
+12+ years at the intersection of strategy and execution, turning customer insight into revenue across Sales, CS, and GTM.
+
+
+
+ABOUT
+I've spent over 12 years turning customer insights into executive strategy, strategy into a story worth telling, and that story into the operating systems that move the org forward.
+What that has looked like in practice: board decks and business reviews, product launches driven by customer interviews, co-selling alongside sales teams, and programs built from scratch that the business quickly can't imagine running without.
+The through line is strategy that executes. I am as comfortable synthesizing customer insight into a board narrative as I am writing a PRD, running a QBR, or sitting in a strategic sales call where knowing the customer changes the outcome. I've reported directly to a CRO and a CEO.
+On LinkedIn I write about lifecycle marketing, GTM strategy, and what it actually takes to build a customer-centric revenue organization.
+60%
+close rate co-selling with sales teams
+25%
+of company revenue from lifecycle email
+97%
+NRR achieved through customer-led strategy
+13%
+churn reduced with a single lifecycle flow
+
+CAREER
+		Digioh Dec 2025 – Present  VP, Partner Programs
+		Built agency partner program and certification from scratch, architecting the full system using AI tools
+		Signed 10 net new agency partners, each with $100k+ MRR potential
+		Leads strategy sessions with existing partners to drive product adoption and deepen relationships
+		 Digioh Jul 2024 – Dec 2025  VP, Customer & Lifecycle Marketing
+		Reporting to the CRO; co-sold with the sales team at a 60% close rate, double the 30% baseline
+		Served as PM on Journeys feature from ideation through launch: customer interviews, PRDs, UX/UI, engineering, and design
+		Launched NPS program and brought customer insight directly into product development
+		Helped bring NRR to 97%
+		 ByHeart May 2023 – Jun 2024  Head of Retention
+		Grew lifecycle email from a dormant list to 25% of all company revenue
+		Achieved consistent 30%+ open rates
+		Built board decks and ran monthly business reviews
+		Built and scaled loyalty program from scratch
+		 Klaviyo Feb 2021 – Apr 2023  Customer Advocacy Lead
+		Built Klaviyo's customer advocacy function from scratch: case studies, review platforms, and VoC programs
+		Brought VoC into product marketing and created clearer ownership across the customer journey
+		Led cross-functional alignment of referral, influencer, advocacy, and community programs
+		Created inaugural Klaviyo Connect: 35 customers, 6 video testimonials in a single day
+		Built the customer story framework that fed the investor deck
+		 Fix My Churn Jun 2017 – Jan 2021  Founder
+		Built Fix My Churn from nothing; ran lifecycle strategy for 10–15 global SaaS and ecommerce brands per year
+		Ran QBRs with client executive teams, synthesizing customer data into strategic recommendations
+		Reduced churn 13% for one client with a single new lifecycle flow
+		Grew free-to-paid conversions from 10% to 15%
+		Clients included ConvertKit, Stripe, Litmus, Trello, and InVision
+
+
+RECOGNITION
+		Top 100 Customer Marketing Influencers and Strategists
+		Finalist, CustomerX Expansion Engineer Award
+		Reforge Certified in Customer Retention + Engagement
+CONVERTKIT
+◆
+STRIPE
+◆
+LITMUS
+◆
+TRELLO
+◆
+INVISION
+◆
+KLAVIYO
+◆
+DIGIOH
+◆
+BYHEART
+◆
+CONVERTKIT
+◆
+STRIPE
+◆
+LITMUS
+◆
+TRELLO
+◆
+INVISION
+◆
+KLAVIYO
+◆
+DIGIOH
+◆
+BYHEART
+◆
+
+
+GEOMETRIC CAREER
+My career doesn't have a straight line. It has a shape.
+Theatre production taught me how to manage chaos and hit a hard deadline. Special events taught me how to read a room. Retail taught me what customers actually do when no one's watching. Sales taught me how to ask for what I want. Customer success taught me that retention starts before the sale. Entrepreneurship taught me how to build from nothing. Ecommerce taught me how scale changes everything. Software taught me to think in systems.
+None of that was planned. All of it was useful.
+I call this a geometric career, not a ladder, not a lattice, but a shape that only makes sense when you step back and look at the whole thing. The breadth is the point.
+Theatre Production
+Special Events
+Retail
+Sales
+Marketing
+Customer Success
+Entrepreneurship
+Intrapreneurship
+Ecommerce
+Software
+
+
+CUSTOMER-LED POSITIONING
+Work with me.
+Most positioning work delivers a messaging framework and stops there. This doesn't. The framework gets activated in the channels where it has to perform — sales conversations, lifecycle email, partner co-marketing — and your team gets trained on how to use it.
+
+Customer-Led Positioning
+$8,500/mo
+$25,500 total · 3 months
+A messaging framework built from what your customers actually say, activated in sales and lifecycle channels.
+↓
+WHAT'S INCLUDED
+		5–6 customer interviews: current customers, churned customers, and prospects
+		Sales call analysis
+		Up to 4 internal stakeholder interviews
+		Messaging framework: core narrative, value prop, audience segmentation, competitive differentiation
+		Sales enablement: rewritten talk track to build a deck from, plus competitive talk tracks on 2–3 top competitors
+		Lifecycle email: rewritten onboarding sequence or nurture flow — actual copy, not a content plan
+		Findings review session before recommendations are finalized
+		One 90-minute team enablement session at delivery
+Not included: partner co-marketing activation, ongoing management, platform implementation
+
+Customer-Led Positioning + Advisory
+MOST POPULAR
+$12,500/mo
+$37,500 total · 3 months
+Everything in Core, plus broader research, partner co-marketing activation, and dedicated async advisory throughout the engagement.
+↓
+EVERYTHING IN CORE, PLUS
+		8–10 customer interviews for more signal to segment across three channels by use case, audience type, and deal stage
+		Up to 6 internal stakeholder interviews for a broader cross-functional picture
+		Partner co-marketing activation: Better Together one-pager and joint value prop document for co-sell conversations
+		2–3 cross-functional enablement sessions — sales, lifecycle, and partner teams each get a targeted session
+		Dedicated async advisory access throughout — real decisions get addressed as they come up, not at the next scheduled check-in
+
+Positioning Maintenance
+FOR EXISTING CLIENTS
+$2,500/mo
+Month-to-month
+Keeps the framework current as your product and market evolve. Available after completing a project engagement.
+↓
+WHAT'S INCLUDED EACH MONTH
+		Messaging updates as the product evolves or new use cases emerge
+		Ongoing sales call review to catch positioning drift before it affects close rates
+		New enablement materials as needed: talk track updates, objection handling additions, competitive refreshes
+		New team member onboarding to the framework
+		One async touchpoint per month
+Not included: full repositioning, new customer research, content production at scale. Designed for clients who have completed a project engagement — if the foundation isn't there, the retainer won't hold.
+Series A or B ecommerce SaaS. Marketing team in place. No one building positioning from the customer up.
+LET'S TALK
+
+
+SPEAKING & PRESS
+HOST
+ECOMMERCE MARKETING SCHOOL · PRIVY / TRIPLE WHALE NETWORK
+Season host for the flagship ecommerce marketing podcast
+ITERABLE
+Digioh's Dinner Party Strategy: Serving Up Smarter Lifecycle Marketing
+Feature
+DOWN TO CHAT · TAPCART
+How to Fix Your Retention
+Podcast
+Val Geisler
+LinkedIn
