@@ -7,7 +7,7 @@
   <meta name="description" content="Val Geisler — I help leaders see the strategy, tell the story, and build the org to make it real.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,8 +22,9 @@
       --orange: #f69426;
       --muted:  rgba(35,31,32,0.52);
       --rule:   rgba(35,31,32,0.13);
-      --serif:  'Cormorant Garamond', Georgia, serif;
-      --sans:   'Inter', system-ui, sans-serif;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Inter', system-ui, sans-serif;
+      --display: 'Bebas Neue', Impact, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -427,10 +428,11 @@
     .work-eyebrow svg { width: 14px; height: 14px; }
 
     .work-title {
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 500;
-      line-height: 1.05;
+      font-family: var(--display);
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: 0.02em;
       color: var(--text);
       margin-bottom: 1.25rem;
     }
@@ -773,6 +775,19 @@
 
     .footer-links a:hover { color: var(--text); }
 
+    /* ── Illustrations ── */
+    section { position: relative; }
+
+    .illus {
+      position: absolute;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      opacity: 0.9;
+      z-index: 0;
+    }
+
+    @media (max-width: 1000px) { .illus { display: none; } }
+
     /* ── Responsive ── */
     @media (max-width: 680px) {
       nav { padding: 1rem 1.25rem; }
@@ -821,7 +836,7 @@
     </div>
 
     <div class="hero-photo">
-      <img src="val-headshot.jpg" alt="Val Geisler">
+      <img src="val-headshot.png" alt="Val Geisler">
     </div>
   </div>
 </section>
@@ -831,6 +846,7 @@
 
 <!-- ═══ ABOUT + CAREER ═══ -->
 <section id="about">
+  <img src="1.png" alt="" class="illus" style="width:200px; right:1rem; top:4rem;">
   <div class="container">
 
     <span class="label label-blue">
@@ -1012,6 +1028,7 @@
 
 <!-- ═══ GEOMETRIC CAREER ═══ -->
 <section id="geometric">
+  <img src="3.png" alt="" class="illus" style="width:220px; right:0.5rem; bottom:3rem;">
   <div class="container">
 
     <span class="label label-navy">
@@ -1094,6 +1111,8 @@
 
 <!-- ═══ WORK WITH ME / PACKAGES ═══ -->
 <section id="work">
+  <img src="2.png" alt="" class="illus" style="width:210px; right:0.5rem; top:3rem;">
+  <img src="4.png" alt="" class="illus" style="width:140px; left:0.5rem; bottom:4rem;">
   <div class="container">
 
     <span class="work-eyebrow">
@@ -1242,6 +1261,7 @@
 
 <!-- ═══ SPEAKING + PRESS ═══ -->
 <section id="speaking">
+  <img src="5.png" alt="" class="illus" style="width:230px; right:0.5rem; bottom:2rem;">
   <div class="container">
 
     <span class="label label-orange">
