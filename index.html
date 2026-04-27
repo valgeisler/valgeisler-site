@@ -19,7 +19,7 @@
       --green:  #0ea5e9;
       --blue:   #3b82f6;
       --navy:   #0f2040;
-      --orange: #8b5cf6;
+      --orange: #009b5f;
       --muted:  rgba(35,31,32,0.52);
       --rule:   rgba(35,31,32,0.13);
       --serif:   'Cormorant Garamond', Georgia, serif;
@@ -131,7 +131,7 @@
     .label-green  { color: var(--green);  background: rgba(0,155,95,0.08);    }
     .label-purple { color: var(--purple); background: rgba(29,78,216,0.08);  }
     .label-navy   { color: var(--navy);   background: rgba(15,32,64,0.08);    }
-    .label-orange { color: var(--orange); background: rgba(139,92,246,0.1);   }
+    .label-orange { color: var(--orange); background: rgba(0,155,95,0.1);   }
 
     /* ── Section dividers — each one different ── */
     .divider { border: none; display: block; overflow: hidden; line-height: 0; margin: 0; padding: 0; }
@@ -140,7 +140,7 @@
     /* 1. Orange band — Hero → About */
     .divider-orange {
       height: 5px;
-      background: linear-gradient(to right, transparent 0%, var(--orange) 6%, var(--orange) 94%, transparent 100%);
+      background: linear-gradient(to right, transparent 0%, var(--navy) 6%, var(--navy) 94%, transparent 100%);
     }
 
   
@@ -196,7 +196,7 @@
       left: 0; right: 0;
       bottom: -4px;
       height: 6px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6' viewBox='0 0 60 6'%3E%3Cpath d='M0 3 Q7.5 0 15 3 Q22.5 6 30 3 Q37.5 0 45 3 Q52.5 6 60 3' fill='none' stroke='%238b5cf6' stroke-width='1.8'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6' viewBox='0 0 60 6'%3E%3Cpath d='M0 3 Q7.5 0 15 3 Q22.5 6 30 3 Q37.5 0 45 3 Q52.5 6 60 3' fill='none' stroke='%23009b5f' stroke-width='1.8'/%3E%3C/svg%3E");
       background-repeat: repeat-x;
       background-size: 60px 6px;
     }
@@ -209,45 +209,13 @@
     }
 
     .hero-photo {
-      position: relative;
       width: 300px;
       height: 400px;
       flex-shrink: 0;
       align-self: end;
-      overflow: visible;
-    }
-
-    /* Orange rounded rectangle — behind everything, slightly rotated */
-    .hero-photo::before {
-      content: '';
-      position: absolute;
-      width: 255px;
-      height: 310px;
-      background: var(--orange);
-      border-radius: 28px;
-      bottom: 0;
-      right: -18px;
-      z-index: 0;
-      transform: rotate(4deg);
-    }
-
-    /* Navy oval — in front of rectangle, behind photo */
-    .hero-photo::after {
-      content: '';
-      position: absolute;
-      width: 230px;
-      height: 310px;
-      border-radius: 50%;
-      background: var(--navy);
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
     }
 
     .hero-photo img {
-      position: relative;
-      z-index: 2;
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -451,7 +419,7 @@
       letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--orange);
-      background: rgba(139,92,246,0.1);
+      background: rgba(0,155,95,0.1);
       padding: 0.35rem 0.85rem;
       border-radius: 100px;
       margin-bottom: 1.25rem;
@@ -737,7 +705,7 @@
 
     .press-card:hover {
       border-color: var(--orange);
-      background: rgba(139,92,246,0.03);
+      background: rgba(0,155,95,0.03);
       transform: translateY(-2px);
     }
 
@@ -746,8 +714,8 @@
       display: flex;
       align-items: center;
       gap: 1.25rem;
-      background: rgba(139,92,246,0.05);
-      border-color: rgba(139,92,246,0.3);
+      background: rgba(0,155,95,0.05);
+      border-color: rgba(0,155,95,0.3);
     }
 
     .press-card.wide:hover { background: rgba(246,148,38,0.09); }
@@ -857,7 +825,7 @@
     </div>
 
     <div class="hero-photo">
-      <img src="val-transparent-background.png" alt="Val Geisler">
+      <img src="val-pill-background.png" alt="Val Geisler">
     </div>
   </div>
 </section>
