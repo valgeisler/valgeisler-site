@@ -306,6 +306,13 @@
       line-height: 1.5;
     }
 
+    .audience-expand-hint {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
     .audience-body-expanded {
       margin-top: 1.25rem;
       padding-top: 1.25rem;
@@ -1019,7 +1026,7 @@
             <div class="audience-eyebrow audience-eyebrow-ecom">Subscription Ecommerce</div>
             <p class="audience-summary-hint">This also works for subscription ecommerce brands.</p>
           </div>
-          <div class="pkg-chevron"><span class="pkg-chevron-label">See more</span><span class="pkg-chevron-arrow"> ↓</span></div>
+          <span class="audience-expand-hint">See more <span class="pkg-chevron-arrow">↓</span></span>
         </summary>
         <div class="audience-body-expanded">
           <div class="audience-heading">Your subscriber signed up. Keeping them is a different pitch.</div>
@@ -1272,13 +1279,11 @@
                   <path d="M1 1h2"/>
                 </svg>
               </div>
-              <span class="pkg-name">Buyer-Led Positioning for Subscription Ecommerce</span>
-              <span class="sticker sticker-b2c">B2C</span>
+              <span class="pkg-name">Buyer-Led Positioning for Ecommerce</span>
             </div>
           </div>
           <div class="pkg-tagline-row">
-            <p class="pkg-tagline">The same positioning framework, built for subscription ecommerce brands. Research replaces sales calls. Retention replaces pipeline. Affiliate activation replaces partner co-marketing.</p>
-            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+            <span class="audience-expand-hint">See details <span class="pkg-chevron-arrow">↓</span></span>
           </div>
         </summary>
         <div class="pkg-body">
