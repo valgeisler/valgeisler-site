@@ -241,7 +241,7 @@
       border: 1.5px solid rgba(15,32,64,0.12);
       border-radius: 14px;
       padding: 2rem 2rem 1.5rem;
-      margin-top: 2.5rem;
+      margin-top: 0;
       width: 100%;
     }
 
@@ -534,40 +534,6 @@
       transform: rotate(1.5deg);
     }
 
-    /* Price badge */
-    .pkg-price-badge {
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    .price-tag {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--purple);
-      line-height: 1;
-      background: rgba(29,78,216,0.08);
-      border-radius: 8px;
-      padding: 0.4rem 0.75rem;
-      display: inline-block;
-      transform: rotate(-2deg);
-      box-shadow: 2px 2px 8px rgba(29,78,216,0.12);
-    }
-
-    .price-tag span {
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 500;
-      opacity: 0.7;
-    }
-
-    .price-total {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 0.5rem;
-      text-align: right;
-    }
-
     .pkg-tagline-row {
       display: flex;
       justify-content: space-between;
@@ -793,8 +759,6 @@
       footer { flex-direction: column; gap: 1.25rem; text-align: center; }
       .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
       .pkg-header-band { flex-direction: column; }
-      .pkg-price-badge { text-align: left; }
-      .price-total { text-align: left; }
     }
   </style>
 </head>
@@ -817,7 +781,7 @@
     <div class="hero-text">
       <h1>Hi, I'm Val.</h1>
       <p class="hero-tagline">
-        Most positioning is built from the inside out, handed off as a framework, and never activated. I build it from <strong><span class="squiggle-underline">what your buyers actually say.</span></strong> Then I activate it across sales, lifecycle, and partner channels.
+        Most positioning is built from the inside out, handed off<br> as a framework, and never activated. I build it<br> from <strong><span class="squiggle-underline">what your buyers actually say.</span></strong> Then I<br> activate it across sales, lifecycle, and partner channels.
       </p>
     </div>
 
@@ -830,7 +794,7 @@
 <div class="divider divider-orange"></div>
 
 
-<!-- ═══ ABOUT + CAREER ═══ -->
+<!-- ═══ ABOUT ═══ -->
 <section id="about">
   <div class="container">
 
@@ -843,14 +807,24 @@
     </span>
 
     <div class="about-text">
-      <p>Your sales team has their own deck. Your lifecycle emails don't drive product adoption, if they exist at all. And whatever materials someone built last quarter are sitting in a shared drive nobody opens.</p>
-      <p>That's not a messaging problem. That's an activation problem.</p>
-      <p>And it's costing you more than you think. Prospects show up to sales calls and don't convert because they don't see their problem in what's being pitched. Customers get onboarded to part of the product because nobody told the full story, so onboarding takes twice as long and churn goes up. Partners are still selling the version of you from two years ago. Referrals fall flat because the people advocating for you don't have the language to do it well.</p>
+      <p>Your sales team has their own deck. Your lifecycle emails don't drive product adoption, if they exist at all. And whatever materials someone built last quarter <strong>are sitting in a shared drive nobody opens.</strong></p>
+      <p>That's not a messaging problem. <strong>That's an activation problem.</strong></p>
+      <p>And it's costing you more than you think.</p>
+      <p>Prospects show up to sales calls and <strong>don't convert</strong> because they don't see their problem in what's being pitched.</p>
+      <p>Customers get onboarded to part of the product because nobody told the full story, so <strong>onboarding takes twice as long and churn goes up.</strong></p>
+      <p><strong>Partners are still selling the version of you from two years ago.</strong> Referrals fall flat because the people advocating for you don't have the language to do it well.</p>
       <p>The wrong customers get in the door. The right ones don't see why it's them. And the people who should be sending you business don't know how to make the case.</p>
-      <p>This is the gap I close.</p>
+      <p><strong>This is the gap I close.</strong></p>
     </div>
 
-    <!-- Stats strip -->
+    <!-- The Wins -->
+    <span class="label label-orange" style="margin-top: 2.5rem; display: inline-flex;">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="8,1.5 10,6 15,6.5 11.5,10 12.5,15 8,12.5 3.5,15 4.5,10 1,6.5 6,6"/>
+      </svg>
+      The Wins
+    </span>
+
     <div class="stats-box">
       <div class="stats-strip">
         <div class="stat-item">
@@ -863,7 +837,7 @@
         </div>
         <div class="stat-item">
           <span class="stat-number stat-blue">97%</span>
-          <span class="stat-label">NRR achieved through customer-led strategy</span>
+          <span class="stat-label">NRR achieved through buyer-led strategy</span>
         </div>
         <div class="stat-item">
           <span class="stat-number stat-purple">13%</span>
@@ -872,35 +846,10 @@
       </div>
     </div>
 
-    <div class="career">
-
-      <span class="label label-green" style="margin-top: 0.5rem;">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="6" width="12" height="8" rx="1.5"/>
-          <path d="M5 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/>
-          <line x1="2" y1="10" x2="14" y2="10"/>
-        </svg>
-        How It Works
-      </span>
-
-      <div class="about-text">
-        <p>Engagements are three months, project-based, and start at $8,500/month. Every engagement ends with your team trained on how to use what we built, not just a document in a shared drive.</p>
-      </div>
-
-      <div class="recognition">
-        <span class="label label-purple">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="8,1.5 10,6 15,6.5 11.5,10 12.5,15 8,12.5 3.5,15 4.5,10 1,6.5 6,6"/>
-          </svg>
-          Let's Talk
-        </span>
-        <p style="font-size: 1.05rem; color: var(--text); line-height: 1.85; margin-bottom: 1.5rem;">Tell me what's broken. I'll let you know if I can fix it.</p>
-        <div class="work-cta" style="text-align: left; margin-top: 0;">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKzFtcJfKAxd-YyaSKWfgVSKc_DmCCwVEO3A_YEMKM99bSCg/viewform?usp=publish-editor" target="_blank" rel="noopener">Let's talk</a>
-        </div>
-      </div>
-
+    <div class="about-text" style="margin-top: 2rem;">
+      <p>The results aren't coincidental. <strong>A 60% co-sell close rate when the baseline was 30%. Lifecycle email growing to 25% of revenue. NRR at 97%.</strong> Those numbers came from the same place every time: knowing who the buyer actually is and building everything from that.</p>
     </div>
+
   </div>
 </section>
 
@@ -928,8 +877,6 @@
 </div>
 
 
-
-
 <!-- ═══ WHY THIS WORKS ═══ -->
 <section id="geometric">
   <div class="container">
@@ -942,13 +889,10 @@
     </span>
 
     <div class="about-text">
-      <p>The results aren't coincidental. A 60% co-sell close rate when the baseline was 30%. Lifecycle email growing to 25% of revenue. NRR at 97%. Those numbers came from the same place every time: knowing who the buyer actually is and building everything from that.</p>
-      <p>That comes from being embedded in this ecosystem for over a decade, not just as a consultant to the vendors, but as an actual buyer. I know what your customers are thinking when they get on a sales call because I've been that person. I know what questions to ask to surface the language that moves deals, reduces churn, and makes partners effective advocates instead of confused ones.</p>
-      <p>Most positioning consultants build from the inside out. They interview your team, synthesize the themes, and hand you a framework that reflects what your org believes about itself. That's not where the signal is.</p>
-      <p>The signal is in what your buyers say when nobody's selling to them. Getting to it requires knowing what to listen for, and knowing what to do with it once you have it.</p>
+      <p>My experience comes from being embedded in this ecosystem for over a decade, not just as a consultant to the vendors, but as an actual buyer. <strong>I know what your customers are thinking when they get on a sales call because I've been that person.</strong> I know what questions to ask to surface the language that moves deals, reduces churn, and makes partners effective advocates instead of confused ones.</p>
+      <p>Most positioning consultants build from the inside out. They interview your team, synthesize the themes, and hand you a framework that <strong>reflects what your org believes about itself.</strong> That's not where the signal is.</p>
+      <p><strong>The signal is in what your buyers say when nobody's selling to them.</strong> Getting to it requires knowing what to listen for, and knowing what to do with it once you have it.</p>
       <p>That perspective didn't come from a straight line.</p>
-      <p>A decade in this industry and my multi-faceted experience has put me in every function, watching what moved the needle and what didn't. Each role since has added a lens. What a sales team actually needs from positioning. What a customer success org sees that marketing misses. What a founder is really asking when they say the messaging isn't working.</p>
-      <p>The non-linear path is a feature, not a bug. It's the thing that lets me sit across from a head of sales, a CMO, and a VP of CS in the same week and know what each of them needs from the same framework.</p>
     </div>
 
     <svg viewBox="0 0 820 640" xmlns="http://www.w3.org/2000/svg" class="geo-svg"
@@ -1037,10 +981,6 @@
               </div>
               <span class="pkg-name">Buyer-Led Positioning</span>
             </div>
-            <div class="pkg-price-badge">
-              <div class="price-tag">$8,500<span>/mo</span></div>
-              <div class="price-total">$25,500 total · 3 months</div>
-            </div>
           </div>
           <div class="pkg-tagline-row">
             <p class="pkg-tagline">The core engagement. For companies that need positioning built from the buyer up and activated in the channels where it has to perform.</p>
@@ -1051,14 +991,14 @@
           <div class="pkg-body-inner">
             <p class="pkg-scope-title">What's included</p>
             <ul class="pkg-scope-list">
-              <li>5-6 buyer interviews, current customers, churned customers, and prospects. Five interviews is typically enough to start seeing clear patterns.</li>
-              <li>Sales call analysis to surface what your team is actually hearing in the field</li>
-              <li>Up to 4 internal stakeholder interviews</li>
-              <li>Messaging framework: core narrative, value proposition, audience segmentation, competitive differentiation</li>
-              <li>Sales enablement: rewritten talk track to build a deck from, plus competitive talk tracks on your top 2-3 competitors</li>
-              <li>Lifecycle: rewritten onboarding sequence or nurture flow, actual copy, not a content plan</li>
-              <li>Findings review session before recommendations are finalized</li>
-              <li>One 90-minute team enablement session at delivery</li>
+              <li><strong>Buyer interviews:</strong> 5-6 interviews across current customers, churned customers, and prospects. Five is typically enough to start seeing clear patterns.</li>
+              <li><strong>Sales call analysis</strong> to surface what your team is actually hearing in the field</li>
+              <li><strong>Stakeholder interviews:</strong> up to 4 internal interviews</li>
+              <li><strong>Messaging framework:</strong> core narrative, value proposition, audience segmentation, competitive differentiation</li>
+              <li><strong>Sales enablement:</strong> rewritten talk track to build a deck from, plus competitive talk tracks on your top 2-3 competitors</li>
+              <li><strong>Lifecycle:</strong> rewritten onboarding sequence or nurture flow, actual copy, not a content plan</li>
+              <li><strong>Findings review</strong> session before recommendations are finalized</li>
+              <li><strong>Team enablement:</strong> one 90-minute session at delivery</li>
             </ul>
             <p class="pkg-not-included"><strong>Not included:</strong> partner co-marketing activation, ongoing management, platform implementation</p>
           </div>
@@ -1080,10 +1020,6 @@
               <span class="pkg-name">Buyer-Led Positioning + Advisory</span>
               <span class="sticker">Most Popular</span>
             </div>
-            <div class="pkg-price-badge">
-              <div class="price-tag">$12,500<span>/mo</span></div>
-              <div class="price-total">$37,500 total · 3 months</div>
-            </div>
           </div>
           <div class="pkg-tagline-row">
             <p class="pkg-tagline">For companies that want positioning activated across every channel, and a direct line throughout the engagement for decisions that can't wait for a scheduled check-in.</p>
@@ -1094,14 +1030,14 @@
           <div class="pkg-body-inner">
             <p class="pkg-scope-title">What's included</p>
             <ul class="pkg-scope-list">
-              <li>8-10 buyer interviews, enough signal to segment by use case, audience type, and deal stage across three channels</li>
-              <li>Up to 6 internal stakeholder interviews across sales, marketing, CS, and product</li>
-              <li>Messaging framework: core narrative, value proposition, audience segmentation, competitive differentiation, and objection handling</li>
-              <li>Sales enablement: rewritten talk track plus competitive talk tracks on your top 2-3 competitors</li>
-              <li>Lifecycle: rewritten onboarding sequence or nurture flow, actual copy, not a content plan</li>
-              <li>Partner co-marketing: Better Together one-pager and joint value proposition document for co-sell conversations</li>
-              <li>2-3 cross-functional enablement sessions, sales, lifecycle, and partner teams each get a targeted working session</li>
-              <li>Dedicated async advisory access throughout the engagement</li>
+              <li><strong>Buyer interviews:</strong> 8-10 interviews, enough signal to segment by use case, audience type, and deal stage across three channels</li>
+              <li><strong>Stakeholder interviews:</strong> up to 6 across sales, marketing, CS, and product</li>
+              <li><strong>Messaging framework:</strong> core narrative, value proposition, audience segmentation, competitive differentiation, and objection handling</li>
+              <li><strong>Sales enablement:</strong> rewritten talk track plus competitive talk tracks on your top 2-3 competitors</li>
+              <li><strong>Lifecycle:</strong> rewritten onboarding sequence or nurture flow, actual copy, not a content plan</li>
+              <li><strong>Partner co-marketing:</strong> Better Together one-pager and joint value proposition document for co-sell conversations</li>
+              <li><strong>Cross-functional enablement:</strong> 2-3 targeted working sessions, one each for sales, lifecycle, and partner teams</li>
+              <li><strong>Dedicated async advisory</strong> access throughout the engagement</li>
             </ul>
           </div>
         </div>
@@ -1121,10 +1057,6 @@
               <span class="pkg-name">Positioning Maintenance</span>
               <span class="sticker sticker-gated">Post-engagement</span>
             </div>
-            <div class="pkg-price-badge">
-              <div class="price-tag">$2,500<span>/mo</span></div>
-              <div class="price-total">Month-to-month retainer</div>
-            </div>
           </div>
           <div class="pkg-tagline-row">
             <p class="pkg-tagline">For clients post-engagement. Keeps the framework current as the product evolves and the team changes.</p>
@@ -1136,11 +1068,11 @@
             <p class="pkg-gated-note">Available to clients who have completed a project engagement. If the foundation isn't there, the retainer won't hold.</p>
             <p class="pkg-scope-title">What's included each month</p>
             <ul class="pkg-scope-list">
-              <li>Messaging updates as the product evolves or new use cases emerge</li>
-              <li>Ongoing sales call review to catch positioning drift before it affects close rates</li>
-              <li>New enablement materials as needed: talk track updates, objection handling additions, competitive refreshes</li>
-              <li>New team member onboarding to the framework</li>
-              <li>One async touchpoint per month</li>
+              <li><strong>Messaging updates</strong> as the product evolves or new use cases emerge</li>
+              <li><strong>Sales call review</strong> to catch positioning drift before it affects close rates</li>
+              <li><strong>New enablement materials</strong> as needed: talk track updates, objection handling additions, competitive refreshes</li>
+              <li><strong>New team member onboarding</strong> to the framework</li>
+              <li><strong>One async touchpoint</strong> per month</li>
             </ul>
             <p class="pkg-not-included">Month-to-month. 30 days notice to cancel.</p>
           </div>
@@ -1149,9 +1081,35 @@
 
     </div>
 
+    <div class="about-text" style="margin-top: 2.5rem; text-align: center;">
+      <p style="color: var(--muted);">Tell me what's broken. I'll let you know if I can fix it.</p>
+    </div>
+
     <div class="work-cta">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKzFtcJfKAxd-YyaSKWfgVSKc_DmCCwVEO3A_YEMKM99bSCg/viewform?usp=publish-editor" target="_blank" rel="noopener">Let's talk</a>
       <p class="work-cta-sub">Fill out the form and I'll follow up with next steps.</p>
+    </div>
+
+    <!-- How It Works -->
+    <div style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule);">
+      <span class="label label-green">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="6" width="12" height="8" rx="1.5"/>
+          <path d="M5 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/>
+          <line x1="2" y1="10" x2="14" y2="10"/>
+        </svg>
+        How It Works
+      </span>
+      <div class="about-text">
+        <p>Engagements are <strong>three months, project-based,</strong> and start at $8,500/month. Every engagement ends with your team trained on how to use what we built, not just a document in a shared drive.</p>
+      </div>
+    </div>
+
+    <!-- Backstory -->
+    <div class="about-text" style="margin-top: 2.5rem;">
+      <p>A decade in this industry and my multi-faceted experience has put me in every function, watching what moved the needle and what didn't. Each role since has added a lens.</p>
+      <p><strong>What a sales team actually needs from positioning. What a customer success org sees that marketing misses. What a founder is really asking when they say the messaging isn't working.</strong></p>
+      <p>The non-linear path is a feature, not a bug. <strong>It's the thing that lets me sit across from a head of sales, a CMO, and a VP of CS in the same week and know what each of them needs from the same framework.</strong></p>
     </div>
 
   </div>
