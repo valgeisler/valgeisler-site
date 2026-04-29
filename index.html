@@ -549,14 +549,35 @@
     }
 
     .pkg-chevron {
-      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
       color: var(--purple);
-      transition: transform 0.3s;
+      background: rgba(29,78,216,0.08);
+      border: 1.5px solid rgba(29,78,216,0.2);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
       flex-shrink: 0;
-      margin-top: 0.1rem;
+      white-space: nowrap;
+      transition: background 0.2s, border-color 0.2s;
     }
 
-    details[open] .pkg-chevron { transform: rotate(180deg); }
+    .pkg-card:hover .pkg-chevron {
+      background: rgba(29,78,216,0.13);
+      border-color: rgba(29,78,216,0.35);
+    }
+
+    .pkg-chevron-arrow {
+      display: inline-block;
+      transition: transform 0.3s;
+      font-size: 0.85rem;
+    }
+
+    details[open] .pkg-chevron-arrow { transform: rotate(180deg); }
 
     /* Package body (expandable) */
     .pkg-body {
@@ -781,7 +802,7 @@
     <div class="hero-text">
       <h1>Hi, I'm Val.</h1>
       <p class="hero-tagline">
-        Most positioning is built from the inside out, handed off<br> as a framework, and never activated. I build it<br> from <strong><span class="squiggle-underline">what your buyers actually say.</span></strong> Then I<br> activate it across sales, lifecycle, and partner channels.
+        Most positioning is built from the inside out, handed off<br> as a framework, and never activated. I build it from<br> <strong><span class="squiggle-underline">what your buyers actually say.</span></strong> Then I activate it<br> across sales, lifecycle, and partner channels.
       </p>
     </div>
 
@@ -984,7 +1005,7 @@
           </div>
           <div class="pkg-tagline-row">
             <p class="pkg-tagline">The core engagement. For companies that need positioning built from the buyer up and activated in the channels where it has to perform.</p>
-            <div class="pkg-chevron">↓</div>
+            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
           </div>
         </summary>
         <div class="pkg-body">
@@ -1023,7 +1044,7 @@
           </div>
           <div class="pkg-tagline-row">
             <p class="pkg-tagline">For companies that want positioning activated across every channel, and a direct line throughout the engagement for decisions that can't wait for a scheduled check-in.</p>
-            <div class="pkg-chevron">↓</div>
+            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
           </div>
         </summary>
         <div class="pkg-body">
@@ -1060,7 +1081,7 @@
           </div>
           <div class="pkg-tagline-row">
             <p class="pkg-tagline">For clients post-engagement. Keeps the framework current as the product evolves and the team changes.</p>
-            <div class="pkg-chevron">↓</div>
+            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
           </div>
         </summary>
         <div class="pkg-body">
