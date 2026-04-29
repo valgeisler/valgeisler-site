@@ -763,23 +763,57 @@
     .footer-links a:hover { color: var(--text); }
 
     /* ── Responsive ── */
+
+    /* Medium screens: tablet / narrow desktop (680–959px) */
+    @media (max-width: 959px) {
+      .hero-inner {
+        grid-template-columns: 1fr 260px;
+        gap: 2.5rem;
+        max-width: 100%;
+      }
+      .hero-photo { width: 260px; height: 340px; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+    }
+
+    /* Small screens: mobile (<680px) */
     @media (max-width: 680px) {
       nav { padding: 1rem 1.25rem; }
-      .nav-links { gap: 0.875rem; }
+      .nav-links { gap: 0.75rem; }
+      /* Hide section text links on mobile, keep action pills */
+      .nav-links a:not(.nav-pill) { display: none; }
+
       section { padding: 3.5rem 1.25rem; }
-      #hero { padding-top: 6rem; padding-bottom: 3rem; padding-left: 1.25rem; padding-right: 1.25rem; }
-      #about, #speaking, #work, #geometric { padding-top: 3.5rem; }
-      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-photo { width: 180px; height: 220px; order: -1; }
-      .hero-photo::before { width: 150px; height: 140px; right: -6px; }
-      .hero-photo::after { width: 140px; height: 175px; }
-      .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+      #hero { padding-top: 5rem; padding-bottom: 2rem; padding-left: 1.25rem; padding-right: 1.25rem; }
+      #about, #speaking, #work, #geometric { padding-top: 3rem; }
+
+      .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero-photo { width: 160px; height: 210px; order: -1; }
+
+      .hero-text h1 { font-size: clamp(44px, 11vw, 64px); }
+      .hero-tagline { font-size: 0.975rem; }
+
+      .label { font-size: 0.8rem; padding: 0.4rem 0.9rem; }
+
+      .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 0.75rem; }
+      .stats-box { padding: 1.5rem 1.25rem 1.25rem; }
+
+      .about-text p { font-size: 0.975rem; }
+
       .career-item { grid-template-columns: 1fr; gap: 0.25rem; }
+
+      .work-title { font-size: clamp(40px, 10vw, 64px); }
+      .work-intro { font-size: 0.975rem; }
+      .pkg-header-band { flex-direction: column; gap: 0.5rem; }
+      .pkg-tagline-row { flex-direction: column; gap: 0.75rem; }
+      .pkg-chevron { align-self: flex-start; }
+
       .press-grid { grid-template-columns: 1fr; }
       .press-card.wide { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+
       footer { flex-direction: column; gap: 1.25rem; text-align: center; }
       .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
-      .pkg-header-band { flex-direction: column; }
+
+      .geo-svg { margin-top: 2rem; }
     }
   </style>
 </head>
@@ -802,7 +836,7 @@
     <div class="hero-text">
       <h1>Hi, I'm Val.</h1>
       <p class="hero-tagline">
-        Most positioning is built from the inside out, handed off<br> as a framework, and never activated. I build it from<br> <strong><span class="squiggle-underline">what your buyers actually say.</span></strong> Then I activate it<br> across sales, lifecycle, and partner channels.
+        Most positioning is built from the inside out, handed off as a framework, and never activated. I build it from <strong><span class="squiggle-underline">what your buyers actually say.</span></strong> Then I activate it across sales, lifecycle, and partner channels.
       </p>
     </div>
 
