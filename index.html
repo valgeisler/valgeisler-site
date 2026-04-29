@@ -235,6 +235,88 @@
 
     .about-text p:last-child { margin-bottom: 0; }
 
+    /* ── Audience grid ── */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .audience-card {
+      border: 1.5px solid var(--rule);
+      border-radius: 12px;
+      padding: 1.5rem 1.625rem;
+    }
+
+    .audience-card-b2b {
+      border-color: rgba(29,78,216,0.2);
+      background: rgba(29,78,216,0.03);
+    }
+
+    .audience-card-ecom {
+      border-color: rgba(0,155,95,0.2);
+      background: rgba(0,155,95,0.03);
+    }
+
+    .audience-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 0.625rem;
+    }
+
+    .audience-eyebrow-b2b { color: var(--purple); }
+    .audience-eyebrow-ecom { color: var(--orange); }
+
+    .audience-heading {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+
+    .audience-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .audience-card-collapsible { cursor: pointer; }
+
+    .audience-summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .audience-summary::-webkit-details-marker { display: none; }
+
+    .audience-summary-hint {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      line-height: 1.5;
+    }
+
+    .audience-body-expanded {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(0,155,95,0.15);
+      animation: pkg-reveal 0.3s ease;
+    }
+
+    @media (max-width: 680px) {
+      .audience-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Stats box + strip ── */
     .stats-box {
       background: rgba(15,32,64,0.07);
@@ -532,6 +614,11 @@
     .sticker-gated {
       background: var(--navy);
       transform: rotate(1.5deg);
+    }
+
+    .sticker-b2c {
+      background: var(--green);
+      transform: rotate(-1deg);
     }
 
     .pkg-tagline-row {
@@ -905,6 +992,44 @@
       <p>The results aren't coincidental. <strong>A 60% co-sell close rate when the baseline was 30%. Lifecycle email growing to 25% of revenue. NRR at 97%.</strong> Those numbers came from the same place every time: knowing who the buyer actually is and building everything from that.</p>
     </div>
 
+    <!-- Who This Is For -->
+    <div style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule);">
+
+      <span class="label label-purple">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="5.5" cy="5" r="2.5"/>
+          <path d="M1 14c0-2.5 2-4.5 4.5-4.5"/>
+          <circle cx="10.5" cy="5" r="2.5"/>
+          <path d="M10.5 9.5c2.5 0 4.5 2 4.5 4.5"/>
+        </svg>
+        Who This Is For
+      </span>
+
+      <!-- B2B — fully open -->
+      <div class="audience-card audience-card-b2b" style="margin-bottom: 1rem;">
+        <div class="audience-eyebrow audience-eyebrow-b2b">B2B Software</div>
+        <div class="audience-heading">Your buyer knows their problem. They don't know you're the solution.</div>
+        <p class="audience-body">Your sales team is pitching features. Lifecycle emails are product updates. Partners are still using messaging from your last rebrand. <strong>The framework you need is already in your customers' words.</strong> Nobody has gone and gotten it.</p>
+      </div>
+
+      <!-- B2C — collapsible -->
+      <details class="audience-card audience-card-ecom audience-card-collapsible">
+        <summary class="audience-summary">
+          <div>
+            <div class="audience-eyebrow audience-eyebrow-ecom">Subscription Ecommerce</div>
+            <p class="audience-summary-hint">This also works for subscription ecommerce brands.</p>
+          </div>
+          <div class="pkg-chevron"><span class="pkg-chevron-label">See more</span><span class="pkg-chevron-arrow"> ↓</span></div>
+        </summary>
+        <div class="audience-body-expanded">
+          <div class="audience-heading">Your subscriber signed up. Keeping them is a different pitch.</div>
+          <p class="audience-body">Acquisition is working but retention is leaking. Lifecycle emails are promotional, not relational. Affiliates and ambassadors want to advocate but don't know what to say. <strong>The story that gets someone to subscribe is not the story that keeps them.</strong></p>
+          <p class="audience-body" style="margin-top: 1rem;">Subscription is subscription. Software or physical product, the buyer is making the same calculation: <strong>is this worth continuing?</strong> The positioning work is the same. So is the result.</p>
+        </div>
+      </details>
+
+    </div>
+
   </div>
 </section>
 
@@ -1130,6 +1255,46 @@
               <li><strong>One async touchpoint</strong> per month</li>
             </ul>
             <p class="pkg-not-included">Month-to-month. 30 days notice to cancel.</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Card 4: Subscription Ecommerce (B2C) -->
+      <details class="pkg-card">
+        <summary class="pkg-summary">
+          <div class="pkg-header-band">
+            <div class="pkg-header-left">
+              <div class="pkg-icon">
+                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 3h11l-1.5 8H4.5L3 3z"/>
+                  <circle cx="6.5" cy="14" r="1"/>
+                  <circle cx="11.5" cy="14" r="1"/>
+                  <path d="M1 1h2"/>
+                </svg>
+              </div>
+              <span class="pkg-name">Buyer-Led Positioning for Subscription Ecommerce</span>
+              <span class="sticker sticker-b2c">B2C</span>
+            </div>
+          </div>
+          <div class="pkg-tagline-row">
+            <p class="pkg-tagline">The same positioning framework, built for subscription ecommerce brands. Research replaces sales calls. Retention replaces pipeline. Affiliate activation replaces partner co-marketing.</p>
+            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+          </div>
+        </summary>
+        <div class="pkg-body">
+          <div class="pkg-body-inner">
+            <p class="pkg-scope-title">What's included</p>
+            <ul class="pkg-scope-list">
+              <li><strong>Subscriber interviews:</strong> 5-6 interviews across current subscribers, churned subscribers, and browsers who didn't convert. The language that keeps people subscribed is different from the language that acquires them.</li>
+              <li><strong>Support ticket and email analysis</strong> to surface what subscribers are actually struggling with and asking about</li>
+              <li><strong>Stakeholder interviews:</strong> up to 4 internal interviews across marketing, CX, and brand</li>
+              <li><strong>Messaging framework:</strong> core subscription narrative, retention value proposition, audience segmentation, competitive differentiation</li>
+              <li><strong>Lifecycle:</strong> rewritten onboarding sequence, cancel flow, or winback sequence, actual copy, not a content plan</li>
+              <li><strong>Affiliate and ambassador activation:</strong> messaging guide so your advocates can articulate the subscription value in their own words</li>
+              <li><strong>Findings review</strong> session before recommendations are finalized</li>
+              <li><strong>Team enablement:</strong> one 90-minute session at delivery</li>
+            </ul>
+            <p class="pkg-not-included"><strong>Not included:</strong> paid media creative, platform implementation, ongoing community management</p>
           </div>
         </div>
       </details>
