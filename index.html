@@ -324,6 +324,49 @@
       .audience-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── Gap cards (3-column symptom grid) ── */
+    .gap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .gap-card {
+      border: 1.5px solid var(--rule);
+      border-radius: 12px;
+      padding: 1.375rem 1.5rem;
+      background: rgba(244,244,237,0.6);
+    }
+
+    .gap-card-channel {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .gap-card-headline {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 0.625rem;
+    }
+
+    .gap-card-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 680px) {
+      .gap-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Stats box + strip ── */
     .stats-box {
       background: rgba(15,32,64,0.07);
@@ -956,13 +999,29 @@
     </span>
 
     <div class="about-text">
-      <p>Your sales team has their own deck. Your lifecycle emails don't drive product adoption, if they exist at all. And whatever materials someone built last quarter <strong>are sitting in a shared drive nobody opens.</strong></p>
-      <p>That's not a messaging problem. <strong>That's an activation problem.</strong></p>
-      <p>And it's costing you more than you think.</p>
-      <p>Prospects show up to sales calls and <strong>don't convert</strong> because they don't see their problem in what's being pitched.</p>
-      <p>Customers get onboarded to part of the product because nobody told the full story, so <strong>onboarding takes twice as long and churn goes up.</strong></p>
-      <p><strong>Partners are still selling the version of you from two years ago.</strong> Referrals fall flat because the people advocating for you don't have the language to do it well.</p>
-      <p>The wrong customers get in the door. The right ones don't see why it's them. And the people who should be sending you business don't know how to make the case.</p>
+      <p>When a business grows past a certain point, something breaks. The voice of the customer gets lost, the why behind the what is buried. Sales is pitching features. Emails announce updates. Partners explain your product the way they understood it two years ago. <strong>Everyone is winging it from their own version of the message.</strong></p>
+      <p>That's not a messaging problem. <strong>That's an activation problem.</strong> And it shows up in three places:</p>
+    </div>
+
+    <div class="gap-grid">
+      <div class="gap-card">
+        <div class="gap-card-channel" style="color: var(--blue);">Sales</div>
+        <div class="gap-card-headline">"Your reps are pitching features."</div>
+        <p class="gap-card-body">Prospects sit through demos and don't see their problem in what's being pitched. Not because the product is wrong — because the story never got to them.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-channel" style="color: var(--orange);">Lifecycle</div>
+        <div class="gap-card-headline">"Your emails are announcing, not activating."</div>
+        <p class="gap-card-body">Customers get onboarded to part of the product. Churn climbs. The full story exists somewhere — just not in the touchpoints that were supposed to tell it.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-channel" style="color: var(--purple);">Partners</div>
+        <div class="gap-card-headline">"Your partners are selling the old you."</div>
+        <p class="gap-card-body">Referrals fall flat. Affiliates want to advocate but don't have the language. Co-sell conversations go nowhere because nobody gave them the right frame.</p>
+      </div>
+    </div>
+
+    <div class="about-text" style="margin-top: 1.5rem;">
       <p><strong>This is the gap I close.</strong></p>
     </div>
 
