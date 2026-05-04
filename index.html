@@ -671,6 +671,11 @@
       transform: rotate(-1deg);
     }
 
+    .sticker-new {
+      background: var(--blue);
+      transform: rotate(2deg);
+    }
+
     .pkg-tagline-row {
       display: flex;
       justify-content: space-between;
@@ -1007,12 +1012,12 @@
       <div class="gap-card">
         <div class="gap-card-channel" style="color: var(--blue);">Sales</div>
         <div class="gap-card-headline">"Your reps are pitching features."</div>
-        <p class="gap-card-body">Prospects sit through demos and don't see their problem in what's being pitched. Not because the product is wrong — because the story never got to them.</p>
+        <p class="gap-card-body">Prospects sit through demos and don't see their problem in what's being pitched. Not because the product is wrong, but because the story never got to them.</p>
       </div>
       <div class="gap-card">
         <div class="gap-card-channel" style="color: var(--orange);">Lifecycle</div>
         <div class="gap-card-headline">"Your emails are announcing, not activating."</div>
-        <p class="gap-card-body">Customers get onboarded to part of the product. Churn climbs. The full story exists somewhere — just not in the touchpoints that were supposed to tell it.</p>
+        <p class="gap-card-body">Customers get onboarded to part of the product. Churn climbs. The full story exists somewhere, just not in the touchpoints that were supposed to tell it.</p>
       </div>
       <div class="gap-card">
         <div class="gap-card-channel" style="color: var(--purple);">Partners</div>
@@ -1199,6 +1204,35 @@
 </div>
 
 
+<!-- ═══ THE ACTIVATION LAYER ═══ -->
+<section id="activation-layer">
+  <div class="container">
+
+    <span class="label label-blue">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="8,1.5 14.5,5 8,8.5 1.5,5"/>
+        <polyline points="1.5,8 8,11.5 14.5,8"/>
+        <polyline points="1.5,11 8,14.5 14.5,11"/>
+      </svg>
+      The Activation Layer
+    </span>
+
+    <div class="about-text">
+      <p>A messaging framework only works if the team can reach for it. Most don't. <strong>It lives in a Notion doc nobody opens, a deck from six months ago, or in the head of one person who's about to leave.</strong></p>
+
+      <p>The fix is an <strong>AI layer that holds the framework</strong>: buyer language, competitive talk tracks, objection handling, partner co-marketing templates. Your sales, lifecycle, and partner teams can query it the moment they need it.</p>
+
+      <p>Ask it how to handle a specific objection. Run a role-play before a discovery call. Generate a Better Together draft for a new partner conversation. <strong>The framework stops being a deliverable and starts being infrastructure.</strong></p>
+
+      <p>I either set this up inside your <strong>existing AI infrastructure</strong> (Claude Projects, ChatGPT Team, Glean, Notion AI) or <strong>build it from scratch</strong> and hand it over. Either way, the messaging stays current because the same engagement that builds the framework also populates the system that holds it.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider divider-dashes"></div>
+
+
 <!-- ═══ WORK WITH ME / PACKAGES ═══ -->
 <section id="work">
   <div class="container">
@@ -1246,6 +1280,7 @@
               <li><strong>Findings review</strong> session before recommendations are finalized</li>
               <li><strong>Team enablement:</strong> one 90-minute session at delivery</li>
             </ul>
+            <p class="pkg-not-included"><strong>AI activation layer available as add-on.</strong> Set up in your existing AI stack or built from scratch and populated with the framework. See the standalone package below for scope.</p>
             <p class="pkg-not-included"><strong>Not included:</strong> partner co-marketing activation, ongoing management, platform implementation</p>
           </div>
         </div>
@@ -1282,14 +1317,52 @@
               <li><strong>Sales enablement:</strong> rewritten talk track plus competitive talk tracks on your top 2-3 competitors</li>
               <li><strong>Lifecycle:</strong> rewritten onboarding sequence or nurture flow, actual copy, not a content plan</li>
               <li><strong>Partner co-marketing:</strong> Better Together one-pager and joint value proposition document for co-sell conversations</li>
-              <li><strong>Cross-functional enablement:</strong> 2-3 targeted working sessions, one each for sales, lifecycle, and partner teams</li>
+              <li><strong>AI activation layer:</strong> set up inside your existing AI infrastructure (Claude Projects, ChatGPT Team, Glean, Notion AI) or built from scratch, populated with the messaging framework, buyer language, talk tracks, objection handling, and partner templates so your team can query it on demand</li>
+              <li><strong>Cross-functional enablement:</strong> 2-3 targeted working sessions, one each for sales, lifecycle, and partner teams, plus team training on the AI layer</li>
               <li><strong>Dedicated async advisory</strong> access throughout the engagement</li>
             </ul>
           </div>
         </div>
       </details>
 
-      <!-- Card 3: Maintenance (gated) -->
+      <!-- Card 3: AI Activation (standalone) -->
+      <details class="pkg-card">
+        <summary class="pkg-summary">
+          <div class="pkg-header-band">
+            <div class="pkg-header-left">
+              <div class="pkg-icon">
+                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8.5 1.5l1.8 4.7 4.7 1.8-4.7 1.8-1.8 4.7-1.8-4.7-4.7-1.8 4.7-1.8z"/>
+                  <circle cx="13.8" cy="3.2" r="0.7"/>
+                  <circle cx="3.2" cy="13.8" r="0.7"/>
+                </svg>
+              </div>
+              <span class="pkg-name">Buyer-Led AI Activation</span>
+              <span class="sticker sticker-new">New</span>
+            </div>
+          </div>
+          <div class="pkg-tagline-row">
+            <p class="pkg-tagline">Standalone. For teams who already have positioning and want it operationalized: an AI layer your sales, partner, and marketing teams can query on demand.</p>
+            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+          </div>
+        </summary>
+        <div class="pkg-body">
+          <div class="pkg-body-inner">
+            <p class="pkg-scope-title">What's included</p>
+            <ul class="pkg-scope-list">
+              <li><strong>Discovery:</strong> audit your existing AI stack (Claude Projects, ChatGPT Team, Glean, Notion AI) or scope a fresh build, depending on what your team will actually use</li>
+              <li><strong>Source document creation:</strong> translate your existing positioning into AI-ready inputs like talk tracks, objection handling, competitive briefs, partner one-pagers, and role-play scenarios</li>
+              <li><strong>AI infrastructure setup:</strong> build the folder and file structure inside your existing tool, or stand up a new system and hand it over</li>
+              <li><strong>Prompt library:</strong> pre-built prompts for sales, partner, and marketing use cases. Handle this objection, draft this Better Together, run this role-play, generate this discovery question.</li>
+              <li><strong>Team training:</strong> one 90-minute session per team (sales, partner, marketing) on how to actually use the AI layer in their workflow</li>
+              <li><strong>30-day refinement window:</strong> tune prompts and source documents based on real usage after rollout</li>
+            </ul>
+            <p class="pkg-not-included"><strong>Requires existing positioning.</strong> If you don't have a current messaging framework that holds up, start with Buyer-Led Positioning above. The AI layer amplifies what's there. It doesn't replace the work of getting it right.</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Card 4: Maintenance (gated) -->
       <details class="pkg-card">
         <summary class="pkg-summary">
           <div class="pkg-header-band">
