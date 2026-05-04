@@ -367,6 +367,185 @@
       .gap-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── Comparison cards (Why not just...) ── */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .comparison-card {
+      border: 1.5px solid var(--rule);
+      border-radius: 12px;
+      padding: 1.375rem 1.5rem;
+      background: rgba(244,244,237,0.6);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .comparison-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .comparison-eyebrow-blue   { color: var(--purple); }
+    .comparison-eyebrow-green  { color: var(--orange); }
+    .comparison-eyebrow-purple { color: #391e60; }
+
+    .comparison-headline {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 0.625rem;
+    }
+
+    .comparison-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    /* Card 1: 2x2 deliverable grid */
+    .deliverable-2x2-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4px;
+    }
+
+    .deliverable-2x2 {
+      border-radius: 6px;
+      padding: 0.65rem 0.5rem;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      line-height: 1.3;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .deliverable-2x2.filled {
+      background: rgba(0,155,95,0.12);
+      border: 1px solid var(--orange);
+      color: #00583a;
+    }
+
+    .deliverable-2x2.empty {
+      background: transparent;
+      border: 1px dashed rgba(35,31,32,0.28);
+      color: rgba(35,31,32,0.42);
+    }
+
+    /* Card 2: dashboard panel */
+    .dash-panel {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 0.75rem 0.875rem;
+    }
+
+    .dash-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.625rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(35,31,32,0.08);
+    }
+
+    .dash-title {
+      font-size: 0.625rem;
+      font-weight: 600;
+      color: rgba(35,31,32,0.7);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .dash-meta {
+      font-size: 0.625rem;
+      color: rgba(35,31,32,0.45);
+      font-weight: 500;
+    }
+
+    .dash-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .dash-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .dash-label {
+      font-size: 0.625rem;
+      color: rgba(35,31,32,0.7);
+      width: 60px;
+      flex-shrink: 0;
+    }
+
+    .dash-track {
+      flex: 1;
+      height: 4px;
+      background: rgba(35,31,32,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .dash-fill {
+      height: 100%;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+
+    .dash-pct {
+      font-size: 0.625rem;
+      color: rgba(35,31,32,0.5);
+      width: 28px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* Card 3: decay sparkline */
+    .decay-chart {
+      display: flex;
+      align-items: end;
+      gap: 3px;
+      height: 56px;
+      padding-top: 4px;
+    }
+
+    .decay-bar {
+      flex: 1;
+      min-width: 0;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .decay-weeks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.625rem;
+      color: rgba(35,31,32,0.4);
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 680px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Stats box + strip ── */
     .stats-box {
       background: rgba(15,32,64,0.07);
@@ -1126,6 +1305,108 @@
     <span class="ticker-item">ByHeart</span><span class="ticker-sep">◆</span>
   </div>
 </div>
+
+
+<!-- ═══ WHY NOT JUST... ═══ -->
+<section id="alternatives">
+  <div class="container">
+
+    <span class="label label-orange">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="14" x2="8" y2="9"/>
+        <line x1="8" y1="9" x2="4" y2="4"/>
+        <line x1="8" y1="9" x2="8" y2="4"/>
+        <line x1="8" y1="9" x2="12" y2="4"/>
+        <circle cx="4" cy="3" r="0.9" fill="currentColor"/>
+        <circle cx="8" cy="3" r="0.9" fill="currentColor"/>
+        <circle cx="12" cy="3" r="0.9" fill="currentColor"/>
+      </svg>
+      Why Not Just...
+    </span>
+
+    <div class="about-text">
+      <p>Most teams considering this work look at three other paths first. Each one delivers something. None of them get the framework into the channels where it has to perform.</p>
+    </div>
+
+    <div class="comparison-grid">
+
+      <!-- Card 1: Strategy firm -->
+      <div class="comparison-card">
+        <div class="comparison-eyebrow comparison-eyebrow-blue">$100K+ → 1 PDF</div>
+        <div class="comparison-headline">Hire a strategy firm</div>
+        <p class="comparison-body">Six months later, nothing has changed in your sales talk track, your onboarding, or how partners describe you. The framework was the deliverable. Activation was never in scope.</p>
+
+        <div class="deliverable-2x2-grid">
+          <div class="deliverable-2x2 filled">✓ Strategy doc</div>
+          <div class="deliverable-2x2 empty">— Sales talk track</div>
+          <div class="deliverable-2x2 empty">— Lifecycle copy</div>
+          <div class="deliverable-2x2 empty">— Partner 1-pager</div>
+        </div>
+      </div>
+
+      <!-- Card 2: AI interview tool -->
+      <div class="comparison-card">
+        <div class="comparison-eyebrow comparison-eyebrow-green">Just a dashboard</div>
+        <div class="comparison-headline">Run an AI interview tool</div>
+        <p class="comparison-body">You get a constant feed of voice-of-customer themes, sentiment tags, and quotes flowing into your dashboards. What you don't get is a rewritten cancel flow, a sales talk track in your buyer's language, or a partner one-pager.</p>
+
+        <div class="dash-panel">
+          <div class="dash-head">
+            <span class="dash-title">Active themes</span>
+            <span class="dash-meta">14 ↑</span>
+          </div>
+          <div class="dash-rows">
+            <div class="dash-row">
+              <span class="dash-label">support</span>
+              <div class="dash-track"><div class="dash-fill" style="width: 78%;"></div></div>
+              <span class="dash-pct">78%</span>
+            </div>
+            <div class="dash-row">
+              <span class="dash-label">pricing</span>
+              <div class="dash-track"><div class="dash-fill" style="width: 64%;"></div></div>
+              <span class="dash-pct">64%</span>
+            </div>
+            <div class="dash-row">
+              <span class="dash-label">loyalty</span>
+              <div class="dash-track"><div class="dash-fill" style="width: 52%;"></div></div>
+              <span class="dash-pct">52%</span>
+            </div>
+            <div class="dash-row">
+              <span class="dash-label">competitor</span>
+              <div class="dash-track"><div class="dash-fill" style="width: 41%;"></div></div>
+              <span class="dash-pct">41%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: DIY -->
+      <div class="comparison-card">
+        <div class="comparison-eyebrow comparison-eyebrow-purple">Stale by quarter's end</div>
+        <div class="comparison-headline">Build it in-house</div>
+        <p class="comparison-body">Your Head of Marketing blocks off two weeks. A few customer calls, a Notion doc, a Slack share. By the next planning cycle, sales is back to pitching features and the doc is in someone's archive. No external perspective, no cross-channel activation, and your customers think you're too close to the product so they never actually told you the real truth to begin with.</p>
+
+        <div class="decay-chart">
+          <div class="decay-bar" style="background: #391e60; height: 88%;"></div>
+          <div class="decay-bar" style="background: #391e60; height: 72%;"></div>
+          <div class="decay-bar" style="background: rgba(57,30,96,0.45); height: 32%;"></div>
+          <div class="decay-bar" style="background: rgba(57,30,96,0.22); height: 14%;"></div>
+          <div class="decay-bar" style="background: rgba(35,31,32,0.1); height: 6%;"></div>
+          <div class="decay-bar" style="background: rgba(35,31,32,0.1); height: 4%;"></div>
+        </div>
+        <div class="decay-weeks">
+          <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="about-text" style="margin-top: 1.75rem;">
+      <p><strong>This is the work that picks up where each of those stops short.</strong></p>
+    </div>
+
+  </div>
+</section>
 
 
 <!-- ═══ WHY THIS WORKS ═══ -->
