@@ -964,6 +964,52 @@
       line-height: 1.55;
     }
 
+    /* Additional Options wrapper */
+    .pkg-additional {
+      margin-top: 0.25rem;
+    }
+
+    .pkg-additional-summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 0.25rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .pkg-additional-summary::-webkit-details-marker { display: none; }
+
+    .pkg-additional-left {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .pkg-additional-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pkg-additional-hint {
+      font-size: 0.8rem;
+      color: var(--muted);
+      opacity: 0.7;
+    }
+
+    .pkg-additional-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 0.75rem;
+      animation: pkg-reveal 0.3s ease;
+    }
+
     /* Work CTA */
     .work-cta {
       margin-top: 2.5rem;
@@ -1660,78 +1706,92 @@
         </div>
       </details>
 
-      <!-- Card 3: AI Activation (standalone) -->
-      <details class="pkg-card">
-        <summary class="pkg-summary">
-          <div class="pkg-header-band">
-            <div class="pkg-header-left">
-              <div class="pkg-icon">
-                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M8.5 1.5l1.8 4.7 4.7 1.8-4.7 1.8-1.8 4.7-1.8-4.7-4.7-1.8 4.7-1.8z"/>
-                  <circle cx="13.8" cy="3.2" r="0.7"/>
-                  <circle cx="3.2" cy="13.8" r="0.7"/>
-                </svg>
-              </div>
-              <span class="pkg-name">Buyer-Led AI Activation</span>
-              <span class="sticker sticker-new">New</span>
-            </div>
+      <!-- Additional Options: single expandable wrapper -->
+      <details class="pkg-additional">
+        <summary class="pkg-additional-summary">
+          <div class="pkg-additional-left">
+            <span class="pkg-additional-label">Additional Options</span>
+            <span class="pkg-additional-hint">AI Activation &amp; Positioning Maintenance</span>
           </div>
-          <div class="pkg-tagline-row">
-            <p class="pkg-tagline">Standalone. For teams who already have positioning and want it operationalized: an AI layer your sales, partner, and marketing teams can query on demand.</p>
-            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
-          </div>
+          <span class="pkg-chevron-arrow" style="color: var(--muted); font-size: 0.85rem; flex-shrink: 0;">↓</span>
         </summary>
-        <div class="pkg-body">
-          <div class="pkg-body-inner">
-            <p class="pkg-scope-title">What's included</p>
-            <ul class="pkg-scope-list">
-              <li><strong>Discovery:</strong> audit your existing AI stack (Claude Projects, ChatGPT Team, Glean, Notion AI) or scope a fresh build, depending on what your team will actually use</li>
-              <li><strong>Source document creation:</strong> translate your existing positioning into AI-ready inputs like talk tracks, objection handling, competitive briefs, partner one-pagers, and role-play scenarios</li>
-              <li><strong>AI infrastructure setup:</strong> build the folder and file structure inside your existing tool, or stand up a new system and hand it over</li>
-              <li><strong>Prompt library:</strong> pre-built prompts for sales, partner, and marketing use cases. Handle this objection, draft this Better Together, run this role-play, generate this discovery question.</li>
-              <li><strong>Team training:</strong> one 90-minute session per team (sales, partner, marketing) on how to actually use the AI layer in their workflow</li>
-              <li><strong>30-day refinement window:</strong> tune prompts and source documents based on real usage after rollout</li>
-            </ul>
-            <p class="pkg-not-included"><strong>Requires existing positioning.</strong> If you don't have a current messaging framework that holds up, start with Buyer-Led Positioning above. The AI layer amplifies what's there. It doesn't replace the work of getting it right.</p>
-          </div>
-        </div>
-      </details>
 
-      <!-- Card 4: Maintenance (gated) -->
-      <details class="pkg-card">
-        <summary class="pkg-summary">
-          <div class="pkg-header-band">
-            <div class="pkg-header-left">
-              <div class="pkg-icon">
-                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="8.5" cy="8.5" r="6.5"/>
-                  <polyline points="8.5,5 8.5,8.5 11,11"/>
-                </svg>
+        <div class="pkg-additional-inner">
+
+          <!-- Card 3: AI Activation (standalone) -->
+          <details class="pkg-card">
+            <summary class="pkg-summary">
+              <div class="pkg-header-band">
+                <div class="pkg-header-left">
+                  <div class="pkg-icon">
+                    <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M8.5 1.5l1.8 4.7 4.7 1.8-4.7 1.8-1.8 4.7-1.8-4.7-4.7-1.8 4.7-1.8z"/>
+                      <circle cx="13.8" cy="3.2" r="0.7"/>
+                      <circle cx="3.2" cy="13.8" r="0.7"/>
+                    </svg>
+                  </div>
+                  <span class="pkg-name">Buyer-Led AI Activation</span>
+                </div>
               </div>
-              <span class="pkg-name">Positioning Maintenance</span>
-              <span class="sticker sticker-gated">Post-engagement</span>
+              <div class="pkg-tagline-row">
+                <p class="pkg-tagline">Standalone. For teams who already have positioning and want it operationalized: an AI layer your sales, partner, and marketing teams can query on demand.</p>
+                <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+              </div>
+            </summary>
+            <div class="pkg-body">
+              <div class="pkg-body-inner">
+                <p class="pkg-scope-title">What's included</p>
+                <ul class="pkg-scope-list">
+                  <li><strong>Discovery:</strong> audit your existing AI stack (Claude Projects, ChatGPT Team, Glean, Notion AI) or scope a fresh build, depending on what your team will actually use</li>
+                  <li><strong>Source document creation:</strong> translate your existing positioning into AI-ready inputs like talk tracks, objection handling, competitive briefs, partner one-pagers, and role-play scenarios</li>
+                  <li><strong>AI infrastructure setup:</strong> build the folder and file structure inside your existing tool, or stand up a new system and hand it over</li>
+                  <li><strong>Prompt library:</strong> pre-built prompts for sales, partner, and marketing use cases. Handle this objection, draft this Better Together, run this role-play, generate this discovery question.</li>
+                  <li><strong>Team training:</strong> one 90-minute session per team (sales, partner, marketing) on how to actually use the AI layer in their workflow</li>
+                  <li><strong>30-day refinement window:</strong> tune prompts and source documents based on real usage after rollout</li>
+                </ul>
+                <p class="pkg-not-included"><strong>Requires existing positioning.</strong> If you don't have a current messaging framework that holds up, start with Buyer-Led Positioning above. The AI layer amplifies what's there. It doesn't replace the work of getting it right.</p>
+              </div>
             </div>
-          </div>
-          <div class="pkg-tagline-row">
-            <p class="pkg-tagline">For clients post-engagement. Keeps the framework current as the product evolves and the team changes.</p>
-            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
-          </div>
-        </summary>
-        <div class="pkg-body">
-          <div class="pkg-body-inner">
-            <p class="pkg-gated-note">Available to clients who have completed a project engagement. If the foundation isn't there, the retainer won't hold.</p>
-            <p class="pkg-scope-title">What's included each month</p>
-            <ul class="pkg-scope-list">
-              <li><strong>Messaging updates</strong> as the product evolves or new use cases emerge</li>
-              <li><strong>Sales call review</strong> to catch positioning drift before it affects close rates</li>
-              <li><strong>New enablement materials</strong> as needed: talk track updates, objection handling additions, competitive refreshes</li>
-              <li><strong>New team member onboarding</strong> to the framework</li>
-              <li><strong>One async touchpoint</strong> per month</li>
+          </details>
+
+          <!-- Card 4: Maintenance (gated) -->
+          <details class="pkg-card">
+            <summary class="pkg-summary">
+              <div class="pkg-header-band">
+                <div class="pkg-header-left">
+                  <div class="pkg-icon">
+                    <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="8.5" cy="8.5" r="6.5"/>
+                      <polyline points="8.5,5 8.5,8.5 11,11"/>
+                    </svg>
+                  </div>
+                  <span class="pkg-name">Positioning Maintenance</span>
+                  <span class="sticker sticker-gated">Post-engagement</span>
+                </div>
+              </div>
+              <div class="pkg-tagline-row">
+                <p class="pkg-tagline">For clients post-engagement. Keeps the framework current as the product evolves and the team changes.</p>
+                <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+              </div>
+            </summary>
+            <div class="pkg-body">
+              <div class="pkg-body-inner">
+                <p class="pkg-gated-note">Available to clients who have completed a project engagement. If the foundation isn't there, the retainer won't hold.</p>
+                <p class="pkg-scope-title">What's included each month</p>
+                <ul class="pkg-scope-list">
+                  <li><strong>Messaging updates</strong> as the product evolves or new use cases emerge</li>
+                  <li><strong>Sales call review</strong> to catch positioning drift before it affects close rates</li>
+                  <li><strong>New enablement materials</strong> as needed: talk track updates, objection handling additions, competitive refreshes</li>
+                  <li><strong>New team member onboarding</strong> to the framework</li>
+                  <li><strong>One async touchpoint</strong> per month</li>
             </ul>
             <p class="pkg-not-included">Month-to-month. 30 days notice to cancel.</p>
           </div>
         </div>
-      </details>
+          </details>
+
+        </div><!-- /pkg-additional-inner -->
+      </details><!-- /pkg-additional -->
 
     </div>
 
