@@ -996,6 +996,69 @@
       margin-top: 0.75rem;
     }
 
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.75rem; }
+
+    .faq-item {
+      border: 1.5px solid var(--rule);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(244,244,237,0.8);
+      transition: border-color 0.2s;
+    }
+
+    .faq-item:hover { border-color: rgba(29,78,216,0.25); }
+
+    .faq-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-summary::-webkit-details-marker { display: none; }
+
+    .faq-question {
+      font-size: 0.975rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .faq-chevron {
+      font-size: 0.85rem;
+      color: var(--purple);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    details[open] .faq-chevron { transform: rotate(180deg); }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+      animation: pkg-reveal 0.3s ease;
+    }
+
+    .faq-answer p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .faq-answer a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .faq-answer a:hover { color: var(--navy); }
+
     /* ── Speaking & Press ── */
     #speaking { padding-top: 3.5rem; }
 
@@ -1256,27 +1319,11 @@
       </span>
 
       <!-- B2B — fully open -->
-      <div class="audience-card audience-card-b2b" style="margin-bottom: 1rem;">
+      <div class="audience-card audience-card-b2b">
         <div class="audience-eyebrow audience-eyebrow-b2b">B2B Software</div>
         <div class="audience-heading">Your buyer knows their problem. They don't know you're the solution.</div>
         <p class="audience-body">Your sales team is pitching features. Lifecycle emails are product updates. Partners are still using messaging from your last rebrand. <strong>The framework you need is already in your customers' words.</strong> Nobody has gone and gotten it.</p>
       </div>
-
-      <!-- B2C — collapsible -->
-      <details class="audience-card audience-card-ecom audience-card-collapsible">
-        <summary class="audience-summary">
-          <div>
-            <div class="audience-eyebrow audience-eyebrow-ecom">Subscription Ecommerce</div>
-            <p class="audience-summary-hint">This also works for subscription ecommerce brands.</p>
-          </div>
-          <span class="audience-expand-hint">See more <span class="pkg-chevron-arrow">↓</span></span>
-        </summary>
-        <div class="audience-body-expanded">
-          <div class="audience-heading">Your subscriber signed up. Keeping them is a different pitch.</div>
-          <p class="audience-body">Acquisition is working but retention is leaking. Lifecycle emails are promotional, not relational. Affiliates and ambassadors want to advocate but don't know what to say. <strong>The story that gets someone to subscribe is not the story that keeps them.</strong></p>
-          <p class="audience-body" style="margin-top: 1rem;">Subscription is subscription. Software or physical product, the buyer is making the same calculation: <strong>is this worth continuing?</strong> The positioning work is the same. So is the result.</p>
-        </div>
-      </details>
 
     </div>
 
@@ -1287,22 +1334,22 @@
 <!-- ═══ CLIENT TICKER ═══ -->
 <div class="ticker-wrap" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item">ConvertKit</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Stripe</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Litmus</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Trello</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">InVision</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Klaviyo</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Digioh</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">ByHeart</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">ConvertKit</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Stripe</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Litmus</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">Trello</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">InVision</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Kit</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Privy</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Autobooks</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">CXL</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Simplero</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Acuity</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Klaviyo</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Digioh</span><span class="ticker-sep">◆</span>
-    <span class="ticker-item">ByHeart</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Kit</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Privy</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Autobooks</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">CXL</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Simplero</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">Acuity</span><span class="ticker-sep">◆</span>
   </div>
 </div>
 
@@ -1686,42 +1733,6 @@
         </div>
       </details>
 
-      <!-- Card 4: Subscription Ecommerce (B2C) -->
-      <details class="pkg-card">
-        <summary class="pkg-summary">
-          <div class="pkg-header-band" style="margin-bottom: 0;">
-            <div class="pkg-header-left">
-              <div class="pkg-icon">
-                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 3h11l-1.5 8H4.5L3 3z"/>
-                  <circle cx="6.5" cy="14" r="1"/>
-                  <circle cx="11.5" cy="14" r="1"/>
-                  <path d="M1 1h2"/>
-                </svg>
-              </div>
-              <span class="pkg-name">Buyer-Led Positioning for Ecommerce</span>
-            </div>
-            <span class="audience-expand-hint">See details <span class="pkg-chevron-arrow">↓</span></span>
-          </div>
-        </summary>
-        <div class="pkg-body">
-          <div class="pkg-body-inner">
-            <p class="pkg-scope-title">What's included</p>
-            <ul class="pkg-scope-list">
-              <li><strong>Subscriber interviews:</strong> 5-6 interviews across current subscribers, churned subscribers, and browsers who didn't convert. The language that keeps people subscribed is different from the language that acquires them.</li>
-              <li><strong>Support ticket and email analysis</strong> to surface what subscribers are actually struggling with and asking about</li>
-              <li><strong>Stakeholder interviews:</strong> up to 4 internal interviews across marketing, CX, and brand</li>
-              <li><strong>Messaging framework:</strong> core subscription narrative, retention value proposition, audience segmentation, competitive differentiation</li>
-              <li><strong>Lifecycle:</strong> rewritten onboarding sequence, cancel flow, or winback sequence, actual copy, not a content plan</li>
-              <li><strong>Affiliate and ambassador activation:</strong> messaging guide so your advocates can articulate the subscription value in their own words</li>
-              <li><strong>Findings review</strong> session before recommendations are finalized</li>
-              <li><strong>Team enablement:</strong> one 90-minute session at delivery</li>
-            </ul>
-            <p class="pkg-not-included"><strong>Not included:</strong> paid media creative, platform implementation, ongoing community management</p>
-          </div>
-        </div>
-      </details>
-
     </div>
 
     <div class="about-text" style="margin-top: 2.5rem; text-align: center;">
@@ -1753,6 +1764,72 @@
       <p>A decade in this industry and my multi-faceted experience has put me in every function, watching what moved the needle and what didn't. Each role since has added a lens.</p>
       <p><strong>What a sales team actually needs from positioning. What a customer success org sees that marketing misses. What a founder is really asking when they say the messaging isn't working.</strong></p>
       <p>The non-linear path is a feature, not a bug. <strong>It's the thing that lets me sit across from a head of sales, a CMO, and a VP of CS in the same week and know what each of them needs from the same framework.</strong></p>
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule);">
+      <span class="label label-navy">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="8" r="6.5"/>
+          <path d="M6.5 6.5c0-1 .7-1.75 1.75-1.75s1.75.75 1.75 1.75c0 1-1 1.5-1.75 1.75V10"/>
+          <circle cx="8" cy="12" r="0.6" fill="currentColor"/>
+        </svg>
+        FAQ
+      </span>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-question">Does this work apply to ecommerce brands?</span>
+            <span class="faq-chevron">↓</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes. The methodology is the same, the activation channels are different. For ecommerce brands, the work replaces sales and partner materials with full lifecycle and retention programs: email, SMS, subscription loyalty, and referral. <a href="/ecommerce">Learn more about the ecommerce work →</a></p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-question">How long does an engagement take?</span>
+            <span class="faq-chevron">↓</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Engagements are three months, project-based. The first month is research and synthesis: buyer interviews, sales call analysis, stakeholder interviews. Month two is framework development and activation: copy, talk tracks, enablement materials. Month three is delivery, training, and handoff. Every engagement ends with your team knowing how to use what we built.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-question">Do you work with early-stage companies?</span>
+            <span class="faq-chevron">↓</span>
+          </summary>
+          <div class="faq-answer">
+            <p>This work requires enough customers to interview, which typically means post-product-market fit with at least 20-30 active customers. If you're pre-revenue or very early, the signal isn't there yet to build from. If you're post-PMF but pre-Series A, you're likely in the right window: enough customers to surface real patterns, early enough that getting the positioning right has an outsized impact on what comes next.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-question">What do you need from us to get started?</span>
+            <span class="faq-chevron">↓</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Access to customers for interviews, a few hours of internal stakeholder time across sales, marketing, and CS, and existing sales call recordings if you have them. You don't need to have your positioning figured out before we start. That's the work. The more raw material you can share at the outset, the faster we move.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-question">What if we already have positioning?</span>
+            <span class="faq-chevron">↓</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Depends on what you mean by positioning. If you have a messaging framework that your sales team actually uses and your lifecycle emails are converting, you probably don't need the core engagement. If you have a Notion doc nobody opens and a deck from last year, you have a starting point, not positioning. If the framework is solid but it's not living anywhere your team can reach for it, the <strong>Buyer-Led AI Activation</strong> package is built for exactly that situation.</p>
+          </div>
+        </details>
+
+      </div>
     </div>
 
   </div>

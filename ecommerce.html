@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer-Led Positioning for Ecommerce — Val Geisler</title>
+  <meta name="description" content="Val Geisler helps ecommerce brands translate customer insight into lifecycle and retention programs that actually work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #f4f4ed;
+      --text:   #231f20;
+      --black:  #000000;
+      --purple: #1d4ed8;
+      --green:  #0ea5e9;
+      --blue:   #3b82f6;
+      --navy:   #0f2040;
+      --orange: #009b5f;
+      --muted:  rgba(35,31,32,0.52);
+      --rule:   rgba(35,31,32,0.13);
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Inter', system-ui, sans-serif;
+      --display: 'Bebas Neue', Impact, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 18px; }
+
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(circle, rgba(35,31,32,0.2) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    strong { font-weight: 600; color: var(--text); }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 1.125rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(244,244,237,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+    }
+
+    .nav-name {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-pill {
+      border: 1.5px solid rgba(35,31,32,0.2) !important;
+      padding: 0.375rem 0.9rem !important;
+      border-radius: 100px;
+      color: var(--text) !important;
+      letter-spacing: 0.06em !important;
+      transition: border-color 0.2s, color 0.2s, background 0.2s !important;
+    }
+
+    .nav-pill:hover {
+      border-color: var(--navy) !important;
+      color: var(--navy) !important;
+    }
+
+    .nav-pill-cta {
+      border-color: var(--orange) !important;
+      color: var(--orange) !important;
+      background: rgba(0,155,95,0.06);
+      font-weight: 500 !important;
+    }
+
+    .nav-pill-cta:hover {
+      background: rgba(0,155,95,0.12) !important;
+      border-color: var(--orange) !important;
+      color: var(--orange) !important;
+    }
+
+    /* ── Back banner ── */
+    .back-banner {
+      background: var(--navy);
+      padding: 0.6rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 62px;
+    }
+
+    .back-banner a {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .back-banner a:hover { color: #fff; }
+
+    .back-banner-sep {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      margin: 0 0.25rem;
+    }
+
+    .back-banner-current {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Shared ── */
+    .container { max-width: 780px; margin: 0 auto; }
+    section { padding: 6rem 2.5rem; }
+
+    /* ── Section labels ── */
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 100px;
+    }
+
+    .label svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .label-blue   { color: var(--blue);   background: rgba(25,121,235,0.08);  }
+    .label-green  { color: var(--green);  background: rgba(0,155,95,0.08);    }
+    .label-purple { color: var(--purple); background: rgba(29,78,216,0.08);  }
+    .label-navy   { color: var(--navy);   background: rgba(15,32,64,0.08);    }
+    .label-orange { color: var(--orange); background: rgba(0,155,95,0.1);   }
+
+    /* ── Dividers ── */
+    .divider { border: none; display: block; overflow: hidden; line-height: 0; margin: 0; padding: 0; }
+    .divider svg { display: block; width: 100%; }
+
+    .divider-orange {
+      height: 5px;
+      background: linear-gradient(to right, transparent 0%, var(--navy) 6%, var(--navy) 94%, transparent 100%);
+    }
+
+    .divider-squiggle { height: 18px; }
+
+    .divider-dashes {
+      height: 5px;
+      background-image: repeating-linear-gradient(to right, var(--green) 0, var(--green) 16px, transparent 16px, transparent 32px);
+    }
+
+    /* ── Hero ── */
+    #hero { padding-top: 3.5rem; padding-bottom: 0; padding-left: 2.5rem; padding-right: 2.5rem; }
+
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: end;
+    }
+
+    .hero-text h1 {
+      font-family: var(--display);
+      font-size: clamp(52px, 6.5vw, 80px);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-tagline strong { color: var(--text); font-weight: 500; }
+
+    .squiggle-underline {
+      position: relative;
+      display: inline-block;
+    }
+
+    .squiggle-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      bottom: -4px;
+      height: 6px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6' viewBox='0 0 60 6'%3E%3Cpath d='M0 3 Q7.5 0 15 3 Q22.5 6 30 3 Q37.5 0 45 3 Q52.5 6 60 3' fill='none' stroke='%23009b5f' stroke-width='1.8'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-size: 60px 6px;
+    }
+
+    .hero-photo {
+      width: 340px;
+      height: 450px;
+      flex-shrink: 0;
+      align-self: end;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+    }
+
+    /* ── About text ── */
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 1.375rem;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* ── Gap cards ── */
+    .gap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .gap-card {
+      border: 1.5px solid var(--rule);
+      border-radius: 12px;
+      padding: 1.375rem 1.5rem;
+      background: rgba(244,244,237,0.6);
+    }
+
+    .gap-card-channel {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .gap-card-headline {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 0.625rem;
+    }
+
+    .gap-card-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 680px) {
+      .gap-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Stats box ── */
+    .stats-box {
+      background: rgba(15,32,64,0.07);
+      border: 1.5px solid rgba(15,32,64,0.12);
+      border-radius: 14px;
+      padding: 2rem 2rem 1.5rem;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem 1rem;
+    }
+
+    .stat-item { padding: 0.5rem 0; }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: clamp(2.25rem, 3.5vw, 3.25rem);
+      font-weight: 500;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-orange { color: var(--orange); }
+    .stat-green  { color: var(--green); }
+    .stat-blue   { color: var(--blue); }
+    .stat-purple { color: var(--purple); }
+
+    .stat-label {
+      font-size: 0.76rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Package cards ── */
+    .pkg-list { display: flex; flex-direction: column; gap: 1rem; }
+
+    .pkg-card {
+      border: 1.5px solid var(--rule);
+      border-radius: 12px;
+      background: rgba(244,244,237,0.8);
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .pkg-card:hover {
+      border-color: var(--orange);
+      box-shadow: 0 6px 24px rgba(0,155,95,0.1);
+      transform: translateY(-2px);
+    }
+
+    .pkg-featured {
+      border-color: var(--orange);
+      background: rgba(0,155,95,0.03);
+    }
+
+    .pkg-summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.5rem;
+    }
+
+    .pkg-summary::-webkit-details-marker { display: none; }
+
+    .pkg-header-band {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .pkg-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .pkg-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(0,155,95,0.1);
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pkg-icon svg { width: 17px; height: 17px; }
+
+    .pkg-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .sticker {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: #fff;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      transform: rotate(-2deg);
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.18);
+      white-space: nowrap;
+    }
+
+    .sticker-gated {
+      background: var(--navy);
+      transform: rotate(1.5deg);
+    }
+
+    .pkg-tagline-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .pkg-tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .pkg-chevron {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: rgba(0,155,95,0.08);
+      border: 1.5px solid rgba(0,155,95,0.2);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .pkg-card:hover .pkg-chevron {
+      background: rgba(0,155,95,0.13);
+      border-color: rgba(0,155,95,0.35);
+    }
+
+    .pkg-chevron-arrow {
+      display: inline-block;
+      transition: transform 0.3s;
+      font-size: 0.85rem;
+    }
+
+    details[open] .pkg-chevron-arrow { transform: rotate(180deg); }
+
+    .pkg-body {
+      overflow: hidden;
+      animation: pkg-reveal 0.3s ease;
+    }
+
+    @keyframes pkg-reveal {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .pkg-body-inner {
+      padding: 0 1.5rem 1.5rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 1.25rem;
+    }
+
+    .pkg-scope-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.875rem;
+    }
+
+    .pkg-scope-list { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .pkg-scope-list li {
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.65;
+      padding-left: 1.125rem;
+      position: relative;
+    }
+
+    .pkg-scope-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+
+    .pkg-not-included {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      line-height: 1.6;
+    }
+
+    .pkg-gated-note {
+      font-size: 0.8rem;
+      color: var(--navy);
+      background: rgba(15,32,64,0.06);
+      border-radius: 6px;
+      padding: 0.6rem 0.875rem;
+      margin-bottom: 1rem;
+      line-height: 1.55;
+    }
+
+    /* ── Work eyebrow / title / intro ── */
+    .work-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: rgba(0,155,95,0.1);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .work-eyebrow svg { width: 14px; height: 14px; }
+
+    .work-title {
+      font-family: var(--display);
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .work-intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── CTA ── */
+    .work-cta {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .work-cta a {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      color: #fff;
+      background: var(--orange);
+      padding: 0.875rem 2.25rem;
+      border-radius: 100px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(0,155,95,0.3);
+    }
+
+    .work-cta a:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(15,32,64,0.3);
+    }
+
+    .work-cta-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--navy);
+      border-left: 3px solid var(--orange);
+      padding: 1rem 0 1rem 1.75rem;
+      margin: 2.5rem 0;
+      line-height: 1.4;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name { font-family: var(--sans); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.75rem; }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── Responsive ── */
+    @media (max-width: 959px) {
+      .hero-inner {
+        grid-template-columns: 1fr 260px;
+        gap: 2.5rem;
+        max-width: 100%;
+      }
+      .hero-photo { width: 260px; height: 340px; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+    }
+
+    @media (max-width: 680px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 0.75rem; }
+      .nav-links a:not(.nav-pill) { display: none; }
+
+      .back-banner { padding: 0.6rem 1.25rem; }
+
+      section { padding: 3.5rem 1.25rem; }
+      #hero { padding-top: 3rem; padding-bottom: 2rem; padding-left: 1.25rem; padding-right: 1.25rem; }
+
+      .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero-photo { width: 160px; height: 210px; order: -1; }
+      .hero-text h1 { font-size: clamp(44px, 11vw, 64px); }
+      .hero-tagline { font-size: 0.975rem; }
+
+      .label { font-size: 0.8rem; padding: 0.4rem 0.9rem; }
+
+      .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 0.75rem; }
+      .stats-box { padding: 1.5rem 1.25rem 1.25rem; }
+
+      .about-text p { font-size: 0.975rem; }
+
+      .work-title { font-size: clamp(40px, 10vw, 64px); }
+      .work-intro { font-size: 0.975rem; }
+      .pkg-header-band { flex-direction: column; gap: 0.5rem; }
+      .pkg-tagline-row { flex-direction: column; gap: 0.75rem; }
+      .pkg-chevron { align-self: flex-start; }
+
+      footer { flex-direction: column; gap: 1.25rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-name">Val Geisler</a>
+  <div class="nav-links">
+    <a href="/" class="nav-pill">← Back to main site</a>
+    <a href="#work" class="nav-pill nav-pill-cta">Work with me</a>
+  </div>
+</nav>
+
+<div class="back-banner">
+  <a href="/">← Val Geisler</a>
+  <span class="back-banner-sep">/</span>
+  <span class="back-banner-current">Buyer-Led Positioning for Ecommerce</span>
+</div>
+
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Your brand has the data. Your customers have the story.</h1>
+      <p class="hero-tagline">
+        Most ecommerce brands have more customer signal than they know what to do with. Reviews, support tickets, survey responses, cancellation reasons. <strong>Nobody has turned it into <span class="squiggle-underline">language your retention team can actually use.</span></strong>
+      </p>
+    </div>
+
+    <div class="hero-photo">
+      <img src="val-pill-background.png" alt="Val Geisler">
+    </div>
+  </div>
+</section>
+
+<div class="divider divider-orange"></div>
+
+
+<!-- ═══ THE PROBLEM ═══ -->
+<section id="about">
+  <div class="container">
+
+    <span class="label label-orange">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="8" cy="5" r="3"/>
+        <path d="M2 15c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      </svg>
+      The Retention Gap
+    </span>
+
+    <div class="about-text">
+      <p>Acquisition is doing its job. The problem is everything that happens after. <strong>Your brand team and your performance team are speaking different languages</strong>, and neither of them is speaking the language your customers use when they talk about why they stay.</p>
+      <p>The gap shows up in three places:</p>
+    </div>
+
+    <div class="gap-grid">
+      <div class="gap-card">
+        <div class="gap-card-channel" style="color: var(--orange);">Lifecycle Email &amp; SMS</div>
+        <div class="gap-card-headline">"Your messages are promotional, not relational."</div>
+        <p class="gap-card-body">Customers get a welcome sequence and then a discount code. The story that keeps them subscribed, the real one, exists somewhere in your reviews and support tickets. Nobody has written it into the touchpoints that matter.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-channel" style="color: var(--blue);">Subscription &amp; Loyalty</div>
+        <div class="gap-card-headline">"The story that acquires isn't the one that retains."</div>
+        <p class="gap-card-body">Churn climbs because your subscription messaging is built for conversion, not commitment. The language that made someone sign up is not the language that makes them stay when the novelty wears off.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-channel" style="color: var(--purple);">Affiliates &amp; Referrals</div>
+        <div class="gap-card-headline">"Your advocates want to help. They don't know what to say."</div>
+        <p class="gap-card-body">Referral programs underperform because affiliates and ambassadors default to generic. They haven't been given the specific language that makes someone feel like this brand was made for them.</p>
+      </div>
+    </div>
+
+    <div class="about-text" style="margin-top: 1.5rem;">
+      <p><strong>This is the gap I close.</strong></p>
+    </div>
+
+    <!-- Stats -->
+    <span class="label label-orange" style="margin-top: 2.5rem; display: inline-flex;">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="8,1.5 10,6 15,6.5 11.5,10 12.5,15 8,12.5 3.5,15 4.5,10 1,6.5 6,6"/>
+      </svg>
+      The Wins
+    </span>
+
+    <div class="stats-box">
+      <div class="stats-strip">
+        <div class="stat-item">
+          <span class="stat-number stat-orange">25%</span>
+          <span class="stat-label">of company revenue from lifecycle email</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number stat-green">13%</span>
+          <span class="stat-label">churn reduced with a single lifecycle flow</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number stat-blue">97%</span>
+          <span class="stat-label">NRR achieved through buyer-led strategy</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number stat-purple">3x</span>
+          <span class="stat-label">referral program activation after messaging overhaul</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-text" style="margin-top: 2rem;">
+      <p>The results come from the same place every time: <strong>knowing exactly what your subscriber is telling themselves when they decide to stay or go</strong>, and making sure every touchpoint is speaking to that decision.</p>
+    </div>
+
+    <!-- Who this is for -->
+    <div style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule);">
+      <span class="label label-purple">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="5.5" cy="5" r="2.5"/>
+          <path d="M1 14c0-2.5 2-4.5 4.5-4.5"/>
+          <circle cx="10.5" cy="5" r="2.5"/>
+          <path d="M10.5 9.5c2.5 0 4.5 2 4.5 4.5"/>
+        </svg>
+        Who This Is For
+      </span>
+
+      <div class="audience-card" style="border: 1.5px solid rgba(0,155,95,0.2); background: rgba(0,155,95,0.03); border-radius: 12px; padding: 1.5rem 1.625rem;">
+        <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.625rem;">Subscription Ecommerce</div>
+        <div style="font-family: var(--serif); font-size: 1.1rem; font-style: italic; font-weight: 500; color: var(--text); line-height: 1.35; margin-bottom: 0.75rem;">Your subscriber signed up. Keeping them is a different pitch.</div>
+        <p style="font-size: 0.875rem; color: var(--muted); line-height: 1.7;">You're a head of ecommerce, a GM, or a CMO at a brand that's figured out acquisition but is watching retention leak. Your lifecycle program exists but it's not doing the job. You have customer data everywhere and no unified story pulling it together. <strong>This is built for you.</strong></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="divider divider-dashes"></div>
+
+
+<!-- ═══ WHY THIS WORKS ═══ -->
+<section id="why">
+  <div class="container">
+
+    <span class="label label-navy">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="8,1.5 14.5,5.5 14.5,10.5 8,14.5 1.5,10.5 1.5,5.5"/>
+      </svg>
+      Why This Works
+    </span>
+
+    <div class="about-text">
+      <p>I've spent years inside the ecommerce ecosystem: as a host of the Ecommerce Marketing School podcast, as a consultant to the tools your retention team uses every day, and as someone who has personally made the subscription-stays-or-goes calculation more times than I can count.</p>
+      <p><strong>I know what your subscriber is thinking when that renewal hits.</strong> I know the moment when a customer goes from passive to committed, and what it takes to get them there in language, not just product features.</p>
+
+      <blockquote class="pull-quote">"The story that gets someone to subscribe is not the story that keeps them."</blockquote>
+
+      <p>Most lifecycle work starts with the calendar. Send a welcome email. Send a nudge. Send a win-back. The cadence gets built before the message does. <strong>This starts with the customer.</strong> What they said when they signed up, what they said when they almost left, what they told a friend when they stayed. That language becomes the foundation for every touchpoint.</p>
+      <p>The result is retention and lifecycle programs that feel like they were written by someone who knows your customer, because they were.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider divider-squiggle">
+  <svg viewBox="0 0 1200 18" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="none" stroke="#009b5f" stroke-width="2" stroke-linecap="round"
+      d="M0,9 C40,2 80,16 120,9 C160,2 200,16 240,9 C280,2 320,16 360,9 C400,2 440,16 480,9 C520,2 560,16 600,9 C640,2 680,16 720,9 C760,2 800,16 840,9 C880,2 920,16 960,9 C1000,2 1040,16 1080,9 C1120,2 1160,16 1200,9"/>
+  </svg>
+</div>
+
+<div class="divider divider-dashes"></div>
+
+
+<!-- ═══ WORK WITH ME ═══ -->
+<section id="work">
+  <div class="container">
+
+    <span class="work-eyebrow">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 1l1.5 3.5L13 5l-2.5 2.5.5 3.5L8 9.5 5 11l.5-3.5L3 5l3.5-.5z"/>
+      </svg>
+      Buyer-Led Positioning for Ecommerce
+    </span>
+    <h2 class="work-title">Work with me.</h2>
+    <p class="work-intro">Same methodology as the B2B work. Different channels. Instead of sales talk tracks and partner co-marketing, the framework gets activated in the places that drive retention: email, SMS, subscription loyalty, and referral programs.</p>
+
+    <div class="pkg-list">
+
+      <!-- Card 1: Core -->
+      <details class="pkg-card">
+        <summary class="pkg-summary">
+          <div class="pkg-header-band">
+            <div class="pkg-header-left">
+              <div class="pkg-icon">
+                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="7.5" cy="7.5" r="5"/>
+                  <line x1="11.5" y1="11.5" x2="16" y2="16"/>
+                </svg>
+              </div>
+              <span class="pkg-name">Buyer-Led Positioning for Ecommerce</span>
+            </div>
+          </div>
+          <div class="pkg-tagline-row">
+            <p class="pkg-tagline">The core engagement. For ecommerce brands that need retention messaging built from the subscriber up and activated in the channels where it has to perform.</p>
+            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+          </div>
+        </summary>
+        <div class="pkg-body">
+          <div class="pkg-body-inner">
+            <p class="pkg-scope-title">What's included</p>
+            <ul class="pkg-scope-list">
+              <li><strong>Subscriber interviews:</strong> 5-6 interviews across current subscribers, churned subscribers, and browsers who didn't convert. The language that keeps people subscribed is different from the language that acquires them.</li>
+              <li><strong>Support ticket and review analysis</strong> to surface what subscribers are actually struggling with, celebrating, and asking about</li>
+              <li><strong>Stakeholder interviews:</strong> up to 4 internal interviews across marketing, CX, and brand</li>
+              <li><strong>Messaging framework:</strong> core subscription narrative, retention value proposition, audience segmentation, competitive differentiation</li>
+              <li><strong>Lifecycle:</strong> rewritten onboarding sequence, cancel flow, or winback sequence, actual copy, not a content plan</li>
+              <li><strong>SMS activation:</strong> key retention moments translated into SMS, written for the channel, not just shortened emails</li>
+              <li><strong>Affiliate and ambassador activation:</strong> messaging guide so your advocates can articulate the subscription value in their own words</li>
+              <li><strong>Findings review</strong> session before recommendations are finalized</li>
+              <li><strong>Team enablement:</strong> one 90-minute session at delivery</li>
+            </ul>
+            <p class="pkg-not-included"><strong>Not included:</strong> paid media creative, platform implementation, ongoing community management</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Card 2: Full Retention Program (featured) -->
+      <details class="pkg-card pkg-featured">
+        <summary class="pkg-summary">
+          <div class="pkg-header-band">
+            <div class="pkg-header-left">
+              <div class="pkg-icon">
+                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="1,10 8.5,5 16,10"/>
+                  <polyline points="1,13 8.5,8 16,13"/>
+                  <polyline points="1,7 8.5,2 16,7"/>
+                </svg>
+              </div>
+              <span class="pkg-name">Buyer-Led Positioning + Full Retention Program</span>
+              <span class="sticker">Most Popular</span>
+            </div>
+          </div>
+          <div class="pkg-tagline-row">
+            <p class="pkg-tagline">For brands that want the framework activated across every retention channel, plus a direct line throughout the engagement for decisions that can't wait for a scheduled check-in.</p>
+            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+          </div>
+        </summary>
+        <div class="pkg-body">
+          <div class="pkg-body-inner">
+            <p class="pkg-scope-title">What's included</p>
+            <ul class="pkg-scope-list">
+              <li><strong>Subscriber interviews:</strong> 8-10 interviews, enough signal to segment by subscriber type, purchase occasion, and churn risk</li>
+              <li><strong>Support ticket, review, and cancellation reason analysis</strong> across all available data sources</li>
+              <li><strong>Stakeholder interviews:</strong> up to 6 across marketing, CX, brand, and retention</li>
+              <li><strong>Messaging framework:</strong> core subscription narrative, retention value proposition, audience segmentation, competitive differentiation, and objection handling for cancel flows</li>
+              <li><strong>Full lifecycle program:</strong> onboarding sequence, loyalty nurture, cancel flow, and winback sequence, actual copy across email and SMS</li>
+              <li><strong>Subscription loyalty messaging:</strong> language for milestone moments, renewal nudges, and loyalty reward touchpoints that reinforce the commitment narrative</li>
+              <li><strong>Referral program activation:</strong> messaging guide and template copy so affiliates and ambassadors have the specific language that converts their audience</li>
+              <li><strong>Cross-functional enablement:</strong> targeted working sessions for retention, CX, and brand teams</li>
+              <li><strong>Dedicated async advisory</strong> access throughout the engagement</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- Card 3: Maintenance (gated) -->
+      <details class="pkg-card">
+        <summary class="pkg-summary">
+          <div class="pkg-header-band">
+            <div class="pkg-header-left">
+              <div class="pkg-icon">
+                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="8.5" cy="8.5" r="6.5"/>
+                  <polyline points="8.5,5 8.5,8.5 11,11"/>
+                </svg>
+              </div>
+              <span class="pkg-name">Positioning Maintenance</span>
+              <span class="sticker sticker-gated">Post-engagement</span>
+            </div>
+          </div>
+          <div class="pkg-tagline-row">
+            <p class="pkg-tagline">For clients post-engagement. Keeps the messaging current as the product evolves, the subscriber base grows, and the team changes.</p>
+            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+          </div>
+        </summary>
+        <div class="pkg-body">
+          <div class="pkg-body-inner">
+            <p class="pkg-gated-note">Available to clients who have completed a project engagement. If the foundation isn't there, the retainer won't hold.</p>
+            <p class="pkg-scope-title">What's included each month</p>
+            <ul class="pkg-scope-list">
+              <li><strong>Messaging updates</strong> as the product evolves or new subscription tiers emerge</li>
+              <li><strong>Lifecycle review</strong> to catch positioning drift before it affects retention rates</li>
+              <li><strong>New enablement materials</strong> as needed: cancel flow updates, seasonal winback copy, referral messaging refreshes</li>
+              <li><strong>New team member onboarding</strong> to the framework</li>
+              <li><strong>One async touchpoint</strong> per month</li>
+            </ul>
+            <p class="pkg-not-included">Month-to-month. 30 days notice to cancel.</p>
+          </div>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="about-text" style="margin-top: 2.5rem; text-align: center;">
+      <p style="color: var(--muted);">Tell me what's leaking. I'll let you know if I can fix it.</p>
+    </div>
+
+    <div class="work-cta">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSGTwVdOmiB9BD9W9LVjRbulxZ_e2RLMbMYpM_biR_qPi57A/viewform?usp=header" target="_blank" rel="noopener">Let's talk</a>
+      <p class="work-cta-sub">Fill out the form and I'll follow up with next steps.</p>
+    </div>
+
+    <!-- How It Works -->
+    <div style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule);">
+      <span class="label label-green">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="6" width="12" height="8" rx="1.5"/>
+          <path d="M5 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/>
+          <line x1="2" y1="10" x2="14" y2="10"/>
+        </svg>
+        How It Works
+      </span>
+      <div class="about-text">
+        <p>Engagements are <strong>three months, project-based,</strong> and start at $8,500/month. Every engagement ends with your team trained on how to use what we built, not just a document in a shared drive.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider divider-orange"></div>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <span class="footer-name">Val Geisler</span>
+  <div class="footer-links">
+    <a href="/">← Main site</a>
+    <a href="https://www.linkedin.com/in/lovevalgeisler" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
