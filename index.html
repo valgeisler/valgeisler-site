@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Val Geisler</title>
-  <meta name="description" content="Val Geisler helps companies build buyer-led positioning and activate it across sales, lifecycle, and partner channels.">
+  <meta name="description" content="Val Geisler helps ecommerce brands build retention strategies that go beyond email. Audit, roadmap, and strategic direction so your team knows what to fix and why.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -133,22 +133,17 @@
     .label-navy   { color: var(--navy);   background: rgba(15,32,64,0.08);    }
     .label-orange { color: var(--orange); background: rgba(0,155,95,0.1);   }
 
-    /* ── Section dividers — each one different ── */
+    /* ── Section dividers ── */
     .divider { border: none; display: block; overflow: hidden; line-height: 0; margin: 0; padding: 0; }
     .divider svg { display: block; width: 100%; }
 
-    /* 1. Orange band — Hero → About */
     .divider-orange {
       height: 5px;
       background: linear-gradient(to right, transparent 0%, var(--navy) 6%, var(--navy) 94%, transparent 100%);
     }
 
-
-
-    /* 3. Navy squiggle — Geometric Career → Work with me */
     .divider-squiggle { height: 18px; }
 
-    /* 4. Green dashes — Work with me → Speaking */
     .divider-dashes {
       height: 5px;
       background-image: repeating-linear-gradient(to right, var(--green) 0, var(--green) 16px, transparent 16px, transparent 32px);
@@ -235,95 +230,6 @@
 
     .about-text p:last-child { margin-bottom: 0; }
 
-    /* ── Audience grid ── */
-    .audience-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .audience-card {
-      border: 1.5px solid var(--rule);
-      border-radius: 12px;
-      padding: 1.5rem 1.625rem;
-    }
-
-    .audience-card-b2b {
-      border-color: rgba(29,78,216,0.2);
-      background: rgba(29,78,216,0.03);
-    }
-
-    .audience-card-ecom {
-      border-color: rgba(0,155,95,0.2);
-      background: rgba(0,155,95,0.03);
-    }
-
-    .audience-eyebrow {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      margin-bottom: 0.625rem;
-    }
-
-    .audience-eyebrow-b2b { color: var(--purple); }
-    .audience-eyebrow-ecom { color: var(--orange); }
-
-    .audience-heading {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-style: italic;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 0.75rem;
-    }
-
-    .audience-body {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .audience-card-collapsible { cursor: pointer; }
-
-    .audience-summary {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .audience-summary::-webkit-details-marker { display: none; }
-
-    .audience-summary-hint {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-      line-height: 1.5;
-    }
-
-    .audience-expand-hint {
-      font-size: 0.8rem;
-      color: var(--muted);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .audience-body-expanded {
-      margin-top: 1.25rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(0,155,95,0.15);
-      animation: pkg-reveal 0.3s ease;
-    }
-
-    @media (max-width: 680px) {
-      .audience-grid { grid-template-columns: 1fr; }
-    }
-
     /* ── Gap cards (3-column symptom grid) ── */
     .gap-grid {
       display: grid;
@@ -367,7 +273,7 @@
       .gap-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── Comparison cards (Why not just...) ── */
+    /* ── Comparison cards ── */
     .comparison-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -414,7 +320,7 @@
       flex: 1;
     }
 
-    /* Card 1: 2x2 deliverable grid */
+    /* Card 1: deliverable grid */
     .deliverable-2x2-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -546,7 +452,7 @@
       .comparison-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── Stats box + strip ── */
+    /* ── Stats box ── */
     .stats-box {
       background: rgba(15,32,64,0.07);
       border: 1.5px solid rgba(15,32,64,0.12);
@@ -645,66 +551,6 @@
       line-height: 1.55;
     }
 
-    /* ── Recognition ── */
-    .recognition { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
-
-    .recognition-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1rem; }
-
-    .recognition-list li {
-      font-size: 0.875rem;
-      color: var(--muted);
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .recognition-list li::before { content: '·'; position: absolute; left: 0; color: var(--purple); font-size: 1.2rem; line-height: 1.3; }
-
-    /* ── Client Ticker ── */
-    .ticker-wrap {
-      overflow: hidden;
-      background: var(--navy);
-      padding: 0.9rem 0;
-      width: 100%;
-    }
-
-    .ticker-track {
-      display: inline-flex;
-      gap: 0;
-      white-space: nowrap;
-      animation: ticker-scroll 22s linear infinite;
-    }
-
-    @keyframes ticker-scroll {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    .ticker-item {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
-      padding: 0 1.5rem;
-    }
-
-    .ticker-sep {
-      color: var(--orange);
-      font-size: 0.5rem;
-      align-self: center;
-    }
-
-    /* ── Geometric Career ── */
-    #geometric { padding-top: 3.5rem; }
-
-    .geo-svg {
-      width: 100%;
-      height: auto;
-      max-width: 660px;
-      display: block;
-      margin: 3.5rem auto 0;
-    }
-
     /* ── Pull quote ── */
     .pull-quote {
       font-family: var(--serif);
@@ -718,7 +564,7 @@
       line-height: 1.4;
     }
 
-    /* ── Work with me / Packages ── */
+    /* ── Work with me ── */
     #work { padding-top: 3.5rem; }
 
     .work-eyebrow {
@@ -756,168 +602,32 @@
       margin-bottom: 3rem;
     }
 
-    /* Package cards */
-    .pkg-list { display: flex; flex-direction: column; gap: 1rem; }
-
-    .pkg-card {
-      border: 1.5px solid var(--rule);
+    /* Offering card */
+    .offering-card {
+      border: 1.5px solid var(--purple);
       border-radius: 12px;
-      background: rgba(244,244,237,0.8);
-      overflow: hidden;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-
-    .pkg-card:hover {
-      border-color: var(--purple);
-      box-shadow: 0 6px 24px rgba(29,78,216,0.1);
-      transform: translateY(-2px);
-    }
-
-    .pkg-featured {
-      border-color: var(--purple);
       background: rgba(29,78,216,0.03);
+      padding: 2rem 2rem 1.75rem;
+      margin-bottom: 1rem;
     }
 
-    .pkg-summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 1.5rem;
-    }
-
-    .pkg-summary::-webkit-details-marker { display: none; }
-
-    .pkg-header-band {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .pkg-header-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .pkg-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: rgba(29,78,216,0.1);
-      color: var(--purple);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .pkg-icon svg { width: 17px; height: 17px; }
-
-    .pkg-name {
+    .offering-name {
       font-family: var(--serif);
-      font-size: 1.35rem;
+      font-size: 1.5rem;
       font-weight: 500;
       color: var(--text);
       line-height: 1.2;
+      margin-bottom: 0.5rem;
     }
 
-    /* Sticker badges */
-    .sticker {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: var(--orange);
-      color: #fff;
-      padding: 0.3rem 0.7rem;
-      border-radius: 100px;
-      transform: rotate(-2deg);
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.18);
-      white-space: nowrap;
-    }
-
-    .sticker-gated {
-      background: var(--navy);
-      transform: rotate(1.5deg);
-    }
-
-    .sticker-b2c {
-      background: var(--green);
-      transform: rotate(-1deg);
-    }
-
-    .sticker-new {
-      background: var(--blue);
-      transform: rotate(2deg);
-    }
-
-    .pkg-tagline-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .pkg-tagline {
-      font-size: 0.9rem;
+    .offering-tagline {
+      font-size: 0.95rem;
       color: var(--muted);
-      line-height: 1.6;
-      max-width: 500px;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
     }
 
-    .pkg-chevron {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--purple);
-      background: rgba(29,78,216,0.08);
-      border: 1.5px solid rgba(29,78,216,0.2);
-      padding: 0.35rem 0.85rem;
-      border-radius: 100px;
-      flex-shrink: 0;
-      white-space: nowrap;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .pkg-card:hover .pkg-chevron {
-      background: rgba(29,78,216,0.13);
-      border-color: rgba(29,78,216,0.35);
-    }
-
-    .pkg-chevron-arrow {
-      display: inline-block;
-      transition: transform 0.3s;
-      font-size: 0.85rem;
-    }
-
-    details[open] .pkg-chevron-arrow { transform: rotate(180deg); }
-
-    /* Package body (expandable) */
-    .pkg-body {
-      overflow: hidden;
-      animation: pkg-reveal 0.3s ease;
-    }
-
-    @keyframes pkg-reveal {
-      from { opacity: 0; transform: translateY(-6px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .pkg-body-inner {
-      padding: 0 1.5rem 1.5rem;
-      border-top: 1px solid var(--rule);
-      padding-top: 1.25rem;
-    }
-
-    .pkg-scope-title {
+    .offering-scope-title {
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -926,17 +636,17 @@
       margin-bottom: 0.875rem;
     }
 
-    .pkg-scope-list { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    .offering-scope-list { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 
-    .pkg-scope-list li {
-      font-size: 0.875rem;
+    .offering-scope-list li {
+      font-size: 0.9rem;
       color: var(--text);
       line-height: 1.65;
       padding-left: 1.125rem;
       position: relative;
     }
 
-    .pkg-scope-list li::before {
+    .offering-scope-list li::before {
       content: '·';
       position: absolute;
       left: 0;
@@ -945,69 +655,60 @@
       line-height: 1.4;
     }
 
-    .pkg-not-included {
+    .offering-not-included {
       font-size: 0.8rem;
       color: var(--muted);
-      margin-top: 1rem;
-      padding-top: 1rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
       border-top: 1px solid var(--rule);
       line-height: 1.6;
     }
 
-    .pkg-gated-note {
-      font-size: 0.8rem;
-      color: var(--navy);
-      background: rgba(15,32,64,0.06);
-      border-radius: 6px;
-      padding: 0.6rem 0.875rem;
-      margin-bottom: 1rem;
-      line-height: 1.55;
-    }
-
-    /* Additional Options wrapper */
-    .pkg-additional {
-      margin-top: 0.25rem;
-    }
-
-    .pkg-additional-summary {
-      list-style: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 0.25rem;
+    .offering-timeline {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
       border-top: 1px solid var(--rule);
     }
 
-    .pkg-additional-summary::-webkit-details-marker { display: none; }
-
-    .pkg-additional-left {
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-    }
-
-    .pkg-additional-label {
+    .offering-timeline-title {
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--orange);
+      margin-bottom: 0.75rem;
     }
 
-    .pkg-additional-hint {
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .timeline-step {
+      background: rgba(0,155,95,0.05);
+      border: 1px solid rgba(0,155,95,0.15);
+      border-radius: 8px;
+      padding: 0.875rem 1rem;
+    }
+
+    .timeline-month {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-desc {
       font-size: 0.8rem;
       color: var(--muted);
-      opacity: 0.7;
+      line-height: 1.55;
     }
 
-    .pkg-additional-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding-top: 0.75rem;
-      animation: pkg-reveal 0.3s ease;
+    @media (max-width: 680px) {
+      .timeline-steps { grid-template-columns: 1fr; }
     }
 
     /* Work CTA */
@@ -1027,13 +728,13 @@
       padding: 0.875rem 2.25rem;
       border-radius: 100px;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 14px rgba(151,79,255,0.3);
+      box-shadow: 0 4px 14px rgba(29,78,216,0.3);
     }
 
     .work-cta a:hover {
       background: var(--navy);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(57,30,96,0.3);
+      box-shadow: 0 6px 20px rgba(15,32,64,0.3);
     }
 
     .work-cta-sub {
@@ -1105,6 +806,57 @@
 
     .faq-answer a:hover { color: var(--navy); }
 
+    @keyframes pkg-reveal {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Geometric Career ── */
+    #geometric { padding-top: 3.5rem; }
+
+    .geo-svg {
+      width: 100%;
+      height: auto;
+      max-width: 660px;
+      display: block;
+      margin: 3.5rem auto 0;
+    }
+
+    /* ── Client Ticker ── */
+    .ticker-wrap {
+      overflow: hidden;
+      background: var(--navy);
+      padding: 0.9rem 0;
+      width: 100%;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: ticker-scroll 22s linear infinite;
+    }
+
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .ticker-item {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      padding: 0 1.5rem;
+    }
+
+    .ticker-sep {
+      color: var(--orange);
+      font-size: 0.5rem;
+      align-self: center;
+    }
+
     /* ── Speaking & Press ── */
     #speaking { padding-top: 3.5rem; }
 
@@ -1135,7 +887,7 @@
       border-color: rgba(0,155,95,0.3);
     }
 
-    .press-card.wide:hover { background: rgba(246,148,38,0.09); }
+    .press-card.wide:hover { background: rgba(0,155,95,0.09); }
 
     .badge {
       display: inline-block;
@@ -1193,8 +945,6 @@
     .footer-links a:hover { color: var(--text); }
 
     /* ── Responsive ── */
-
-    /* Medium screens: tablet / narrow desktop (680–959px) */
     @media (max-width: 959px) {
       .hero-inner {
         grid-template-columns: 1fr 260px;
@@ -1205,11 +955,9 @@
       .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
     }
 
-    /* Small screens: mobile (<680px) */
     @media (max-width: 680px) {
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 0.75rem; }
-      /* Hide section text links on mobile, keep action pills */
       .nav-links a:not(.nav-pill) { display: none; }
 
       section { padding: 3.5rem 1.25rem; }
@@ -1233,9 +981,6 @@
 
       .work-title { font-size: clamp(40px, 10vw, 64px); }
       .work-intro { font-size: 0.975rem; }
-      .pkg-header-band { flex-direction: column; gap: 0.5rem; }
-      .pkg-tagline-row { flex-direction: column; gap: 0.75rem; }
-      .pkg-chevron { align-self: flex-start; }
 
       .press-grid { grid-template-columns: 1fr; }
       .press-card.wide { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
@@ -1244,6 +989,8 @@
       .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
 
       .geo-svg { margin-top: 2rem; }
+
+      .offering-card { padding: 1.5rem 1.25rem; }
     }
   </style>
 </head>
@@ -1266,7 +1013,10 @@
     <div class="hero-text">
       <h1>Hi, I'm Val.</h1>
       <p class="hero-tagline">
-        Most positioning is built from the inside out, handed off as a framework, and never activated. I build it from <strong><span class="squiggle-underline">what your buyers actually say.</span></strong> Then I activate it across sales, lifecycle, and partner channels.
+        Most brands have someone who runs email. What most brands don't have is someone who looks at <strong><span class="squiggle-underline">the entire customer journey.</span></strong>
+      </p>
+      <p class="hero-tagline" style="margin-top: 0.75rem;">
+        I do <strong>Strategic Retention for Ecommerce:</strong> an audit of your full retention ecosystem and a roadmap your team can actually act on.
       </p>
     </div>
 
@@ -1288,29 +1038,29 @@
         <circle cx="8" cy="5" r="3"/>
         <path d="M2 15c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
       </svg>
-      The Activation Gap
+      The Gap
     </span>
 
     <div class="about-text">
-      <p>When a business grows past a certain point, something breaks. The voice of the customer gets lost, the reason behind the work is buried. Sales is pitching features. Emails announce updates. Partners explain your product the way they understood it two years ago. <strong>Everyone is winging it from their own version of the message.</strong></p>
-      <p>That's not a messaging problem. <strong>That's an activation problem.</strong> And it shows up in three places:</p>
+      <p>Your email program is running. Campaigns go out, flows are live, your agency is optimizing open rates. And your retention is still not where it needs to be.</p>
+      <p>That's not an email problem. <strong>Retention is rarely just an email problem.</strong> It shows up in three places most brands aren't looking:</p>
     </div>
 
     <div class="gap-grid">
       <div class="gap-card">
-        <div class="gap-card-channel" style="color: var(--blue);">Sales</div>
-        <div class="gap-card-headline">"Your reps are pitching features."</div>
-        <p class="gap-card-body">Prospects sit through demos and don't see their problem in what's being pitched. Not because the product is wrong, but because the story never got to them.</p>
+        <div class="gap-card-channel" style="color: var(--blue);">Acquisition</div>
+        <div class="gap-card-headline">"The problem starts before the first email."</div>
+        <p class="gap-card-body">The customers you're acquiring are shaping what retention is even possible. If the wrong customers are coming in, no lifecycle sequence fixes that. Acquisition quality and retention are the same conversation.</p>
       </div>
       <div class="gap-card">
-        <div class="gap-card-channel" style="color: var(--orange);">Lifecycle</div>
-        <div class="gap-card-headline">"Your emails are announcing, not activating."</div>
-        <p class="gap-card-body">Customers get onboarded to part of the product. Churn climbs. The full story exists somewhere, just not in the touchpoints that were supposed to tell it.</p>
+        <div class="gap-card-channel" style="color: var(--orange);">Execution</div>
+        <div class="gap-card-headline">"Your agency is inside the tool. Someone needs to be outside it."</div>
+        <p class="gap-card-body">Agencies optimize what's there. They're not asking why customers leave, what the site experience is doing before email starts, or whether your segments reflect how customers actually behave. That's not their job. It needs to be someone's.</p>
       </div>
       <div class="gap-card">
-        <div class="gap-card-channel" style="color: var(--purple);">Partners</div>
-        <div class="gap-card-headline">"Your partners are selling the old you."</div>
-        <p class="gap-card-body">Referrals fall flat. Affiliates want to advocate but don't have the language. Co-sell conversations go nowhere because nobody gave them the right frame.</p>
+        <div class="gap-card-channel" style="color: var(--purple);">Strategy</div>
+        <div class="gap-card-headline">"You're ready for direction, not just another hire."</div>
+        <p class="gap-card-body">Opening a Director of CRM search is one answer. But what does that person walk into? A clear strategy they can execute against, or a blank slate they'll spend a year figuring out? The strategy should come first.</p>
       </div>
     </div>
 
@@ -1329,48 +1079,26 @@
     <div class="stats-box">
       <div class="stats-strip">
         <div class="stat-item">
-          <span class="stat-number stat-orange">60%</span>
-          <span class="stat-label">close rate co-selling with sales teams</span>
+          <span class="stat-number stat-orange">25%</span>
+          <span class="stat-label">of company revenue driven by lifecycle email</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number stat-green">25%</span>
-          <span class="stat-label">of company revenue from lifecycle email</span>
+          <span class="stat-number stat-green">13%</span>
+          <span class="stat-label">churn reduced with a single lifecycle flow</span>
         </div>
         <div class="stat-item">
           <span class="stat-number stat-blue">97%</span>
-          <span class="stat-label">NRR achieved through buyer-led strategy</span>
+          <span class="stat-label">NRR achieved through customer-led retention strategy</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number stat-purple">13%</span>
-          <span class="stat-label">churn reduced with a single lifecycle flow</span>
+          <span class="stat-number stat-purple">10+</span>
+          <span class="stat-label">years building retention programs across ecommerce and SaaS</span>
         </div>
       </div>
     </div>
 
     <div class="about-text" style="margin-top: 2rem;">
-      <p>The results aren't coincidental. <strong>A 60% co-sell close rate when the baseline was 30%. Lifecycle email growing to 25% of revenue. NRR at 97%.</strong> Those numbers came from the same place every time: knowing who the buyer actually is and building everything from that.</p>
-    </div>
-
-    <!-- Who This Is For -->
-    <div style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule);">
-
-      <span class="label label-purple">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="5.5" cy="5" r="2.5"/>
-          <path d="M1 14c0-2.5 2-4.5 4.5-4.5"/>
-          <circle cx="10.5" cy="5" r="2.5"/>
-          <path d="M10.5 9.5c2.5 0 4.5 2 4.5 4.5"/>
-        </svg>
-        Who This Is For
-      </span>
-
-      <!-- B2B — fully open -->
-      <div class="audience-card audience-card-b2b">
-        <div class="audience-eyebrow audience-eyebrow-b2b">B2B Software</div>
-        <div class="audience-heading">Your buyer knows their problem. They don't know you're the solution.</div>
-        <p class="audience-body">Your sales team is pitching features. Lifecycle emails are product updates. Partners are still using messaging from your last rebrand. <strong>The framework you need is already in your customers' words.</strong> Nobody has gone and gotten it.</p>
-      </div>
-
+      <p>These aren't flukes. <strong>Lifecycle email growing to 25% of revenue. Churn dropping 13% from a single flow change. NRR at 97%.</strong> Every one of those came from the same process: understanding what customers actually need, not just what the tool is already sending.</p>
     </div>
 
   </div>
@@ -1380,6 +1108,7 @@
 <!-- ═══ CLIENT TICKER ═══ -->
 <div class="ticker-wrap" aria-hidden="true">
   <div class="ticker-track">
+    <span class="ticker-item">ByHeart</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Klaviyo</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Digioh</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Kit</span><span class="ticker-sep">◆</span>
@@ -1388,6 +1117,7 @@
     <span class="ticker-item">CXL</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Simplero</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Acuity</span><span class="ticker-sep">◆</span>
+    <span class="ticker-item">ByHeart</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Klaviyo</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Digioh</span><span class="ticker-sep">◆</span>
     <span class="ticker-item">Kit</span><span class="ticker-sep">◆</span>
@@ -1418,84 +1148,36 @@
     </span>
 
     <div class="about-text">
-      <p>Most teams considering this work look at three other paths first. Each one delivers something. None of them get the framework into the channels where it has to perform.</p>
+      <p>There are three paths most brands consider when retention isn't working. Each one gets part of the picture. None of them gets the whole thing.</p>
     </div>
 
     <div class="comparison-grid">
 
-      <!-- Card 1: Strategy firm -->
+      <!-- Card 1: Expand the agency scope -->
       <div class="comparison-card">
-        <div class="comparison-eyebrow comparison-eyebrow-blue">$100K+ → 1 PDF</div>
-        <div class="comparison-headline">Hire a strategy firm</div>
-        <p class="comparison-body">Six months later, nothing has changed in your sales talk track, your onboarding, or how partners describe you. The framework was the deliverable. Activation was never in scope.</p>
-
-        <div class="deliverable-2x2-grid">
-          <div class="deliverable-2x2 filled">✓ Strategy doc</div>
-          <div class="deliverable-2x2 empty">— Sales talk track</div>
-          <div class="deliverable-2x2 empty">— Lifecycle copy</div>
-          <div class="deliverable-2x2 empty">— Partner 1-pager</div>
-        </div>
+        <div class="comparison-eyebrow comparison-eyebrow-blue">Inside the tool</div>
+        <div class="comparison-headline">Ask the agency to do more</div>
+        <p class="comparison-body">A good retention agency will optimize what they can see: flow performance, campaign metrics, list health. What they won't do is audit acquisition quality, evaluate your site experience, or tell you whether your segments map to how customers actually behave. That's not in their scope.</p>
       </div>
 
-      <!-- Card 2: AI interview tool -->
+      <!-- Card 2: Hire a Director of CRM -->
       <div class="comparison-card">
-        <div class="comparison-eyebrow comparison-eyebrow-green">Just a dashboard</div>
-        <div class="comparison-headline">Run an AI interview tool</div>
-        <p class="comparison-body">You get a constant feed of voice-of-customer themes, sentiment tags, and quotes flowing into your dashboards. What you don't get is a rewritten cancel flow, a sales talk track in your buyer's language, or a partner one-pager.</p>
-
-        <div class="dash-panel">
-          <div class="dash-head">
-            <span class="dash-title">Active themes</span>
-            <span class="dash-meta">14 ↑</span>
-          </div>
-          <div class="dash-rows">
-            <div class="dash-row">
-              <span class="dash-label">support</span>
-              <div class="dash-track"><div class="dash-fill" style="width: 78%;"></div></div>
-              <span class="dash-pct">78%</span>
-            </div>
-            <div class="dash-row">
-              <span class="dash-label">pricing</span>
-              <div class="dash-track"><div class="dash-fill" style="width: 64%;"></div></div>
-              <span class="dash-pct">64%</span>
-            </div>
-            <div class="dash-row">
-              <span class="dash-label">loyalty</span>
-              <div class="dash-track"><div class="dash-fill" style="width: 52%;"></div></div>
-              <span class="dash-pct">52%</span>
-            </div>
-            <div class="dash-row">
-              <span class="dash-label">competitor</span>
-              <div class="dash-track"><div class="dash-fill" style="width: 41%;"></div></div>
-              <span class="dash-pct">41%</span>
-            </div>
-          </div>
-        </div>
+        <div class="comparison-eyebrow comparison-eyebrow-green">6 months to ramp</div>
+        <div class="comparison-headline">Hire a Director of CRM</div>
+        <p class="comparison-body">The right hire is worth it. But a search takes three to four months. Then another six to twelve months before they've diagnosed the real problem and built a strategy. That's a long time to wait, and it's a lot of pressure to put on someone who walked into a blank slate.</p>
       </div>
 
       <!-- Card 3: DIY -->
       <div class="comparison-card">
-        <div class="comparison-eyebrow comparison-eyebrow-purple">Stale by quarter's end</div>
-        <div class="comparison-headline">Build it in-house</div>
-        <p class="comparison-body">Your Head of Marketing blocks off two weeks. A few customer calls, a Notion doc, a Slack share. By the next planning cycle, sales is back to pitching features and the doc is in someone's archive.</p>
-
-        <div class="decay-chart">
-          <div class="decay-bar" style="background: #391e60; height: 88%;"></div>
-          <div class="decay-bar" style="background: #391e60; height: 72%;"></div>
-          <div class="decay-bar" style="background: rgba(57,30,96,0.45); height: 32%;"></div>
-          <div class="decay-bar" style="background: rgba(57,30,96,0.22); height: 14%;"></div>
-          <div class="decay-bar" style="background: rgba(35,31,32,0.1); height: 6%;"></div>
-          <div class="decay-bar" style="background: rgba(35,31,32,0.1); height: 4%;"></div>
-        </div>
-        <div class="decay-weeks">
-          <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span>
-        </div>
+        <div class="comparison-eyebrow comparison-eyebrow-purple">Nobody owns it</div>
+        <div class="comparison-headline">Handle it internally</div>
+        <p class="comparison-body">Your marketing lead carves out time. They look at the data, run a few experiments, put together a plan. It helps until the next campaign crunch hits, and then the strategic work gets deprioritized again. Retention strategy without dedicated ownership tends to fade.</p>
       </div>
 
     </div>
 
     <div class="about-text" style="margin-top: 1.75rem;">
-      <p><strong>This is the work that picks up where each of those stops short.</strong></p>
+      <p><strong>The audit and roadmap picks up where each of those stops short.</strong> You get strategic clarity now, and a foundation your team or your next hire can actually build from.</p>
     </div>
 
   </div>
@@ -1521,10 +1203,10 @@
     </span>
 
     <div class="about-text">
-      <p>My experience comes from being embedded in this space for over a decade, as a consultant to the vendors and as an actual buyer. <strong>I know what your customers are thinking when they get on a sales call because I've been that person.</strong> I know what questions to ask to surface the language that moves deals, reduces churn, and makes partners effective advocates instead of confused ones.</p>
-      <p>Most positioning consultants build from the inside out. They interview your team, synthesize the themes, and hand you a framework that <strong>reflects what your org believes about itself.</strong> That's not where the signal is.</p>
-      <p><strong>The signal is in what your buyers say when nobody's selling to them.</strong> Getting to it requires knowing what to listen for, and knowing what to do with it once you have it.</p>
-      <p>That perspective didn't come from a straight line.</p>
+      <p>I've spent over a decade on both sides of the ecommerce ecosystem. At Klaviyo, I saw how the tools work and what brands actually struggle with when they try to use them well. At ByHeart, I was the one building the retention strategy in-house, working alongside an execution agency, and learning what a brand actually needs from that relationship.</p>
+      <p><strong>Most retention consultants come from one side or the other.</strong> They either know the tools deeply but haven't run brand-side retention, or they've been brand-side but don't understand the ecosystem their agency is operating in. That gap shows up in the recommendations.</p>
+      <p>I can sit with your agency and tell them what's missing. I can sit with your marketing team and show them what the data is actually saying. I can look at your acquisition channels and tell you how they're affecting retention downstream. <strong>That's not a single-channel skill. It's a perspective that comes from having been in every seat.</strong></p>
+      <p>And it didn't come from a straight line.</p>
     </div>
 
     <svg viewBox="0 0 820 640" xmlns="http://www.w3.org/2000/svg" class="geo-svg"
@@ -1584,37 +1266,10 @@
   </svg>
 </div>
 
-
-<!-- ═══ THE ACTIVATION LAYER ═══ -->
-<section id="activation-layer">
-  <div class="container">
-
-    <span class="label label-blue">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="8,1.5 14.5,5 8,8.5 1.5,5"/>
-        <polyline points="1.5,8 8,11.5 14.5,8"/>
-        <polyline points="1.5,11 8,14.5 14.5,11"/>
-      </svg>
-      The Activation Layer
-    </span>
-
-    <div class="about-text">
-      <p>A messaging framework only works if the team can reach for it. Most don't. <strong>It lives in a Notion doc nobody opens, a deck from six months ago, or in the head of one person who's about to leave.</strong></p>
-
-      <p>The fix is an <strong>AI layer that holds the framework</strong>: buyer language, competitive talk tracks, objection handling, partner co-marketing templates. Your sales, lifecycle, and partner teams can query it the moment they need it.</p>
-
-      <p>Ask it how to handle a specific objection. Run a role-play before a discovery call. Generate a Better Together draft for a new partner conversation. <strong>The framework stops being a deliverable and starts being infrastructure.</strong></p>
-
-      <p>I either set this up inside your <strong>existing AI infrastructure</strong> (Claude Projects, ChatGPT Team, Glean, Notion AI) or <strong>build it from scratch</strong> and hand it over. Either way, the messaging stays current because the same engagement that builds the framework also populates the system that holds it.</p>
-    </div>
-
-  </div>
-</section>
-
 <div class="divider divider-dashes"></div>
 
 
-<!-- ═══ WORK WITH ME / PACKAGES ═══ -->
+<!-- ═══ WORK WITH ME ═══ -->
 <section id="work">
   <div class="container">
 
@@ -1622,180 +1277,49 @@
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M8 1l1.5 3.5L13 5l-2.5 2.5.5 3.5L8 9.5 5 11l.5-3.5L3 5l3.5-.5z"/>
       </svg>
-      Buyer-Led Positioning
+      Strategic Retention for Ecommerce
     </span>
     <h2 class="work-title">Work with me.</h2>
-    <p class="work-intro">Most positioning work delivers a messaging framework and stops there. This doesn't. The framework gets activated in the channels where it has to perform: sales conversations, lifecycle email, and partner co-marketing. Your team gets trained on how to use it.</p>
+    <p class="work-intro">One offering. An audit of your retention ecosystem and a prioritized roadmap your team can act on. No execution, no ongoing management. Just a clear picture of what's broken and what to do about it, built by someone who has seen this from every angle.</p>
 
-    <div class="pkg-list">
+    <div class="offering-card">
+      <div class="offering-name">Retention Audit + Strategic Roadmap</div>
+      <p class="offering-tagline">A focused engagement that gives you a clear picture of where your retention program stands and a practical roadmap for where to take it next. Your team leaves with enough direction to move without needing ongoing outside help.</p>
 
-      <!-- Card 1: Core -->
-      <details class="pkg-card">
-        <summary class="pkg-summary">
-          <div class="pkg-header-band">
-            <div class="pkg-header-left">
-              <div class="pkg-icon">
-                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="7.5" cy="7.5" r="5"/>
-                  <line x1="11.5" y1="11.5" x2="16" y2="16"/>
-                </svg>
-              </div>
-              <span class="pkg-name">Buyer-Led Positioning</span>
-            </div>
+      <p class="offering-scope-title">What's included</p>
+      <ul class="offering-scope-list">
+        <li><strong>Retention ecosystem audit</strong> across campaign performance, segmentation, lifecycle architecture, and how acquisition is feeding (or undermining) retention</li>
+        <li><strong>Site and channel review</strong> to understand what the customer experience looks like before and between emails</li>
+        <li><strong>Stakeholder interviews</strong> with up to five internal contacts across marketing, data, and any teams that touch the customer relationship</li>
+        <li><strong>Findings review session</strong> before anything is finalized, so you can flag what doesn't look right before recommendations are built on top of it</li>
+        <li><strong>Strategic roadmap</strong> with prioritized recommendations your team can act on: segmentation strategy, lifecycle architecture, cadence framework, cross-team coordination model, and a testing and measurement framework tied to your KPIs</li>
+        <li><strong>Brand voice and email writing guidelines</strong> developed in collaboration with whoever owns your content</li>
+      </ul>
+
+      <div class="offering-not-included">
+        <strong>Not included:</strong> campaign copywriting, platform implementation, staff training sessions, or ongoing management. The roadmap is built so your team can run it forward without me.
+      </div>
+
+      <div class="offering-timeline">
+        <div class="offering-timeline-title">How it runs</div>
+        <div class="timeline-steps">
+          <div class="timeline-step">
+            <div class="timeline-month">Month 1</div>
+            <div class="timeline-desc">Kickoff, data access, stakeholder interviews, and ecosystem audit</div>
           </div>
-          <div class="pkg-tagline-row">
-            <p class="pkg-tagline">The core engagement. For companies that need positioning built from the buyer up and activated in the channels where it has to perform.</p>
-            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
+          <div class="timeline-step">
+            <div class="timeline-month">Month 2</div>
+            <div class="timeline-desc">Findings review, roadmap development, strategic recommendations</div>
           </div>
-        </summary>
-        <div class="pkg-body">
-          <div class="pkg-body-inner">
-            <p class="pkg-scope-title">What's included</p>
-            <ul class="pkg-scope-list">
-              <li><strong>Buyer interviews:</strong> 5-6 interviews across current customers, churned customers, and prospects. Five is typically enough to start seeing clear patterns.</li>
-              <li><strong>Sales call analysis</strong> to surface what your team is actually hearing in the field</li>
-              <li><strong>Stakeholder interviews:</strong> up to 4 internal interviews</li>
-              <li><strong>Messaging framework:</strong> core narrative, value proposition, audience segmentation, competitive differentiation</li>
-              <li><strong>Sales enablement:</strong> rewritten talk track to build a deck from, plus competitive talk tracks on your top 2-3 competitors</li>
-              <li><strong>Lifecycle:</strong> rewritten onboarding sequence or nurture flow, actual copy, not a content plan</li>
-              <li><strong>Findings review</strong> session before recommendations are finalized</li>
-              <li><strong>Team enablement:</strong> one 90-minute session at delivery</li>
-            </ul>
-            <p class="pkg-not-included"><strong>AI activation layer available as add-on.</strong> Set up in your existing AI stack or built from scratch and populated with the framework. See the standalone package below for scope.</p>
-            <p class="pkg-not-included"><strong>Not included:</strong> partner co-marketing activation, ongoing management, platform implementation</p>
+          <div class="timeline-step">
+            <div class="timeline-month">Month 3</div>
+            <div class="timeline-desc">Final roadmap delivery and brand voice guidelines</div>
           </div>
         </div>
-      </details>
-
-      <!-- Card 2: Advisory (featured) -->
-      <details class="pkg-card pkg-featured">
-        <summary class="pkg-summary">
-          <div class="pkg-header-band">
-            <div class="pkg-header-left">
-              <div class="pkg-icon">
-                <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="1,10 8.5,5 16,10"/>
-                  <polyline points="1,13 8.5,8 16,13"/>
-                  <polyline points="1,7 8.5,2 16,7"/>
-                </svg>
-              </div>
-              <span class="pkg-name">Buyer-Led Positioning + Advisory</span>
-              <span class="sticker">Most Popular</span>
-            </div>
-          </div>
-          <div class="pkg-tagline-row">
-            <p class="pkg-tagline">For companies that want positioning activated across every channel, and a direct line throughout the engagement for decisions that can't wait for a scheduled check-in.</p>
-            <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
-          </div>
-        </summary>
-        <div class="pkg-body">
-          <div class="pkg-body-inner">
-            <p class="pkg-scope-title">What's included</p>
-            <ul class="pkg-scope-list">
-              <li><strong>Buyer interviews:</strong> 8-10 interviews, enough signal to segment by use case, audience type, and deal stage across three channels</li>
-              <li><strong>Stakeholder interviews:</strong> up to 6 across sales, marketing, CS, and product</li>
-              <li><strong>Messaging framework:</strong> core narrative, value proposition, audience segmentation, competitive differentiation, and objection handling</li>
-              <li><strong>Sales enablement:</strong> rewritten talk track plus competitive talk tracks on your top 2-3 competitors</li>
-              <li><strong>Lifecycle:</strong> rewritten onboarding sequence or nurture flow, actual copy, not a content plan</li>
-              <li><strong>Partner co-marketing:</strong> Better Together one-pager and joint value proposition document for co-sell conversations</li>
-              <li><strong>AI activation layer:</strong> set up inside your existing AI infrastructure (Claude Projects, ChatGPT Team, Glean, Notion AI) or built from scratch, populated with the messaging framework, buyer language, talk tracks, objection handling, and partner templates so your team can query it on demand</li>
-              <li><strong>Cross-functional enablement:</strong> 2-3 targeted working sessions, one each for sales, lifecycle, and partner teams, plus team training on the AI layer</li>
-              <li><strong>Dedicated async advisory</strong> access throughout the engagement</li>
-            </ul>
-          </div>
-        </div>
-      </details>
-
-      <!-- Additional Options: single expandable wrapper -->
-      <details class="pkg-additional">
-        <summary class="pkg-additional-summary">
-          <div class="pkg-additional-left">
-            <span class="pkg-additional-label">Additional Options</span>
-            <span class="pkg-additional-hint">AI Activation &amp; Positioning Maintenance</span>
-          </div>
-          <span class="pkg-chevron-arrow" style="color: var(--muted); font-size: 0.85rem; flex-shrink: 0;">↓</span>
-        </summary>
-
-        <div class="pkg-additional-inner">
-
-          <!-- Card 3: AI Activation (standalone) -->
-          <details class="pkg-card">
-            <summary class="pkg-summary">
-              <div class="pkg-header-band">
-                <div class="pkg-header-left">
-                  <div class="pkg-icon">
-                    <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M8.5 1.5l1.8 4.7 4.7 1.8-4.7 1.8-1.8 4.7-1.8-4.7-4.7-1.8 4.7-1.8z"/>
-                      <circle cx="13.8" cy="3.2" r="0.7"/>
-                      <circle cx="3.2" cy="13.8" r="0.7"/>
-                    </svg>
-                  </div>
-                  <span class="pkg-name">Buyer-Led AI Activation</span>
-                </div>
-              </div>
-              <div class="pkg-tagline-row">
-                <p class="pkg-tagline">Standalone. For teams who already have positioning and want it operationalized: an AI layer your sales, partner, and marketing teams can query on demand.</p>
-                <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
-              </div>
-            </summary>
-            <div class="pkg-body">
-              <div class="pkg-body-inner">
-                <p class="pkg-scope-title">What's included</p>
-                <ul class="pkg-scope-list">
-                  <li><strong>Discovery:</strong> audit your existing AI stack (Claude Projects, ChatGPT Team, Glean, Notion AI) or scope a fresh build, depending on what your team will actually use</li>
-                  <li><strong>Source document creation:</strong> translate your existing positioning into AI-ready inputs like talk tracks, objection handling, competitive briefs, partner one-pagers, and role-play scenarios</li>
-                  <li><strong>AI infrastructure setup:</strong> build the folder and file structure inside your existing tool, or stand up a new system and hand it over</li>
-                  <li><strong>Prompt library:</strong> pre-built prompts for sales, partner, and marketing use cases. Handle this objection, draft this Better Together, run this role-play, generate this discovery question.</li>
-                  <li><strong>Team training:</strong> one 90-minute session per team (sales, partner, marketing) on how to actually use the AI layer in their workflow</li>
-                  <li><strong>30-day refinement window:</strong> tune prompts and source documents based on real usage after rollout</li>
-                </ul>
-                <p class="pkg-not-included"><strong>Requires existing positioning.</strong> If you don't have a current messaging framework that holds up, start with Buyer-Led Positioning above. The AI layer amplifies what's there. It doesn't replace the work of getting it right.</p>
-              </div>
-            </div>
-          </details>
-
-          <!-- Card 4: Maintenance (gated) -->
-          <details class="pkg-card">
-            <summary class="pkg-summary">
-              <div class="pkg-header-band">
-                <div class="pkg-header-left">
-                  <div class="pkg-icon">
-                    <svg viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="8.5" cy="8.5" r="6.5"/>
-                      <polyline points="8.5,5 8.5,8.5 11,11"/>
-                    </svg>
-                  </div>
-                  <span class="pkg-name">Positioning Maintenance</span>
-                  <span class="sticker sticker-gated">Post-engagement</span>
-                </div>
-              </div>
-              <div class="pkg-tagline-row">
-                <p class="pkg-tagline">For clients post-engagement. Keeps the framework current as the product evolves and the team changes.</p>
-                <div class="pkg-chevron"><span class="pkg-chevron-label">See details</span><span class="pkg-chevron-arrow"> ↓</span></div>
-              </div>
-            </summary>
-            <div class="pkg-body">
-              <div class="pkg-body-inner">
-                <p class="pkg-gated-note">Available to clients who have completed a project engagement. If the foundation isn't there, the retainer won't hold.</p>
-                <p class="pkg-scope-title">What's included each month</p>
-                <ul class="pkg-scope-list">
-                  <li><strong>Messaging updates</strong> as the product evolves or new use cases emerge</li>
-                  <li><strong>Sales call review</strong> to catch positioning drift before it affects close rates</li>
-                  <li><strong>New enablement materials</strong> as needed: talk track updates, objection handling additions, competitive refreshes</li>
-                  <li><strong>New team member onboarding</strong> to the framework</li>
-                  <li><strong>One async touchpoint</strong> per month</li>
-            </ul>
-            <p class="pkg-not-included">Month-to-month. 30 days notice to cancel.</p>
-          </div>
-        </div>
-          </details>
-
-        </div><!-- /pkg-additional-inner -->
-      </details><!-- /pkg-additional -->
-
+      </div>
     </div>
 
-    <div class="about-text" style="margin-top: 2.5rem; text-align: center;">
+    <div class="about-text" style="margin-top: 2rem;">
       <p style="color: var(--muted);">Tell me what's broken. I'll let you know if I can fix it.</p>
     </div>
 
@@ -1804,26 +1328,11 @@
       <p class="work-cta-sub">Fill out the form and I'll follow up with next steps.</p>
     </div>
 
-    <!-- How It Works -->
-    <div style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule);">
-      <span class="label label-green">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="6" width="12" height="8" rx="1.5"/>
-          <path d="M5 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/>
-          <line x1="2" y1="10" x2="14" y2="10"/>
-        </svg>
-        How It Works
-      </span>
-      <div class="about-text">
-        <p>Engagements are <strong>three months, project-based,</strong> and start at $8,500/month. Every engagement ends with your team trained on how to use what we built, not just a document in a shared drive.</p>
-      </div>
-    </div>
-
     <!-- Backstory -->
-    <div class="about-text" style="margin-top: 2.5rem;">
-      <p>A decade in this industry and a non-linear path put me in every function, watching what worked and what didn't.</p>
-      <p><strong>What a sales team actually needs from positioning. What a customer success org sees that marketing misses. What a founder is really asking when they say the messaging isn't working.</strong></p>
-      <p>The non-linear path is a feature, not a bug. <strong>That's what lets me sit across from a head of sales, a CMO, and a VP of CS in the same week and know what each of them needs from the same framework.</strong></p>
+    <div class="about-text" style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule);">
+      <p>A decade in ecommerce, on the vendor side and the brand side, means I know what your agency is working with and what your internal team needs from the strategy they're supposed to execute.</p>
+      <p><strong>What a CRM director sees in the data that marketing misses. What an agency is optimizing that isn't actually the problem. What a founder is really asking when they say retention is broken.</strong></p>
+      <p>The non-linear path is a feature, not a bug. <strong>It's what lets me look at your full retention ecosystem, not just the channel your agency manages.</strong></p>
     </div>
 
     <!-- FAQ -->
@@ -1841,31 +1350,31 @@
 
         <details class="faq-item">
           <summary class="faq-summary">
-            <span class="faq-question">Does this work apply to ecommerce brands?</span>
+            <span class="faq-question">We already have an email agency. Do we still need this?</span>
             <span class="faq-chevron">↓</span>
           </summary>
           <div class="faq-answer">
-            <p>Yes. The methodology is the same, the activation channels are different. For ecommerce brands, the work replaces sales and partner materials with full lifecycle and retention programs: email, SMS, subscription loyalty, and referral. <a href="/ecommerce">Learn more about the ecommerce work →</a></p>
+            <p>Probably, yes. An agency optimizes what they can see inside the tool. This engagement looks at what the tool is supposed to be solving, which means acquisition quality, site experience, segmentation logic, and whether your lifecycle architecture maps to how customers actually behave. Those aren't questions your agency is asking. That's not a knock on them. It's just not their job.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-summary">
-            <span class="faq-question">How long does an engagement take?</span>
+            <span class="faq-question">We're about to hire a Director of CRM. Should we wait?</span>
             <span class="faq-chevron">↓</span>
           </summary>
           <div class="faq-answer">
-            <p>Engagements are three months, project-based. The first month is research and synthesis: buyer interviews, sales call analysis, stakeholder interviews. Month two is framework development and activation: copy, talk tracks, enablement materials. Month three is delivery, training, and handoff. Every engagement ends with your team knowing how to use what we built.</p>
+            <p>Do this first. The roadmap gives your new hire a strategy to execute against instead of a blank slate to figure out. That's a better use of their first six months, and it lowers the risk of a bad fit. A Director of Retention who walks into a clear strategy is more effective faster than one who has to diagnose the problem and build the plan themselves.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-summary">
-            <span class="faq-question">Do you work with early-stage companies?</span>
+            <span class="faq-question">What kinds of brands is this right for?</span>
             <span class="faq-chevron">↓</span>
           </summary>
           <div class="faq-answer">
-            <p>This work requires enough customers to interview, which typically means post-product-market fit with at least 20-30 active customers. If you're pre-revenue or very early, the signal isn't there yet to build from. If you're post-PMF but pre-Series A, you're likely in the right window: enough customers to surface real patterns, early enough that getting the positioning right has an outsized impact on what comes next.</p>
+            <p>Ecommerce brands where retention is a meaningful business lever, not a nice-to-have. That usually means you have a real customer base, an email program that's been running for a while, and a sense that something isn't working but you're not sure what. DTC brands, CPG brands with a direct channel, subscription businesses, and brands with a mix of channels all fit. If you're pre-launch or just starting email, the signal isn't there yet to audit.</p>
           </div>
         </details>
 
@@ -1875,17 +1384,17 @@
             <span class="faq-chevron">↓</span>
           </summary>
           <div class="faq-answer">
-            <p>Access to customers for interviews, a few hours of internal stakeholder time across sales, marketing, and CS, and existing sales call recordings if you have them. You don't need to have your positioning figured out before we start. That's the work. The more raw material you can share at the outset, the faster we move.</p>
+            <p>Access to your ESP and any relevant performance data, an internal point person who can help coordinate interviews and data access, and stakeholders available for 30 to 45 minute conversations in the first few weeks. You don't need to have your retention problem figured out. That's the work. The more raw material you can share at kickoff, the faster we move.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-summary">
-            <span class="faq-question">What if we already have positioning?</span>
+            <span class="faq-question">Do you do any execution or ongoing work?</span>
             <span class="faq-chevron">↓</span>
           </summary>
           <div class="faq-answer">
-            <p>Depends on what you mean by positioning. If you have a messaging framework that your sales team actually uses and your lifecycle emails are converting, you probably don't need the core engagement. If you have a Notion doc nobody opens and a deck from last year, you have a starting point, not positioning. If the framework is solid but it's not living anywhere your team can reach for it, the <strong>Buyer-Led AI Activation</strong> package is built for exactly that situation.</p>
+            <p>No. The engagement ends with a roadmap your team can run. I don't do campaign management, flow builds, or retainer work. That's intentional. The value here is strategic clarity, not another vendor in your stack. If you need execution help after the roadmap is done, I can point you toward the right resources.</p>
           </div>
         </details>
 
